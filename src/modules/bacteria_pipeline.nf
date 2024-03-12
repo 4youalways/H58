@@ -4,7 +4,7 @@ nextflow.enable.dsl=2
 
 
 
-process TRIM_READS {
+process TRIM_LONG {
     tag "FILTLONG on $sample_id"
     publishDir "${params.trimed_reads}", mode: 'copy'
 
