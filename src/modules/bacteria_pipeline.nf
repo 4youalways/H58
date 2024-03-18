@@ -1,8 +1,29 @@
 nextflow.enable.dsl=2
 
+// download short reads
+/*
+process GET_READS {
+    tag 'Downloading read ${sample_id}'
+
+    conda ../src/ffq.yaml
+
+    input:
+    tuple val(accession)
+
+    output:
+    tuple val(accession), path(${accession}_[1,2].fastq.gz)
+
+    script:
+
+    """
+    ffq --ftp ${accession} | grep -Eo '"url": "[^"]*"' | grep -o '"[^"]*"$' | xargs wget -c -t 1
+
+    """
+}
+
+*/
+
 // QC of raw reads
-
-
 
 process TRIM_LONG {
     tag "FILTLONG on $sample_id"
@@ -22,10 +43,12 @@ process FASTQC {
 
     tag "FASTQC on $sample_id"
     publishDir "${params.fastqc}", mode: 'copy'
+    debug true
+    container  "biocontainers/fastqc:v0.11.9_cv7"
 
     input:
     //tuple val(sample_id), path(reads)
-    tuple val(sample_id), path(read1), path(read2)
+    tuple val(sample_id), path(reads)
 
     output:
     path("fastqc_${sample_id}") 
@@ -34,7 +57,7 @@ process FASTQC {
     script:
     """
     mkdir fastqc_${sample_id}
-    fastqc -o fastqc_${sample_id} -f fastq -q $read1, $read2 -t 8
+    fastqc -o fastqc_${sample_id} -f fastq -q $reads -t 8
     """
 }
 
@@ -173,6 +196,7 @@ process POLYPOLISH {
 // 
 process FASTP {
     publishDir "${params.outdir}", mode: 'copy'
+    container 'nanozoo/fastp:0.23.1--9f2e255'
 
     input:
     tuple val(sample_id), path(reads)
@@ -184,7 +208,7 @@ process FASTP {
     script :
     """
     mkdir fastp
-    fastp --in1 ${reads[0]} --in2 ${reads[1]}  --out1 fastp/${sample_id}_FP_1.fastq.gz --out2 fastp/${sample_id}_FP_2.fastq.gz --cut_front --cut_tail --trim_poly_x --cut_mean_quality 30 --qualified_quality_phred 30 --unqualified_percent_limit 10 --length_required 50
+    fastp --in1 ${reads[0]} --in2 ${reads[1]}  --out1 fastp/${sample_id}_FP_1.fastq.gz --out2 fastp/${sample_id}_FP_2.fastq.gz --cut_front --cut_tail --trim_poly_x --cut_mean_quality 25 --qualified_quality_phred 25 --unqualified_percent_limit 10 --length_required 30
     """
 }
 
@@ -269,4 +293,70 @@ process SNIPPY{
     snippy --cpus ${task.cpus} --outdir ${params.output}/${sample_id} --reference ${params.ref} --R1 ${reads[0]} --R2 ${reads[0]}
     
     """
+}
+
+
+// create a mapping of reads to a reference genome
+process BWA_INDEX {
+    tag "Indexing reference genome"
+
+    input:
+    path 'assembly'
+    
+    output:
+    path '*'
+
+    script:
+      """
+    bwa index ${assembly}
+      """
+}
+
+
+process BWA_MEM {
+    tag "BWA_MEM on $sample_id"
+    publishDir "${params.mappings}", mode: 'copy'
+
+    input:
+    tuple val(sample_id), path('reads')
+    path 'index'
+    
+    output:
+    tuple val(sample_id), path("${sample_id}.sam")
+
+    script:
+      """
+    bwa mem -t 16 -a ${index} ${reads[0]} ${reads[1]} > ${sample_id}.sam
+      """
+}
+
+process MAPPING {
+    tag "Mapping $sample_id to the reference"
+    publishDir "${params.mappings}", mode: 'copy'
+
+    input:
+    tuple val(sample_id), path('reads')
+    each path('ref')
+    
+    output:
+    tuple val(sample_id), path("${sample_id}.bcf.gz")
+
+    script:
+      """
+        bwa index ${ref}
+
+        bwa mem ${ref} ${reads} > mapping.sam
+
+        samtools view -b mapping.sam > mapping.bam
+
+        samtools sort mapping.bam > sorted.bam
+
+        samtools index sorted.bam
+
+        bcftools mpileup -Ou -f ${ref} sorted.bam | \
+        bcftools call -v -c --ploidy 1 -Ob --skip-variants indels > mapping.bcf
+
+        bcftools view -H mapping.bcf -Oz > ${sample_id}.bcf.gz
+
+      """
 }
