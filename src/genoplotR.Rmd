@@ -1,0 +1,375 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+# introduction
+
+this scripts contains code used to plot the dna segments from the assemblies
+
+# installing packages
+```{r, eval=FALSE}
+
+install.packages("tidyverse") 
+install.packages("genoPlotR")
+install.packages("janitor")
+install.packages("stringr")
+install.packages("config")
+```
+
+# the chromosome
+## loading files
+
+```{r}
+# load the packages
+library(genoPlotR)
+library(tidyverse)
+library(janitor)
+library(patchwork)
+
+setwd("/Users/zuza/repos/H58")
+
+path_to_genbank_files <- "outputs/gbk"
+
+sample_type <- "chromosome"
+
+file_names <- 
+c("1017142", "BKQU3X", "A58390", "BKQT8S", "AL513382.1") # removed "A53789"
+
+extension <- ".gbk"
+
+# load blast comparisons
+comparison_file_1 <-
+  "outputs/blast/ct18_vs_1017142.txt"
+comparison_file_2 <-
+  "outputs/blast/1017142_vs_A58390.txt"
+comparison_file_3 <-
+  "outputs/blast/A58390_vs_BKQT8S.txt"
+comparison_file_4 <-
+  "outputs/blast/BKQT8S_vs_BKQU3X.txt"
+
+
+# load the phage regions in the CT18 ref genome
+phage_data_location <-"outputs/phaster"
+```
+
+
+## bacteriophage region positions in the reference
+Using phaster we located bacteriophages on the chromosome. 
+these regions are plotted over the next few lines. a total of 8 phage regions were identified and 5 of them are intact
+
+### Phage 1
+a 45.7kb intact phage spanning the region 1007350-1053060 of the ct18 reference genome.
+
+
+```{r }
+sample_name <- str_glue(file_names[5], extension)
+
+ct18 <- file.path(path_to_genbank_files, sample_type, sample_name)
+  
+dna_seg <-
+  read_dna_seg_from_genbank(ct18)
+
+
+  # which gets the row number of the matched item
+positions <- c(which(dna_seg$start == 1007350),
+                   which(dna_seg$end == 1055793))
+
+positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+phage_one <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+phage_one$fill <- "#6A3D9A"
+phage_one$col <- "#6A3D9A"
+  
+phage_one_annotation = annotation(text = phage_one$gene,
+              x1 = middle(phage_one),
+              x2 = middle(phage_one),
+              rot = 30)
+  
+  # plot the DNA segment for phage 1
+plot_gene_map(c(phage_one),
+                gene_type = "arrows",
+                scale = TRUE,
+                annotations = phage_one_annotation)
+
+```
+
+#### Phage 2
+
+```{r } 
+  
+  # region 2
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 1538899),
+                   which(dna_seg$end == 1575836))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_two <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_two$fill <- "#6A3D9A"
+  phage_two$col <- "#6A3D9A"
+  
+  phage_two_annotation = annotation(text = phage_two$gene,
+              x1 = middle(phage_two),
+              x2 = middle(phage_two),
+              rot = 30)
+
+  plot_gene_map(c(phage_two),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 3
+
+```{r }
+  # region 3
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 1781177),
+                   which(dna_seg$end == 1787337))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_three <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_three$fill <- "#6A3D9A"
+  phage_three$col <- "#6A3D9A"
+  
+  phage_three_annotation = annotation(text = phage_three$gene,
+              x1 = middle(phage_three),
+              x2 = middle(phage_three),
+              rot = 30)
+
+  plot_gene_map(c(phage_three),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 4
+
+```{r }  
+    # phage 4
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 1883242),
+                   which(dna_seg$end == 1934286))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_four <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_four$fill <- "#6A3D9A"
+  phage_four$col <- "#6A3D9A"
+  
+  phage_four_annotation = annotation(text = phage_four$gene,
+              x1 = middle(phage_four),
+              x2 = middle(phage_four),
+              rot = 30)
+
+  plot_gene_map(c(phage_four),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 5
+
+```{r }  
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 2438615),
+                   which(dna_seg$end == 2447015))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_five <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_five$fill <- "#6A3D9A"
+  phage_five$col <- "#6A3D9A"
+  
+  phage_five_annotation = annotation(text = phage_five$gene,
+              x1 = middle(phage_five),
+              x2 = middle(phage_five),
+              rot = 30)
+
+  plot_gene_map(c(phage_five),
+                gene_type = "arrows",
+                scale = TRUE)
+```
+
+#### Phage 6
+
+```{r }
+
+   # phage 6
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 3504360),
+                   which(dna_seg$end == 3552416))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_six <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_six$fill <- "#6A3D9A"
+  phage_six$col <- "#6A3D9A"
+  
+  phage_six_annotation = annotation(text = phage_six$gene,
+              x1 = middle(phage_six),
+              x2 = middle(phage_six),
+              rot = 30)
+
+  plot_gene_map(c(phage_six),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 7
+
+```{r }
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 4458746),
+                   which(dna_seg$end == 4507730))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_seven <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_seven$fill <- "#6A3D9A"
+  phage_seven$col <- "#6A3D9A"
+  
+  phage_seven_annotation = annotation(text = phage_seven$gene,
+              x1 = middle(phage_seven),
+              x2 = middle(phage_seven),
+              rot = 30)
+
+  plot_gene_map(c(phage_seven),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 8
+
+```{r }  
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 4681892),
+                   which(dna_seg$end == 4696380))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_eight <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_eight$fill <- "#6A3D9A"
+  phage_eight$col <- "#6A3D9A"
+  
+  phage_eight_annotation = annotation(text = phage_eight$gene,
+              x1 = middle(phage_eight),
+              x2 = middle(phage_eight),
+              rot = 30)
+
+  plot_gene_map(c(phage_eight),
+                gene_type = "arrows",
+                scale = TRUE)
+```
+
+#### combining the phage regions
+
+```{r }
+pdf(file = "/Users/zuza/typhi/figures/bacteriophages_1.pdf",
+    width = 14)
+
+plot_gene_map(dna_segs =
+                list(phage_one, phage_two, phage_three, phage_four,
+                     phage_five, phage_six, phage_seven, phage_eight),
+                gene_type = "side_blocks",
+              dna_seg_labels =
+                c("Phage 1", "Phage 2", "Phage 3", "Phage 4", "Phage 5",
+                  "Phage 6", "Phage 7", "Phage 8"),
+              annotations = list(phage_one_annotation, phage_two_annotation,
+                              phage_three_annotation, phage_four_annotation,
+                              phage_five_annotation, phage_six_annotation,
+                              phage_seven_annotation, phage_eight_annotation),
+              annotation_height=2,
+              main = "Bacteriophage regions in the isolate AL513382.1",
+              dna_seg_scale = TRUE, scale = FALSE)
+
+dev.off()
+```
+
+
+### more phage regions
+the phage regions are numbered differently for the reference and the isolates.
+manually modify the phage regions to match the reference by modifying the summary text file. to determine which regions match which,
+there is need to open up the files in the artemis comparison tool and reanotate the text file
+
+
+
+```{r }
+# clean phage data
+clean_phage <- 
+    function(sample_id) {
+    phage_file <- file.path(phage_data_location, sample_id, "phage_regions.txt")
+    
+    phages <- read_table(file = phage_file) %>%
+    remove_constant() %>%
+    remove_empty() %>%
+    clean_names() %>%
+    filter(!is.na(region_length))
+
+    #split the completeness and score columns
+    phages[c("completeness", "score")] <-
+        str_split_fixed(phages$completeness_score, "\\(", 2)
+
+    phages$region_length <-
+        str_replace_all(phages$region_length, "Kb", "")
+    
+    return(phages)
+}
+
+x <- clean_phage(file_names[5])
+y <- clean_phage(file_names[1])
+
+
+x_plot <-
+    x %>% arrange(region_length) %>%
+    ggplot(aes(x = region, y = region_length, fill = completeness)) +
+    geom_col()
+
+y_plot <-
+    y %>%
+    ggplot(aes(x = region, y = region_length, fill = completeness)) +
+    geom_col()
+
+x_plot + y_plot
+
+rbind(x,y) %>%
+    group_by(region) %>%
+    ggplot(aes(x = region, y = region_length, fill = completeness)) +
+    geom_col(position = "dodge")
+```
