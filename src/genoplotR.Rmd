@@ -28,6 +28,8 @@ library(genoPlotR)
 library(tidyverse)
 library(janitor)
 library(patchwork)
+library(ragg)
+library(forcats)
 
 setwd("/Users/zuza/repos/H58")
 
@@ -53,6 +55,10 @@ comparison_file_4 <-
 
 # load the phage regions in the CT18 ref genome
 phage_data_location <-"outputs/phaster"
+
+# output folder
+
+outdir <- "outputs/plots"
 ```
 
 
@@ -323,18 +329,18 @@ dev.off()
 ```
 
 
-### more phage regions
+### plot the phaster output for the phage regions
 the phage regions are numbered differently for the reference and the isolates.
 manually modify the phage regions to match the reference by modifying the summary text file. to determine which regions match which,
 there is need to open up the files in the artemis comparison tool and reanotate the text file
-
 
 
 ```{r }
 # clean phage data
 clean_phage <- 
     function(sample_id) {
-    phage_file <- file.path(phage_data_location, sample_id, "phage_regions.txt")
+    phage_file <-
+    file.path(phage_data_location, sample_id, "phage_regions.txt")
     
     phages <- read_table(file = phage_file) %>%
     remove_constant() %>%
@@ -348,28 +354,123 @@ clean_phage <-
 
     phages$region_length <-
         str_replace_all(phages$region_length, "Kb", "")
+
+    phages$region_length <-
+        as.numeric(phages$region_length)
     
+    # get the start position of the bacteriophage
+    phages$region_position <-
+        str_replace_all(phages$region_position,
+        "cluster_002_consensus_polypolish:", "")
+    
+    phages$region_position <-
+        str_replace_all(phages$region_position,
+        "cluster_001_consensus_polypolish:", "")
+    
+    phages[c("start", "stop")] <-
+    str_split_fixed(phages$region_position, "-", 2)
+    
+    phages$start <- as.numeric(phages$start)
     return(phages)
 }
 
 x <- clean_phage(file_names[5])
 y <- clean_phage(file_names[1])
-
+z <- clean_phage(file_names[2])
+a <- clean_phage(file_names[3])
+b <- clean_phage(file_names[4])
 
 x_plot <-
-    x %>% arrange(region_length) %>%
-    ggplot(aes(x = region, y = region_length, fill = completeness)) +
-    geom_col()
+    x %>%
+    mutate(region_position = fct_reorder(region_position, start)) %>%
+    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
+    geom_col(width = 0.75) +
+    ggtitle(file_names[5]) +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    plot.title = element_text(hjust = 0.5)) +
+    ylim(c(0, 60)) +
+    scale_fill_brewer(palette = "Dark2") +
+    xlab(NULL) +
+    ylab("Length Of Bacteriophage (Kb)") +
+    labs(fill = "Completeness")
 
 y_plot <-
     y %>%
-    ggplot(aes(x = region, y = region_length, fill = completeness)) +
-    geom_col()
+    mutate(region_position = fct_reorder(region_position, start)) %>%
+    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
+    geom_col(width = 0.75) +
+    ggtitle(file_names[1]) +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    plot.title = element_text(hjust = 0.5)) +
+    ylim(c(0, 60)) +
+    scale_fill_brewer(palette = "Dark2") +
+    xlab(NULL) +
+    ylab(NULL) +
+    labs(fill = "Completeness")
 
-x_plot + y_plot
+z_plot <-
+    z %>%
+    mutate(region_position = fct_reorder(region_position, start)) %>%
+    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
+    geom_col(width = 0.75) +
+    ggtitle(file_names[2]) +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    plot.title = element_text(hjust = 0.5)) +
+    ylim(c(0, 60)) +
+    scale_fill_brewer(palette = "Dark2") +
+    xlab(NULL) +
+    ylab(NULL) +
+    labs(fill = "Completeness")
 
-rbind(x,y) %>%
-    group_by(region) %>%
-    ggplot(aes(x = region, y = region_length, fill = completeness)) +
-    geom_col(position = "dodge")
+a_plot <-
+    a %>%
+    mutate(region_position = fct_reorder(region_position, start)) %>%
+    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
+    geom_col(width = 0.75) +
+    ggtitle(file_names[3]) +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    plot.title = element_text(hjust = 0.5)) +
+    ylim(c(0, 60)) +
+    scale_fill_brewer(palette = "Dark2") +
+    xlab(NULL) +
+    ylab(NULL) +
+    labs(fill = "Completeness")
+
+
+b_plot <-
+    b %>%
+    mutate(region_position = fct_reorder(region_position, start)) %>%
+    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
+    geom_col(width = 0.75) +
+    ggtitle(file_names[4]) +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    plot.title = element_text(hjust = 0.5)) +
+    ylim(c(0, 60)) +
+    scale_fill_brewer(palette = "Dark2") +
+    xlab(NULL) +
+    ylab(NULL) +
+    labs(fill = "Completeness")
+
+# save the phages
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "phage_col_plot.svg")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+svg(plot_name,
+    width = 20,
+    height = 6)
+
+plots <-
+    x_plot + y_plot + a_plot + z_plot + b_plot + plot_layout(guides = "collect", nrow = 1)
+
+# create common lable
+wrap_elements(panel = plots) +
+    labs(tag = "Bacteriophage Start Position") +
+    theme(
+        plot.tag = element_text(size = rel(1)),
+        plot.tag.position = "bottom"
+    )
+dev.off() 
+
 ```
