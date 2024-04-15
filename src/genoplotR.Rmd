@@ -408,78 +408,6 @@ levels(all_phages$phage_species_num) <-
 ```
 
 ```{r}
-
-x_plot <-
-    x %>%
-    mutate(region_position = fct_reorder(region_position, start)) %>%
-    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
-    geom_col(width = 0.75) +
-    ggtitle(file_names[5]) +
-    theme(axis.text.x = element_text(angle = 30, hjust = 1),
-    plot.title = element_text(hjust = 0.5)) +
-    ylim(c(0, 60)) +
-    scale_fill_brewer(palette = "Dark2") +
-    xlab(NULL) +
-    ylab("Length Of Bacteriophage (Kb)") +
-    labs(fill = "Completeness")
-
-y_plot <-
-    y %>%
-    mutate(region_position = fct_reorder(region_position, start)) %>%
-    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
-    geom_col(width = 0.75) +
-    ggtitle(file_names[1]) +
-    theme(axis.text.x = element_text(angle = 30, hjust = 1),
-    plot.title = element_text(hjust = 0.5)) +
-    ylim(c(0, 60)) +
-    scale_fill_brewer(palette = "Dark2") +
-    xlab(NULL) +
-    ylab(NULL) +
-    labs(fill = "Completeness")
-
-z_plot <-
-    z %>%
-    mutate(region_position = fct_reorder(region_position, start)) %>%
-    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
-    geom_col(width = 0.75) +
-    ggtitle(file_names[2]) +
-    theme(axis.text.x = element_text(angle = 30, hjust = 1),
-    plot.title = element_text(hjust = 0.5)) +
-    ylim(c(0, 60)) +
-    scale_fill_brewer(palette = "Dark2") +
-    xlab(NULL) +
-    ylab(NULL) +
-    labs(fill = "Completeness")
-
-a_plot <-
-    a %>%
-    mutate(region_position = fct_reorder(region_position, start)) %>%
-    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
-    geom_col(width = 0.75) +
-    ggtitle(file_names[3]) +
-    theme(axis.text.x = element_text(angle = 30, hjust = 1),
-    plot.title = element_text(hjust = 0.5)) +
-    ylim(c(0, 60)) +
-    scale_fill_brewer(palette = "Dark2") +
-    xlab(NULL) +
-    ylab(NULL) +
-    labs(fill = "Completeness")
-
-
-b_plot <-
-    b %>%
-    mutate(region_position = fct_reorder(region_position, start)) %>%
-    ggplot(aes(x = region_position, y = region_length, fill = completeness)) +
-    geom_col(width = 0.75) +
-    ggtitle(file_names[4]) +
-    theme(axis.text.x = element_text(angle = 30, hjust = 1),
-    plot.title = element_text(hjust = 0.5)) +
-    ylim(c(0, 60)) +
-    scale_fill_brewer(palette = "Dark2") +
-    xlab(NULL) +
-    ylab(NULL) +
-    labs(fill = "Completeness")
-
 # save the phages
 plotting_dir <- file.path(outdir, Sys.Date())
 plot_name <- file.path(plotting_dir, "phage_col_plot.svg")
@@ -489,17 +417,6 @@ if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
 svg(plot_name,
     width = 20,
     height = 6)
-
-plots <-
-    x_plot + y_plot + a_plot + z_plot + b_plot + plot_layout(guides = "collect", nrow = 1)
-
-# create common lable
-wrap_elements(panel = plots) +
-    labs(tag = "Bacteriophage Start Position") +
-    theme(
-        plot.tag = element_text(size = rel(1)),
-        plot.tag.position = "bottom"
-    )
 
 plot2 <- all_phages %>%
     mutate(region_position = fct_reorder(region_position, start)) %>%
@@ -513,7 +430,9 @@ plot2 <- all_phages %>%
     xlab("Position on Assembly") +
     ylab("Length Of Bacteriophage (Kb)") +
     labs(fill = "Completeness") +
-    facet_wrap(~sample_id, scales = "free", nrow = 1)
+    facet_wrap(~factor(sample_id, c("AL513382.1", "1017142", "A58390", "BKQT8S", "BKQU3X")), scales = "free", nrow = 1)
+
+print(plot2)
 
 dev.off() 
 
@@ -544,13 +463,30 @@ plot3 <- all_phages %>%
     xlab("Position on Assembly") +
     ylab("Length Of Bacteriophage (Kb)") +
     labs(fill = "Phage Species Number") +
-    facet_wrap(~sample_id, scales = "free", nrow = 1)
+    facet_wrap(~factor(sample_id, c("AL513382.1", "1017142", "A58390", "BKQT8S", "BKQU3X")), scales = "free", nrow = 1)
 
 print(plot3)
 
 dev.off() 
 ```
 
+```{r}
+# save the phages
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "combined_phage_plot.svg")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+svg(plot_name,
+    width = 20,
+    height = 12)
+
+plot2/plot3
+
+
+dev.off() 
+
+```
 
 
 the output of phaster shows some phage regions which are conserved across
