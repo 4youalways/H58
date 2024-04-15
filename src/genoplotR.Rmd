@@ -17,6 +17,7 @@ install.packages("genoPlotR")
 install.packages("janitor")
 install.packages("stringr")
 install.packages("config")
+remotes::install_github("clauswilke/colorblindr")
 ```
 
 # the chromosome
@@ -30,6 +31,9 @@ library(janitor)
 library(patchwork)
 library(ragg)
 library(forcats)
+library(viridis)
+library(colorblindr) #the packge has a function {cvd_grid(plot)} 
+#which can simulate how a color blind person would see the plots
 
 setwd("/Users/zuza/repos/H58")
 
@@ -56,6 +60,11 @@ comparison_file_4 <-
 # load the phage regions in the CT18 ref genome
 phage_data_location <-"outputs/phaster"
 
+# create custom color pellet
+colors <- 
+    unique(c(brewer.pal(n = 11, name = "Paired"), brewer.pal(n = 8, name = "Dark2"), brewer.pal(n = 8, name = "Set2")))
+
+colors <- viridis(n = 20)
 # output folder
 
 outdir <- "outputs/plots"
@@ -371,14 +380,34 @@ clean_phage <-
     str_split_fixed(phages$region_position, "-", 2)
     
     phages$start <- as.numeric(phages$start)
+
+    phages$phage_species_num <- as.factor(phages$phage_species_num)
+
+    phages$sample_id <- sample_id
     return(phages)
 }
 
+```
+
+
+```{r}
 x <- clean_phage(file_names[5])
 y <- clean_phage(file_names[1])
 z <- clean_phage(file_names[2])
 a <- clean_phage(file_names[3])
 b <- clean_phage(file_names[4])
+
+all_phages <-
+    rbind(x,y,z,a,b)
+
+all_phages$phage_species_num
+
+levels(all_phages$phage_species_num) <-
+    as.integer(levels(all_phages$phage_species_num)) %>% sort()
+
+```
+
+```{r}
 
 x_plot <-
     x %>%
@@ -471,6 +500,66 @@ wrap_elements(panel = plots) +
         plot.tag = element_text(size = rel(1)),
         plot.tag.position = "bottom"
     )
+
+plot2 <- all_phages %>%
+    mutate(region_position = fct_reorder(region_position, start)) %>%
+    ggplot(aes(x = region_position,
+        y = region_length, fill = completeness)) +
+    geom_col(width = 0.75) +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    plot.title = element_text(hjust = 0.5)) +
+    ylim(c(0, 60)) +
+    scale_fill_viridis_d() +
+    xlab("Position on Assembly") +
+    ylab("Length Of Bacteriophage (Kb)") +
+    labs(fill = "Completeness") +
+    facet_wrap(~sample_id, scales = "free", nrow = 1)
+
 dev.off() 
+
+```
+
+
+```{r color_the_phages_by_their_species_number}
+
+# save the phages
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "phage_species_plot.svg")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+svg(plot_name,
+    width = 20,
+    height = 6)
+
+plot3 <- all_phages %>%
+    mutate(region_position = fct_reorder(region_position, start)) %>%
+    ggplot(aes(x = region_position,
+        y = region_length, fill = phage_species_num)) +
+    geom_col(width = 0.75) +
+    theme(axis.text.x = element_text(angle = 30, hjust = 1),
+    plot.title = element_text(hjust = 0.5)) +
+    ylim(c(0, 60)) +
+    scale_fill_viridis_d() +
+    xlab("Position on Assembly") +
+    ylab("Length Of Bacteriophage (Kb)") +
+    labs(fill = "Phage Species Number") +
+    facet_wrap(~sample_id, scales = "free", nrow = 1)
+
+print(plot3)
+
+dev.off() 
+```
+
+
+
+the output of phaster shows some phage regions which are conserved across
+the isolates. Now we will look at these phages in more detail using GenoPlotR
+
+```{r}
+
+
+
+
 
 ```
