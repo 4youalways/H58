@@ -343,15 +343,16 @@ the phage regions are numbered differently for the reference and the isolates.
 manually modify the phage regions to match the reference by modifying the summary text file. to determine which regions match which,
 there is need to open up the files in the artemis comparison tool and reanotate the text file
 
-
-```{r }
+#### a function to clean up the phage data
+```{r clean_phage_function}
 # clean phage data
 clean_phage <- 
     function(sample_id) {
     phage_file <-
     file.path(phage_data_location, sample_id, "phage_regions.txt")
     
-    phages <- read_table(file = phage_file) %>%
+    phages <-
+        read_table(file = phage_file) %>%
     remove_constant() %>%
     remove_empty() %>%
     clean_names() %>%
@@ -366,7 +367,7 @@ clean_phage <-
 
     phages$region_length <-
         as.numeric(phages$region_length)
-    
+
     # get the start position of the bacteriophage
     phages$region_position <-
         str_replace_all(phages$region_position,
@@ -379,14 +380,16 @@ clean_phage <-
     phages[c("start", "stop")] <-
     str_split_fixed(phages$region_position, "-", 2)
     
-    phages$start <- as.numeric(phages$start)
+    phages$start <- 
+        as.numeric(phages$start)
 
-    phages$phage_species_num <- as.factor(phages$phage_species_num)
+    phages$phage_species_num <- 
+        as.factor(phages$phage_species_num)
 
-    phages$sample_id <- sample_id
+    phages$sample_id <-
+        sample_id
     return(phages)
 }
-
 ```
 
 
@@ -430,7 +433,9 @@ plot2 <- all_phages %>%
     xlab("Position on Assembly") +
     ylab("Length Of Bacteriophage (Kb)") +
     labs(fill = "Completeness") +
-    facet_wrap(~factor(sample_id, c("AL513382.1", "1017142", "A58390", "BKQT8S", "BKQU3X")), scales = "free", nrow = 1)
+    facet_wrap(~factor(sample_id,
+        c("AL513382.1", "1017142", "A58390", "BKQT8S", "BKQU3X")),
+        scales = "free", nrow = 1)
 
 print(plot2)
 
@@ -463,7 +468,9 @@ plot3 <- all_phages %>%
     xlab("Position on Assembly") +
     ylab("Length Of Bacteriophage (Kb)") +
     labs(fill = "Phage Species Number") +
-    facet_wrap(~factor(sample_id, c("AL513382.1", "1017142", "A58390", "BKQT8S", "BKQU3X")), scales = "free", nrow = 1)
+    facet_wrap(~factor(sample_id,
+        c("AL513382.1", "1017142", "A58390", "BKQT8S", "BKQU3X")),
+        scales = "free", nrow = 1)
 
 print(plot3)
 
@@ -485,7 +492,6 @@ plot2/plot3
 
 
 dev.off() 
-
 ```
 
 
@@ -493,9 +499,5 @@ the output of phaster shows some phage regions which are conserved across
 the isolates. Now we will look at these phages in more detail using GenoPlotR
 
 ```{r}
-
-
-
-
 
 ```
