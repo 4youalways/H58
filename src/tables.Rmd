@@ -1,0 +1,110 @@
+
+# load packages
+```{r}
+library(tidyverse)
+library(kableExtra)
+library(stringr)
+library(janitor)
+
+outdir <- "outputs/plots"
+
+```
+
+# read and style amr and plasmid data
+```{r}
+
+plasmid <-
+  read_csv("docs/plasmid_data.csv")
+
+#assign colnames for the table
+column_names <- colnames(plasmid)
+
+# draw the table
+options(knitr.kable.NA = '')
+x <- plasmid %>%
+  knitr::kable(booktabs = TRUE,
+               longtable = TRUE,
+               linesep = "",
+               align = "l",
+               escape = FALSE,
+   col.names = linebreak(column_names, align = "l")) %>%
+  kable_styling(position = "left",
+                full_width = FALSE,
+                latex_options = c("striped", "repeat_header"),
+                stripe_color = "gray")
+
+
+
+```
+
+# save to plot plasmid and amr table
+```{r}
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "Table2.png")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+save_kable(x, file = plot_name,
+           bs_theme = "simplex")
+
+```
+
+
+# load the isolate metadata
+```{r}
+
+sequencing_overview <-
+  read_csv("docs/sequencing_overview.csv") %>%
+  clean_names() %>%
+  filter(isolate_id != "A53789")
+
+# calculate summary values
+mean_length <- mean(sequencing_overview$length_of_assembly)
+
+mean_gc <- mean(sequencing_overview$gc_percent)
+
+table <- sequencing_overview %>% select(isolate_id,
+                                        year_of_isolation,
+                                        source,
+                               long_read_accession,
+                               short_read_accession_number,
+                               lineage,
+                               length_of_assembly,
+                               n50,
+                               number_of_contigs,
+                               gc_percent,
+                               presence_of_plasmid)
+
+# remove underscore from column names
+column_names <- table %>%
+  names() %>%
+  str_replace_all("_", " ") %>%
+  str_to_title()
+
+
+# draw the table
+y <- table %>%
+  knitr::kable(booktabs = TRUE,
+               longtable = TRUE,
+               linesep = "",
+               align = "l",
+               escape = FALSE,
+    col.names = linebreak(column_names, align = "l")) %>%
+  kable_styling(position = "left",
+                full_width = FALSE,
+                latex_options = c("striped", "repeat_header"),
+                stripe_color = "gray")
+```
+
+
+# save isolate metadata to table
+```{r}
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "Table1.png")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+save_kable(y, file = plot_name,
+           bs_theme = "simplex")
+
+```
