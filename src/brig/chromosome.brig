@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BRIG blastOptions="" legendPosition="upper-right" queryFile="/Users/zuza/typhi/results/brig/assemblies/sequence.fasta" outputFolder="/Users/zuza/typhi/results/brig" blastPlus="yes" imageFormat="svg" outputFile="/Users/zuza/repos/H58/outputs/brig/images/20240504/assemblies_with_features" title="Chromosome" queryFastaFile="/Users/zuza/typhi/results/brig/assemblies/sequence.fasta" cgXML="/Users/zuza/typhi/results/brig/scratch/sequence.fasta.xml">
+  <brig_settings Ring1="172,14,225" Ring2="222,149,220" Ring3="161,221,231" Ring4="49,34,221" Ring5="116,152,226" Ring6="224,206,38" Ring7="40,191,140" Ring8="158,223,139" Ring9="226,38,122" Ring10="211,41,77" defaultUpper="70" defaultLower="50" defaultMinimum="50" genbankFiles="gbk,gb,genbank" fastaFiles="fna,faa,fas,fasta,fa" emblFiles="embl" blastLocation="/usr/local/ncbi/blast/bin" divider="3" multiplier="3" memory="5000" defaultSpacer="0" />
+  <special value="GC Content" />
+  <special value="GC Skew" />
+  <refDir location="/Users/zuza/typhi/results/brig/assemblies">
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/BKQU3X_2.fasta" />
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/1017142.fasta" />
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/A58390_2.fasta" />
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/A53789.fasta" />
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/CHF104.fasta" />
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/BKQT8S_2.fasta" />
+  </refDir>
+  <ring position="4" colour="202,178,214" name="A58390" upperInt="70" lowerInt="50" legend="no" size="30" labels="no" blastType="blastn">
+    <sequence location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/A58390/A58390.gbk" blastResults="/Users/zuza/typhi/results/brig/scratch/A58390.gbk.fnaVssequence.fasta.tab" />
+  </ring>
+  <ring colour="51,160,44" name="1017142" position="3" upperInt="70" lowerInt="50" legend="no" size="30" labels="no" blastType="blastn">
+    <sequence location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/1017142/1017142.gbk" blastResults="/Users/zuza/typhi/results/brig/scratch/1017142.gbk.fnaVssequence.fasta.tab" />
+  </ring>
+  <refDir location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/1017142">
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/1017142/1017142.gbk" />
+  </refDir>
+  <refDir location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/A53789">
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/A53789/A53789.gbk" />
+  </refDir>
+  <refDir location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/A58390">
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/A58390/A58390.gbk" />
+  </refDir>
+  <refDir location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/BKQT8S">
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/BKQT8S/BKQT8S.gbk" />
+  </refDir>
+  <ring colour="31,120,180" name="BKQT8S" position="5" upperInt="70" lowerInt="50" legend="no" size="30" labels="no" blastType="blastn">
+    <sequence location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/BKQT8S/BKQT8S.gbk" blastResults="/Users/zuza/typhi/results/brig/scratch/BKQT8S.gbk.fnaVssequence.fasta.tab" />
+  </ring>
+  <refDir location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/BKQU3X">
+    <refFile location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/BKQU3X/BKQU3X.gbk" />
+  </refDir>
+  <ring colour="178,223,138" name="BKQU3X" position="6" upperInt="70" lowerInt="50" legend="no" size="30" labels="no" blastType="blastn">
+    <sequence location="/Users/zuza/typhi/results/brig/assemblies/prokka/prokka/trycycler/BKQU3X/BKQU3X.gbk" blastResults="/Users/zuza/typhi/results/brig/scratch/BKQU3X.gbk.fnaVssequence.fasta.tab" />
+  </ring>
+  <ring colour="225,0,0" name="GC Content" position="0" upperInt="70" lowerInt="50" legend="yes" size="30" labels="no" blastType="blastn">
+    <sequence location="GC Content" />
+  </ring>
+  <ring colour="225,0,0" name="GC Skew" position="1" upperInt="70" lowerInt="50" legend="yes" size="30" labels="no" blastType="blastn">
+    <sequence location="GC Skew" />
+  </ring>
+  <ring colour="0,0,0" name="AL513382.1 Bacteriophages" position="7" upperInt="70" lowerInt="50" legend="no" size="30" labels="no" blastType="blastn">
+    <feature label="Phage 1" colour="black" decoration="arc">
+      <featureRange start="1007350" stop="1053060" label="1007350" />
+    </feature>
+    <feature label="Phage 2" colour="black" decoration="arc">
+      <featureRange start="1538899" stop="1575836" label="1538899" />
+    </feature>
+    <feature label="Phage 3" colour="black" decoration="arc">
+      <featureRange start="1781177" stop="1787337" label="1781177" />
+    </feature>
+    <feature label="Phage 4" colour="black" decoration="arc">
+      <featureRange start="1885326" stop="1933598" label="1885326" />
+    </feature>
+    <feature label="Phage 5" colour="black" decoration="arc">
+      <featureRange start="2438615" stop="2447015" label="2438615" />
+    </feature>
+    <feature label="Phage 6" colour="black" decoration="arc">
+      <featureRange start="3504242" stop="3555052" label="3504242" />
+    </feature>
+    <feature label="Phage 7" colour="black" decoration="arc">
+      <featureRange start="4459144" stop="4507514" label="4459144" />
+    </feature>
+    <feature label="Phage 8" colour="black" decoration="arc">
+      <featureRange start="4683670" stop="4696075" label="4683670" />
+    </feature>
+  </ring>
+  <ring colour="166,206,227" name="AL513382.1" position="2" upperInt="70" lowerInt="50" legend="no" size="30" labels="no" blastType="blastn">
+    <sequence location="/Users/zuza/typhi/docs/sequence.fasta" blastResults="/Users/zuza/typhi/results/brig/scratch/sequence.fastaVssequence.fasta.tab" />
+  </ring>
+  <refDir location="/Users/zuza/typhi/docs">
+    <refFile location="/Users/zuza/typhi/docs/GCA_001367555.2_1036491_genomic.fna" />
+    <refFile location="/Users/zuza/typhi/docs/pHCM1.gb" />
+    <refFile location="/Users/zuza/typhi/docs/pHCM1.fasta" />
+    <refFile location="/Users/zuza/typhi/docs/sequence.fasta" />
+    <refFile location="/Users/zuza/typhi/docs/sequence.gb" />
+  </refDir>
+  <cgview_settings arrowheadLength="medium" backboneColor="black" backboneRadius="600" backboneThickness="medium" backgroundColor="white" borderColor="black" featureSlotSpacing="medium" featureThickness="30" giveFeaturePositions="false" globalLabel="true" height="3600" isLinear="false" labelFont="SansSerif,plain,30" labelLineLength="medium" labelLineThickness="medium" labelPlacementQuality="best" labelsToKeep="1000" longTickColor="black" minimumFeatureLength="medium" moveInnerLabelsToOuter="true" origin="12" rulerFont="SansSerif,plain,35" rulerFontColor="black" rulerPadding="40" rulerUnits="bases" shortTickColor="black" shortTickThickness="medium" showBorder="false" showShading="true" showWarning="false" tickDensity="0.2333" tickThickness="medium" titleFont="SansSerif,plain,55" titleFontColor="black" useColoredLabelBackgrounds="false" useInnerLabels="true" warningFont="Default,plain,40" warningFontColor="black" width="3600" zeroTickColor="black" tickLength="medium" />
+</BRIG>
+
