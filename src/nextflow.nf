@@ -8,6 +8,7 @@ params.reads = '/Users/zuza/repos/H58/outputs/fastp/**_{1,2}.fastq.gz'
 // set output folders
 params.outdir = '../outputs/'
 params.mappings = '../outputs/mappings'
+params.msa = '../outputs/msa'
 
 
 include { TRIM_LONG; FASTQC; FASTP; MAPPING } from './modules/bacteria_pipeline.nf'

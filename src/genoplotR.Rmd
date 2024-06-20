@@ -31,6 +31,7 @@ library(janitor)
 library(patchwork)
 library(ragg)
 library(forcats)
+library(RColorBrewer)
 library(viridis)
 library(colorblindr) #the packge has a function {cvd_grid(plot)} 
 #which can simulate how a color blind person would see the plots

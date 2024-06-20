@@ -339,7 +339,7 @@ process MAPPING {
     each path('ref')
     
     output:
-    tuple val(sample_id), path("${sample_id}.bcf.gz")
+    tuple val(sample_id), path("${sample_id}.vcf.gz")
 
     script:
       """
@@ -355,8 +355,27 @@ process MAPPING {
 
         bcftools mpileup -Ou -f ${ref} sorted.bam | \
         bcftools call -v -c --ploidy 1 -Ob --skip-variants indels > mapping.bcf
+        bcftools view -H mapping.bcf -Oz > ${sample_id}.vcf.gz
 
-        bcftools view -H mapping.bcf -Oz > ${sample_id}.bcf.gz
+      """
+}
+
+process MSA {
+    tag "Creating a multiple sequence alignment"
+    publishDir "${params.msa}", mode: 'copy'
+
+    input:
+    tuple val(sample_id), path('vcf')
+    each path('ref')
+    
+    output:
+    tuple val(sample_id), path("${sample_id}.vcf.gz")
+
+    script:
+      """
+        bwa index ${ref}
+        bcftools index ${vcf}
+        bcftools consensus -f ${ref} ${vcf} -o {sample_id}.fasta
 
       """
 }

@@ -57,7 +57,7 @@ write_csv(metadata,
 ```{r}
 
 tree <-
-  ape::read.tree("/Users/zuza/repos/H58/outputs/phylo.aln.treefile")
+  ape::read.tree("/Users/zuza/repos/H58/outputs/newick/2024-04-19/phylo.aln.treefile")
 
 tree <- ladderize(tree, right = TRUE)
 
@@ -76,7 +76,17 @@ data <- metadata %>% filter(accession_number %in% c(labels))
 
 p <- ggtree(tree, layout = "rectangular",
   ladderize = TRUE)
-p
+p <-
+    p + geom_cladelab(node = 160, label="ERR279153", angle=0) +
+    geom_cladelab(node = 161, label="ERR2602821", angle=0)
+
+
+
+
+p + geom_hilight(node=161, fill="steelblue", alpha=.6) +
+    geom_hilight(node=160, fill="steelblue", alpha=.6) +
+    geom_cladelab(node = 161)
+p + geom_hilight(mapping = aes(node %in% c(160, 161), fill = S))
 
 # get the node ids for annotation later
 nodeid(tree, label = c("ERR2602821", "ERR360832", "ERR279139", "ERR2602832", "ERR279153"))
@@ -102,7 +112,7 @@ p1 <-
   geom_tippoint(aes(color=genotype),
                 size = 0.5)
 
-p1
+p1 + tiplabels()
 
 ```
 

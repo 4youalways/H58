@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r eval=FALSE}
+
+install.packages("figpatch")
+pak::pkg_install("figpatch")
+```
+
+```{r}
+
+library(tidyverse)
+library(patchwork)
+library(readr)
+library(figpatch)
+
+```
+
+
+```{r clean_nanoplot_data}
+setwd("/Users/zuza/repos/H58")
+
+read_stats <-
+    read_table("./outputs/nanoplot/nanostats/nanostats.txt")
+
+summary(read_stats)
+
+
+```
+
+
+```{r plot_nanoplot_data}
+kde_plots_dir <-
+    "./outputs/nanoplot/kde_plots"
+
+file_names <- 
+c("1017142", "BKQU3X", "A58390", "BKQT8S", "AL513382.1") # removed "A53789"
+
+extension <-
+    "LengthvsQualityScatterPlot_kde.png"
+
+read_1017142 <- file.path(kde_plots_dir, str_glue("1017142", extension))
+img1 <- png::readPNG(read_1017142, native = TRUE)
+img1 + img1
+img1 <- fig(read_1017142)
+
+img1 /img1
+ggplot() + cowplot::draw_image(read_1017142)
+```

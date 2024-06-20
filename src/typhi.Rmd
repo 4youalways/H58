@@ -1,0 +1,2508 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+# Styphi
+before running this script you will need to install the package [pacman](https://github.com/trinker/pacman). It can be installed by running the following in the r console
+
+## installing packages for rna-seq
+```{r , eval=false}
+install.packages("pacman")
+install.packages("viridis")  # Install
+
+workdir <- "/Users/zuza/typhi"
+
+# the pak package manager assists installing apps
+install.packages("pak",
+  repos =
+  sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s",
+  .Platform$pkgType, R.Version()$os, R.Version()$arch))
+
+install.packages("patchwork")
+
+```
+
+# assembly statistics and tables
+
+## the chromosome
+```{r}
+library(tidyverse)
+library(janitor)
+library(kableExtra)
+library(stringr)
+
+setwd("/Users/zuza/typhi/")
+
+sequencing_overview <-
+  read_csv("docs/sequencing_overview.csv") %>%
+  clean_names()
+
+# calculate summary values
+mean_length <- mean(sequencing_overview$length_of_assembly)
+
+mean_gc <- mean(sequencing_overview$gc_percent)
+
+table <- sequencing_overview %>% select(isolate_id,
+                                        year_of_isolation,
+                                        source,
+                               long_read_accession,
+                               short_read_accession_number,
+                               lineage,
+                               length_of_assembly,
+                               n50,
+                               number_of_contigs,
+                               gc_percent,
+                               presence_of_plasmid)
+
+# remove underscore from column names
+column_names <- table %>%
+  names() %>%
+  str_replace_all("_", " ") %>%
+  str_to_title()
+
+
+# draw the table
+y <- table %>%
+  knitr::kable(booktabs = TRUE,
+               longtable = TRUE,
+               linesep = "",
+               align = "l",
+               escape = FALSE,
+    col.names = linebreak(column_names, align = "l")) %>%
+  kable_styling(position = "left",
+                full_width = FALSE,
+                latex_options = c("striped", "repeat_header"),
+                stripe_color = "gray") %>%
+  row_spec(c(3,4), background = "lightgray")
+
+save_kable(y, file = "figures/Table 1.pdf",
+           bs_theme = "simplex")
+
+```
+
+## the plasmids
+
+
+
+# AMR genes
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(config)
+library(readr)
+
+setwd("/Users/zuza/typhi/")
+
+ariba <- read_csv(config::get("ariba", file = "src/typhi.yml" ))
+amrfinder <- read_tsv(config::get("amrfinder", file = "src/typhi.yml" )) %>% clean_names()
+
+cleaned_amrfinder <-
+  amrfinder %>%
+  filter(element_type == "AMR") %>%
+  select(name, protein_identifier, contig_id,
+         start, stop, strand, gene_symbol,
+         sequence_name, class, hmm_description)
+write_csv(cleaned_amrfinder,
+          file = "/Users/zuza/typhi/docs/cleaned_amrfinder.csv")
+```
+
+
+## plotting DNA segments
+```{r loading packages, echo=FALSE}
+library(pacman)
+pacman::p_load(
+  stringr,
+  tidyverse,
+  config,
+  readxl,
+  janitor,
+  pak
+)
+
+```
+# GenoPlotR
+
+this script is intended for plotting dna segments in the Salmonella typhi AMR island between the cyaA and cyaY genes.
+the script works on single contigs which have been annotated into genbank fomart
+
+##genoPlotR for the chromosomal region
+
+the following section contains a piece of code with a function for plotting the cyaA-cyAY region in the typhi chromosome
+```{r}
+
+library(config)
+library(genoPlotR)
+library(tidyverse)
+
+setwd("/Users/zuza/typhi/")
+
+prokka <- config::get("pRokka", file = "src/typhi.yml")
+samples <- c("1017142", "BKQU3X", "A53789", "A58390", "BKQT8S", "AL513382.1")
+
+# create empty vector to put annotated sequences in 
+genbank_file <- c()
+BKQT8S <- c()
+
+# get the paths to the genbank files and add to the empty vector created above
+for (sample in samples[6]) {
+  #glue for string and variable concartenation
+  file_name <- str_glue({sample}, ".gbk")
+  assembly <- file.path(prokka, sample,file_name) # file.path to join paths
+  genbank <- append(genbank_file, assembly) # add the file paths to a vector
+  # read in the dna segment from GBK
+  segment <- read_dna_seg_from_file(genbank, fileType = "detect")
+ 
+  # which gets the row number of the matched item
+  positions <- c(which(segment$name == "cyaA"), which(segment$name == "cyaY"))
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  filtered_segment <- segment[positions[1]:positions[2], ]
+
+segment %>% filter(1)
+  # plot the DNA segments
+  plot_gene_map(list(filtered_segment),
+    gene_type = "arrows",
+    annotations =
+      annotation(text = filtered_segment$gene,
+      x1 = middle(filtered_segment),
+      x2 = middle(filtered_segment),
+      rot = 30),
+      annotation_height=5.7,
+      annotation_cex=2,
+      dna_seg_scale = TRUE,
+      main = sample,
+      main_pos = "centre")
+
+}
+
+
+#manually annotate the dna_segs in the reference
+
+
+
+
+
+
+```
+
+## manually draw annotate the dna segs
+
+### draw the bacteriophage regions in the reference genome 
+
+```{r}
+library(tidyverse)
+library(genoPlotR)
+setwd("/Users/zuza/typhi/")
+
+# read in the annotated reference sequence
+ct18 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/AL513382.1/AL513382.1.gbk"
+
+dna_seg <-
+  read_dna_seg_from_genbank(ct18)
+
+  # draw the features
+
+```
+
+#### Phage 1
+
+```{r }
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$name == "cyaA"), which(dna_seg$name == "cyaY"))
+  positions <- c(which(dna_seg$start == 1007350),
+                   which(dna_seg$end == 1055793))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_one <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_one$fill <- "#6A3D9A"
+  phage_one$col <- "#6A3D9A"
+  
+  phage_one_annotation = annotation(text = phage_one$gene,
+              x1 = middle(phage_one),
+              x2 = middle(phage_one),
+              rot = 30)
+  
+  # plot the DNA segment for phage 1
+  plot_gene_map(c(phage_one),
+                gene_type = "arrows",
+                scale = TRUE,
+                annotations = phage_one_annotation)
+
+```
+
+#### Phage 2
+
+```{r } 
+  
+  # region 2
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 1538899),
+                   which(dna_seg$end == 1575836))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_two <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_two$fill <- "#6A3D9A"
+  phage_two$col <- "#6A3D9A"
+  
+  phage_two_annotation = annotation(text = phage_two$gene,
+              x1 = middle(phage_two),
+              x2 = middle(phage_two),
+              rot = 30)
+
+  plot_gene_map(c(phage_two),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 3
+
+```{r }
+  # region 3
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 1781177),
+                   which(dna_seg$end == 1787337))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_three <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_three$fill <- "#6A3D9A"
+  phage_three$col <- "#6A3D9A"
+  
+  phage_three_annotation = annotation(text = phage_three$gene,
+              x1 = middle(phage_three),
+              x2 = middle(phage_three),
+              rot = 30)
+
+  plot_gene_map(c(phage_three),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 4
+
+```{r }  
+    # phage 4
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 1883242),
+                   which(dna_seg$end == 1934286))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_four <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_four$fill <- "#6A3D9A"
+  phage_four$col <- "#6A3D9A"
+  
+  phage_four_annotation = annotation(text = phage_four$gene,
+              x1 = middle(phage_four),
+              x2 = middle(phage_four),
+              rot = 30)
+
+  plot_gene_map(c(phage_four),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 5
+
+```{r }  
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 2438615),
+                   which(dna_seg$end == 2447015))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_five <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_five$fill <- "#6A3D9A"
+  phage_five$col <- "#6A3D9A"
+  
+  phage_five_annotation = annotation(text = phage_five$gene,
+              x1 = middle(phage_five),
+              x2 = middle(phage_five),
+              rot = 30)
+
+  plot_gene_map(c(phage_five),
+                gene_type = "arrows",
+                scale = TRUE)
+```
+
+#### Phage 6
+
+```{r }
+
+   # phage 6
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 3504360),
+                   which(dna_seg$end == 3552416))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_six <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_six$fill <- "#6A3D9A"
+  phage_six$col <- "#6A3D9A"
+  
+  phage_six_annotation = annotation(text = phage_six$gene,
+              x1 = middle(phage_six),
+              x2 = middle(phage_six),
+              rot = 30)
+
+  plot_gene_map(c(phage_six),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 7
+
+```{r }
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 4458746),
+                   which(dna_seg$end == 4507730))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_seven <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_seven$fill <- "#6A3D9A"
+  phage_seven$col <- "#6A3D9A"
+  
+  phage_seven_annotation = annotation(text = phage_seven$gene,
+              x1 = middle(phage_seven),
+              x2 = middle(phage_seven),
+              rot = 30)
+
+  plot_gene_map(c(phage_seven),
+                gene_type = "arrows",
+                scale = TRUE)
+
+```
+
+#### Phage 8
+
+```{r }  
+
+  # which gets the row number of the matched item
+  positions <- c(which(dna_seg$start == 4681892),
+                   which(dna_seg$end == 4696380))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  phage_eight <- seg1 <- dna_seg[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  phage_eight$fill <- "#6A3D9A"
+  phage_eight$col <- "#6A3D9A"
+  
+  phage_eight_annotation = annotation(text = phage_eight$gene,
+              x1 = middle(phage_eight),
+              x2 = middle(phage_eight),
+              rot = 30)
+
+  plot_gene_map(c(phage_eight),
+                gene_type = "arrows",
+                scale = TRUE)
+```
+
+#### combining the phage regions
+
+```{r }
+pdf(file = "/Users/zuza/typhi/figures/bacteriophages_1.pdf",
+    width = 14)
+
+plot_gene_map(dna_segs =
+                list(phage_one, phage_two, phage_three, phage_four,
+                     phage_five, phage_six, phage_seven, phage_eight),
+                gene_type = "side_blocks",
+              dna_seg_labels =
+                c("Phage 1", "Phage 2", "Phage 3", "Phage 4", "Phage 5",
+                  "Phage 6", "Phage 7", "Phage 8"),
+              annotations = list(phage_one_annotation, phage_two_annotation,
+                              phage_three_annotation, phage_four_annotation,
+                              phage_five_annotation, phage_six_annotation,
+                              phage_seven_annotation, phage_eight_annotation),
+              annotation_height=2,
+              main = "Bacteriophage regions in the isolate AL513382.1",
+              dna_seg_scale = TRUE, scale = FALSE)
+
+dev.off()
+```
+
+
+
+
+
+
+### Annotate regions with gaps in the new isolates
+
+#### import data
+```{r}
+library(tidyverse)
+library(genoPlotR)
+setwd("/Users/zuza/typhi/")
+
+# load assemblies
+ct18 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/AL513382.1/AL513382.1.gbk"
+s1017142 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/1017142/1017142.gbk"
+A53789 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/A53789/A53789.gbk"
+A58390 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/A58390/A58390.gbk"
+BKQT8S <-
+  "/Users/zuza/typhi/results/prokka/chromosome/BKQT8S/BKQT8S.gbk"
+BKQU3X <-
+  "/Users/zuza/typhi/results/prokka/chromosome/BKQU3X/BKQU3X.gbk"
+  
+# load blast comparisons
+comparison_file_1 <-
+  "/Users/zuza/typhi/results/blast/ct18_vs_1017142.txt"
+comparison_file_2 <-
+  "/Users/zuza/typhi/results/blast/1017142_vs_A3789.txt"
+comparison_file_3 <-
+  "/Users/zuza/typhi/results/blast/A53789_vs_A58390.txt"
+comparison_file_4 <-
+  "/Users/zuza/typhi/results/blast/A58390_vs_BKQT8S.txt"
+comparison_file_5 <-
+  "/Users/zuza/typhi/results/blast/BKQT8S_vs_BKQU3X.txt"
+
+# create dna segments
+dna_seg_ref <-
+  read_dna_seg_from_genbank(ct18)
+
+dna_seq_1017142 <-
+  read_dna_seg_from_genbank(s1017142)
+
+dna_seq_A53789 <-
+  read_dna_seg_from_genbank(A53789)
+
+dna_seq_A58390 <-
+  read_dna_seg_from_genbank(A58390)
+
+dna_seq_BKQT8S <-
+  read_dna_seg_from_genbank(BKQT8S)
+
+dna_seq_BKQU3X <-
+  read_dna_seg_from_genbank(BKQU3X)
+
+# create comparison files
+
+comparison_1 <-
+  read_comparison_from_blast(comparison_file_1,
+                           sort_by = "per_id")
+comparison_2 <-
+  read_comparison_from_blast(comparison_file_2,
+                           sort_by = "per_id")
+comparison_3 <-
+  read_comparison_from_blast(comparison_file_3,
+                           sort_by = "per_id")
+comparison_4 <-
+  read_comparison_from_blast(comparison_file_4,
+                           sort_by = "per_id")
+comparison_5 <-
+  read_comparison_from_blast(comparison_file_5,
+                           sort_by = "per_id")
+
+
+
+```
+
+#### plot ct18
+
+```{r}
+# which gets the row number of the matched item
+  positions <- c(which(dna_seg_ref$name == "ybgD"),
+                   which(dna_seg_ref$name == "idi"))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  ref_dna_seg <- dna_seg_ref[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  ref_dna_seg$fill <- "#6A3D9A"
+  ref_dna_seg$col <- "#6A3D9A"
+  
+  ref_dna_seg_annotation = annotation(text = ref_dna_seg$gene,
+              x1 = middle(ref_dna_seg),
+              x2 = middle(ref_dna_seg),
+              rot = 30)
+plot_gene_map(list(ref_dna_seg))
+```
+
+#### plot the malawian isolate
+```{r}
+# which gets the row number of the matched item
+  positions <- c(which(dna_seq_malawi$name == "ybgD"),
+                   which(dna_seq_malawi$name == "idi"))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  malawi_dna_seg <- dna_seq_malawi[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  malawi_dna_seg$fill <- "#6A3D9A"
+  malawi_dna_seg$col <- "#6A3D9A"
+  
+  malawi_dna_seg_annotation = annotation(text = malawi_dna_seg$gene,
+              x1 = middle(malawi_dna_seg),
+              x2 = middle(malawi_dna_seg),
+              rot = 30)
+plot_gene_map(list(malawi_dna_seg))
+```
+
+
+#### plot the A53789 isolate
+```{r}
+# which gets the row number of the matched item
+  positions <- c(which(dna_seq_A53789$name == "ybgD"),
+                   which(dna_seq_A53789$name == "idi"))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  A53789_dna_seg <- dna_seq_A53789[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  A53789_dna_seg$fill <- "#6A3D9A"
+  A53789_dna_seg$col <- "#6A3D9A"
+  
+  A53789_dna_seg_annotation = annotation(text = A53789_dna_seg$gene,
+              x1 = middle(A53789_dna_seg),
+              x2 = middle(A53789_dna_seg),
+              rot = 30)
+plot_gene_map(list(A53789_dna_seg))
+```
+
+### function to plot the phage regions
+```{r}
+plot_phage <-
+  function(start_gene, stop_gene, plot_name){
+# which gets the row number of the matched item
+  positions <- c(which(dna_seg_ref$name == start_gene),
+                   which(dna_seg_ref$name == stop_gene))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  ref_dna_seg <- dna_seg_ref[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  ref_dna_seg$fill <- "#6A3D9A"
+  ref_dna_seg$col <- "#6A3D9A"
+  
+  ref_dna_seg_annotation = annotation(text = ref_dna_seg$gene,
+              x1 = middle(ref_dna_seg),
+              x2 = middle(ref_dna_seg),
+              rot = 30)
+  
+  
+# which gets the row number of the matched item
+  positions <- c(which(dna_seq_malawi$name == start_gene),
+                   which(dna_seq_malawi$name == stop_gene))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  malawi_dna_seg <- dna_seq_malawi[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  malawi_dna_seg$fill <- "#6A3D9A"
+  malawi_dna_seg$col <- "#6A3D9A"
+  
+  malawi_dna_seg_annotation = annotation(text = malawi_dna_seg$gene,
+              x1 = middle(malawi_dna_seg),
+              x2 = middle(malawi_dna_seg),
+              rot = 30)
+
+
+# which gets the row number of the matched item
+  positions <- c(which(dna_seq_A53789$name == start_gene),
+                   which(dna_seq_A53789$name == stop_gene))
+
+  positions <- sort(positions) # sorts the positions
+
+  # using the row positions we filter the rows in that range
+  A53789_dna_seg <- dna_seq_A53789[positions[1]:positions[2], ]
+  
+  # set color for the dna segs
+  A53789_dna_seg$fill <- "#6A3D9A"
+  A53789_dna_seg$col <- "#6A3D9A"
+  
+  A53789_dna_seg_annotation = annotation(text = A53789_dna_seg$gene,
+              x1 = middle(A53789_dna_seg),
+              x2 = middle(A53789_dna_seg),
+              rot = 30)
+  
+
+plot_gene_map(list(ref_dna_seg, malawi_dna_seg, A53789_dna_seg),
+              gene_type = "side_blocks",
+              comparisons = list(comparison_1, comparison_2),
+              annotations = list(ref_dna_seg_annotation,
+                                 malawi_dna_seg_annotation,
+                                 A53789_dna_seg_annotation),
+              main = as.character(plot_name),
+              dna_seg_labels = c("AL513382.1", "1017142", "A53789"),
+              dna_seg_scale = TRUE, scale = FALSE # adds scale with position in chromosome
+              )
+}
+
+```
+
+### plot the phages using the function
+```{r}
+pdf(file = "/Users/zuza/typhi/figures/bacteriophages_compared_with_malawi_isolates.pdf",
+    width = 14)
+
+plot_phage("ybgD","idi",
+           "Gap 1" )
+
+# phage region 1
+plot_phage("pncB","pepN",
+           "Phage region 1")
+
+# phage region 2
+plot_phage("ydgH","rstA",
+           "Phage region 2")
+
+# phage region 3
+plot_phage("yodB","ptxA",
+           "Phage region 3")
+
+# phage region 4
+plot_phage("yjcS","yebZ",
+           "Phage region 4")
+
+# phage region 5
+plot_phage("flk","mnmC",
+           "Phage region 5")
+
+# phage region 6
+plot_phage("rep","purH",
+           "Phage region 6")
+
+# phage reion 7
+plot_phage("cysH_3","yjhP",
+           "Phage region 7")
+
+# phage reion 8
+plot_phage("lptG","virF",
+           "Phage region 8")
+
+
+dev.off()
+```
+
+
+
+#### compare the two segements
+
+```{r}
+
+plot_gene_map(list(ref_dna_seg, malawi_dna_seg, A53789_dna_seg),
+              gene_type = "side_blocks",
+              comparisons = list(comparison_1, comparison_2),
+              annotations = list(ref_dna_seg_annotation,
+                                 malawi_dna_seg_annotation,
+                                 A53789_dna_seg_annotation),
+              dna_seg_labels = c("AL513382.1", "1017142", "A53789"),
+              dna_seg_scale = TRUE, scale = FALSE # adds scale with position in chromosome
+              )
+```
+
+
+## plot a mauve comparison of th DNA segs
+
+```{r}
+
+bbone_file <- "/Users/zuza/typhi/results/mauve/test.backbone"
+
+bbone <- read_mauve_backbone(bbone_file, ref = 1)
+
+
+pdf(file = "/Users/zuza/typhi/figures/mauve_full_chromosome.pdf",
+    width = 14)
+
+plot_gene_map(dna_segs = bbone$dna_segs,
+              comparisons = bbone$comparisons,
+              #global_color_scheme=c("length", "increasing", "red_blue", 0.7),
+              dna_seg_labels = c("AL513382.1", "1017142", "A53789",
+                                 "A58390", "BKQT8S", "BKQU3X"),
+              dna_seg_scale = TRUE, scale = FALSE,
+              main = "A Mauve comparison comparing the hybrid assemblies to the CT18 reference strain (AL513382.1)")
+
+dev.off()
+```
+
+
+## genoPlotR on the Plasmid
+
+the following piece of code compares the pHCM1 plasmid from the CT18 reference to our plasmid. There are 3 regions which might be interesting
+
+```{r}
+library(genoPlotR)
+library(patchwork)
+library(tidyverse)
+
+
+setwd("/Users/zuza/typhi")
+
+#pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/pHCM1/pHCM1.gbk"
+pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/R27/R27.gbk"
+  
+
+
+BKQT8S <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/BKQT8S/BKQT8S.gbk"
+
+comparison_file <-
+  "/Users/zuza/typhi/results/brig/assemblies/pHCM1-BKQT8S.tsv"
+
+# read the dna segments into genoplotR
+segment1 <-
+  read_dna_seg_from_file(pHCM1, fileType = "detect")
+
+segment2 <-
+  read_dna_seg_from_file(BKQT8S, fileType = "detect")
+
+comparison <- read_comparison_from_blast(comparison_file)
+
+#plot the segments
+whole_plasmid <-
+  plot_gene_map(dna_segs = list(segment1, segment2),
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"))
+             
+
+#subset the comparison above
+dna_seg1 <- filter(segment1, start >= 106624, end <= 186232)
+dna_seg2 <- filter(segment2, start >= 64601, end <= 114328)
+
+
+dna_seg1 <- segment1
+dna_seg2 <- segment2
+x <- strsplit(dna_seg1$product, split = " ")
+
+case_when(grepl(c("IS|Tn"), strsplit(dna_seg1$product, split = " "), ignore.case = FALSE) ~
+              dna_seg1$product,
+          TRUE ~ dna_seg1$gene)
+
+#case_when(strsplit(dna_seg1$product, split = " ") ~ "x")
+# create new variable to use for annotation
+dna_seg1$annotation <-
+  case_when(grepl(c("IS|Tn"), dna_seg1$product, ignore.case = FALSE) ~
+              dna_seg1$product,
+          TRUE ~ dna_seg1$gene)
+
+# manually annotate dna segs
+dna_seg1$annotation[1] = "IS1R"
+dna_seg1$annotation[25] = "TnAs2"
+dna_seg1$annotation[26] = "IS4321R"
+dna_seg1$annotation[27] = "IS432L"
+dna_seg1$annotation[50] = "IS4"
+dna_seg1$annotation[57] = "ISNCY"
+dna_seg1$annotation[63] = "IS4321R"
+dna_seg1$annotation[59] = "IS1R"
+dna_seg1$annotation[63] = "IS4321R"
+dna_seg1$annotation[65] = "IS26"
+dna_seg1$annotation[66] = "IS26"
+dna_seg1$annotation[67] = "Tn3"
+dna_seg1$annotation[68] = "bla"
+dna_seg1$annotation[70] = "IS26"
+dna_seg1$annotation[76] = "IS26"
+dna_seg1$annotation[85] = "ISL3"
+dna_seg1$annotation[86] = "IS110"
+dna_seg1$annotation[89] = "Tn10 TetC"
+dna_seg1$annotation[91] = "Tn10"
+dna_seg1$annotation[99] = "ISVsa5"
+dna_seg1$annotation[87] = "IS1"
+dna_seg1$annotation[64] = "Tn3"
+
+# color the is elements
+dna_seg1$fill <- 
+  case_when(grepl(c("IS|Tn"), dna_seg1$annotation) ~ "#A6CEE3",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$col <- 
+  case_when(grepl(c("IS|Tn"), dna_seg1$annotation) ~ "#A6CEE3",
+            TRUE ~ dna_seg1$col)
+
+
+# color amr genes
+amr_genes <- c("merR",
+               "merT_1",
+               "merP_1",
+               "merC_1",
+               "merA_1",
+               "dhfrI",
+               "cat",
+               "bla",
+               "folP",
+               "merA_2",
+               "merC_2",
+               "merP_2",
+               "merT_2",
+               "tetC",
+               "tetA",
+               "tetR")
+
+dna_seg1$fill <-
+  case_when(dna_seg1$gene %in% amr_genes ~ "#6A3D9A",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$col <-
+  case_when(dna_seg1$gene %in% amr_genes ~ "#6A3D9A",
+            TRUE ~ dna_seg1$col)
+
+#plot the new comparison
+plasmid_subset <-
+  plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
+              gene_type = "side_blocks",
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"),
+              annotations = 
+                annotation(text = dna_seg1$annotation,
+                           x1 = middle(dna_seg1),
+                           rot = 30),
+              annotation_height=8)
+
+
+
+jpeg(filename = "figures/whole_plasmid_comparison.jpeg", 
+     width = 1000,
+     height = 300,
+     )
+
+plot_gene_map(dna_segs = list(segment1, segment2),
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"))
+
+dev.off()
+
+
+pdf(file = "/Users/zuza/typhi/figures/plasmid_amr.pdf",
+    width = 14)
+
+  plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
+              gene_type = "side_blocks",
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"),
+              annotations = 
+                annotation(text = dna_seg1$annotation,
+                           x1 = middle(dna_seg1),
+                           rot = 90),
+              annotation_height=3,
+              annotation_cex = 0.4,
+              dna_seg_scale = TRUE, scale = FALSE,
+              main = "Plot of AMR region in pHCM1 and BKQT8S")
+
+
+dev.off()
+
+```
+
+
+```{r}
+library(genoPlotR)
+library(patchwork)
+library(tidyverse)
+
+
+setwd("/Users/zuza/typhi")
+
+pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/R27/R27.gbk"
+  
+BKQT8S <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/BKQT8S/BKQT8S.gbk"
+
+comparison_file <-
+  "/Users/zuza/typhi/results/blast/R27_vs_BKQU3X.txt"
+
+# read the dna segments into genoplotR
+segment1 <-
+  read_dna_seg_from_file(pHCM1, fileType = "detect")
+
+segment2 <-
+  read_dna_seg_from_file(BKQT8S, fileType = "detect")
+
+comparison <- read_comparison_from_blast(comparison_file)
+
+#plot the segments
+whole_plasmid <-
+  plot_gene_map(dna_segs = list(segment1, segment2),
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"))
+             
+
+
+#subset the comparison above
+dna_seg1 <- filter(segment1, start >= 106624, end <= 186232)
+dna_seg2 <- filter(segment2, start >= 64601, end <= 114328)
+
+
+dna_seg1 <- segment1
+dna_seg2 <- segment2
+x <- strsplit(dna_seg1$product, split = " ")
+
+case_when(grepl(c("IS|Tn"), strsplit(dna_seg1$product, split = " "), ignore.case = FALSE) ~
+              dna_seg1$product,
+          TRUE ~ dna_seg1$gene)
+
+#case_when(strsplit(dna_seg1$product, split = " ") ~ "x")
+# create new variable to use for annotation
+dna_seg1$annotation <-
+  case_when(grepl(c("IS|Tn"), dna_seg1$product, ignore.case = FALSE) ~
+              dna_seg1$product,
+          TRUE ~ dna_seg1$gene)
+
+# color the is elements
+dna_seg1$fill <- 
+  case_when(grepl(c("IS|Tn"), dna_seg1$annotation) ~ "#A6CEE3",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$col <- 
+  case_when(grepl(c("IS|Tn"), dna_seg1$annotation) ~ "#A6CEE3",
+            TRUE ~ dna_seg1$col)
+
+
+# color amr genes
+amr_genes <- c("merR",
+               "merT_1",
+               "merP_1",
+               "merC_1",
+               "merA_1",
+               "dhfrI",
+               "cat",
+               "bla",
+               "folP",
+               "merA_2",
+               "merC_2",
+               "merP_2",
+               "merT_2",
+               "tetC",
+               "tetA",
+               "tetR")
+
+dna_seg1$fill <-
+  case_when(dna_seg1$gene %in% amr_genes ~ "#6A3D9A",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$col <-
+  case_when(dna_seg1$gene %in% amr_genes ~ "#6A3D9A",
+            TRUE ~ dna_seg1$col)
+
+#plot the new comparison
+plasmid_subset <-
+  plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
+              gene_type = "side_blocks",
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"),
+              annotations = 
+                annotation(text = dna_seg1$annotation,
+                           x1 = middle(dna_seg1),
+                           rot = 30),
+              annotation_height=8)
+
+
+
+plot_gene_map(dna_segs = list(segment1, segment2),
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"))
+
+pdf(file = "/Users/zuza/typhi/figures/plasmid_amr_r27.pdf",
+    width = 14)
+
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
+              gene_type = "side_blocks",
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"),
+              annotations = 
+                annotation(text = dna_seg1$annotation,
+                           x1 = middle(dna_seg1),
+                           rot = 90),
+              annotation_height=3,
+              annotation_cex = 0.4,
+              dna_seg_scale = TRUE, scale = FALSE,
+              main = "Plot of AMR region in R27 and BKQT8S")
+
+dev.off()
+```
+## bacteriophages
+
+```{r this block will clean the data from phaster}
+
+workdir <- "/Users/zuza/typhi"
+setwd(workdir)
+library(pacman)
+pacman::p_load(config,
+               tidyverse,
+               janitor)
+
+# the location of the phaster output
+phages <- (config::get("phages", file = "src/typhi.yml"))
+
+# the name of the file to read in
+phaster_export <- "filtered_summary.txt"
+
+
+# a function for creating a clean data frame showing the position of the phages
+clean_phast <- function(id){
+  id <- id
+  initial_table <-
+    read_table(file.path(phages, id, phaster_export)) %>%
+    remove_empty() %>%
+    mutate(id, .before = REGION_LENGTH) # use .before to specify the location of the new column
+}
+
+
+A53789 <- clean_phast("A53789")
+S1017142 <- clean_phast("1017142")
+A58390 <- clean_phast("A58390")
+BKQU3X <- clean_phast("BKQU3X")
+BKQT8S <- clean_phast("BKQT8S")
+reference <- clean_phast("AL513382.1")
+
+
+full_faster_table <-
+  rbind(A53789, S1017142, A58390, BKQU3X, BKQT8S, reference)
+
+# subset the full data for visualisation in ggplot
+brig <- full_faster_table %>%
+  select(REGION_POSITION, id, `COMPLETENESS(score)`)
+
+brig$REGION_POSITION <-
+  str_replace_all(brig$REGION_POSITION, "cluster_001_consensus_polypolish:", "") 
+
+
+brig$REGION_POSITION <-
+  str_replace_all(brig$REGION_POSITION, "cluster_002_consensus_polypolish:", "")
+
+# split the region position into start and stop columns
+brig[c("Start","Stop")] <- str_split_fixed(brig$REGION_POSITION, "-", 2)
+
+# split the completeness and score into seperate columns
+brig[c("completenes","score")] <-
+  str_split_fixed(brig$`COMPLETENESS(score)`, "\\(", 2) 
+
+
+brig$score <- str_replace_all(brig$score, "\\)", "")
+
+
+# filter the phages for any sample and save into a features file
+brig %>% filter(id == "BKQT8S") %>%
+  select(Start, Stop, completenes) %>%
+  write.table(file = "/Users/zuza/typhi/results/brig/BKQT8S_features.txt",
+              sep = "\t", quote = FALSE,
+              row.names = FALSE)
+
+View(brig)
+
+brig %>% filter(id == "BKQU3X") %>% group_by(completenes) %>% ggplot(aes(completenes, Start)) + geom_point()
+
+brig %>% group_by(id) %>% ggplot(aes(id, Start)) + geom_point()
+
+brig %>% ggplot(aes(Start)) + geom_dotplot()
+
+
+
+
+#str_replace_all(brig$Region_position, "-", \/t)
+
+colnames(full_faster_table) <- str_to_title(colnames(full_faster_table))
+
+
+x <- full_faster_table %>%
+  knitr::kable(booktabs = TRUE,
+               longtable = TRUE,
+               linesep = "",
+               align = "l",
+               escape = FALSE) %>%
+  kable_styling(full_width = FALSE,
+                latex_options = c("striped", "repeat_header"),
+                stripe_color = "gray")
+
+save_kable(x, file = "figures/phages.pdf")
+```
+
+
+
+## full metadata
+```{r}
+library(tidyverse)
+library(janitor)
+library(config)
+setwd("/Users/zuza/typhi")
+
+# load the metadata file
+metadata <-
+  read_csv(config::get("metadata", file = "src/typhi.yml")) %>%
+  select(!c(genotype))
+
+#load the data from mykrobe predict
+mykrobe <-
+  read.table(config::get("mykrobe", file = "src/typhi.yml"), sep="\t", header=TRUE) %>%
+  remove_empty() %>%
+  remove_constant() %>%
+  rename("accession_number" = "genome")
+
+#merge the metadata file and mykrobe results
+metadata <-
+  base::merge(metadata, mykrobe, by = "accession_number",
+        all.x = TRUE)
+
+# group isolates into this study and others
+metadata$group <-
+  case_when(metadata$publication == "Jillian et al. 2021" ~ "This study",
+  TRUE ~ "Other")
+
+# group isolates locale into Malawi and other countries
+metadata$origin_country <-
+  case_when(metadata$country == "Malawi" ~ "Malawi",
+  TRUE ~ "Other")
+
+# sort countries by number of genomes in the country
+grouping <- 
+  group_by(country) %>%
+  count(metadata$country) %>%
+  arrange(-n)
+
+metadata$other_country <-
+  case_when(metadata$country %in% grouping[1:10, ]$`metadata$country` ~ metadata$country,
+            TRUE ~ "Other")
+
+
+#write the metadata to disk
+write_csv(metadata,
+  file = "/Users/zuza/typhi/docs/metadata_plus_mykrobe.csv")
+
+```
+
+## metadata plots
+```{r}
+library(viridis) # the color palette to use
+#install.packages("plotly")
+library(plotly)
+library(gridExtra)
+library(readr)
+library(tidyverse)
+
+setwd("/Users/zuza/typhi")
+
+metadata <-
+  read_csv("/Users/zuza/typhi/docs/metadata_plus_mykrobe.csv")
+
+# add a column grouping for country of sample isolation
+other <- count(metadata, metadata$country) %>% filter(n <= 10)
+other <- other[,1]
+
+# create a grouped column with countries with less than 10 isolates grouped together
+metadata$grouped_country <- case_when(metadata$country %in% c(other) ~ "other",
+                           TRUE ~ metadata$country)
+
+
+#create a plot object
+p <- metadata %>% ggplot()
+
+# a plot of the country with bars calored by the genotype of available isolates
+grouped_country <- p + geom_bar(aes(other_country, fill = genotype.x)) +
+  ggtitle("Plot showing distribution of isolates by country") +
+  xlab("Country") +
+  ylab("Number of Isolates") +
+  theme_minimal() +
+  scale_fill_viridis(discrete = TRUE, option = "D")
+
+
+
+# adding them to the country plot
+grouped_country <-
+  grouped_country + theme(
+  plot.title = element_text( face = "bold", size = 18, vjust = 0.5),
+  axis.title.x = element_text( size = 14, face = "bold"),
+  axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5,
+                             face = "bold", size = 10),
+  axis.title.y = element_text( size = 14, face = "bold")
+)
+
+# plot of the available genetypes showing distribution of time of isolation
+genotype <- p + geom_bar(aes(genotype, fill = as.factor(year))) +
+  ggtitle("Plot showing distribution of the different genotpes over the years") +
+  xlab("Genotype") +
+  ylab("Number of Isolates") +
+  theme_minimal() +
+  scale_fill_viridis(discrete = TRUE, option = "D")
+
+
+# a them element for the genotype plot
+genotype <-
+  genotype + theme(
+  plot.title = element_text( face = "bold", size = 18, vjust = 0.5),
+  axis.title.x = element_text( size = 14, face = "bold"),
+  axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
+  axis.title.y = element_text( size = 14, face = "bold")
+)
+
+# ggplotly can create interactive plots which is good for exploring data
+#ggplotly(country)
+
+#jpeg(filename = "metadata.jpeg")
+# put all plots on 1 plot
+grid.arrange(grouped_country, country, genotype)
+
+#dev.off()
+
+grid.arrange(grouped_country)
+
+
+# write the plots to disk
+jpeg(filename = "figures/genotype.jpeg")
+
+genotype
+
+dev.off()
+
+jpeg(filename = "figures/country.jpeg")
+
+country
+
+dev.off()
+
+jpeg(filename = "figures/grouped_country.jpeg")
+
+grouped_country
+
+dev.off()
+```
+
+
+
+## ggtree
+
+```{r}
+#pak::pak("ggtree")
+pacman::p_load(ape,
+               ggtree,
+               ggnewscale,
+               phangorn,
+               TreeTools)
+
+#tree <-
+#  ape::read.tree("/Users/zuza/Downloads/core.aln") # 2023-10-20
+
+tree <-
+  ape::read.tree("/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/trips/accra/sesssion/OneDrive_1_01-03-2024/Materials/phylo_all.aln.treefile")
+
+tree <- ladderize(tree, right = TRUE)
+
+tree <- midpoint(tree)
+
+tree <- reorder.phylo(tree, order = "cladewise")
+
+#get tip labels in the current tree
+labels <- TipLabels(tree)
+
+#subset metadata file using the labels in the tree
+data <- metadata %>% filter(accession_number %in% c(labels))
+
+
+
+p <- ggtree(tree, layout = "rectangular",
+  ladderize = TRUE)
+p
+
+
+
+```
+
+###
+
+```{r}
+three <- "/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/trips/accra/sesssion/OneDrive_1_01-03-2024/Materials/test3.txt"
+
+five <- "/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/trips/accra/sesssion/OneDrive_1_01-03-2024/Materials/test5.txt"
+x <- read_table(three) %>% ggplot() + geom_dotplot(aes(x = ALIGNED))
+
+read_table(five) %>% ggplot() + geom_dotplot(aes(LOWCOV))
+
+read_table(five) %>% ggplot() + geom_boxplot(aes(VARIANT))
+
+seven <- "/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/trips/accra/sesssion/OneDrive_1_01-03-2024/Materials/test7.txt"
+read_table(seven) %>% filter(ALIGNED <= 4200000) #%>% ggplot() + geom_dotplot(aes(ALIGNED))
+
+ggplotly(x)
+
+
+
+snp <- "/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/trips/accra/sesssion/OneDrive_1_01-03-2024/Materials/total_snps.txt"
+
+read_table(snp) %>% ggplot() + geom_dotplot(aes(`snps\033`))
+
+```
+
+
+### color the tips of the tree by country of sample isolation
+```{r}
+# color the tips of the tree
+p1 <-
+  p %<+% data +
+  theme(legend.position = "none",
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(
+          size = 12,
+          face = "bold",
+          hjust = 0.5,
+          vjust = -15
+        )
+  ) +
+  geom_tippoint(aes(color=genotype.x),
+                size = 0.5)
+
+p1
+
+```
+
+### create a heatmap for the country
+
+```{r}
+# create heatmap for the country variable
+country<- 
+  data.frame("country" =
+               metadata[, c("accession_number", "country")]) %>%
+  rename("accession_number" = "country.accession_number",
+         "country" = "country.country")
+
+#set row names to the column for accession_number
+rownames(country) <- country$accession_number
+
+# remove accession number column so that the country variable
+#has the accession variable as the row nakes
+country <- country %>% select(!accession_number)
+
+
+#create heatmap for group
+group <- 
+  data.frame("group" =
+               metadata[, c("accession_number", "group")]) %>%
+  rename("accession_number" = "group.accession_number",
+         "group" = "group.group")
+
+#set row names to the column for accession_number
+rownames(group) <- group$accession_number
+
+# remove accession number column so that the country variable
+#has the accession variable as the row nakes
+group <- group %>% select(!accession_number)
+
+
+# create heatmap with multiple variables
+
+#select columns with plasmids
+plasmid <-
+   metadata %>%
+  select("accession_number", contains("Inc"))
+  
+#set row names to the column for accession_number
+rownames(plasmid) <- plasmid$accession_number
+
+# remove accession number column so that the country variable
+#has the accession variable as the row nakes
+plasmid <- plasmid %>% select(!accession_number)
+
+
+#select columns with amr genes
+amr <-
+   metadata %>%
+  select("accession_number",
+         "blaTEM.1D",
+         "blaCTX.M.15",
+         "catA1",
+         "sul1",
+         "sul2",
+         "dfrA7",
+         "dfrA14",
+         "tetA",
+         "tetB")
+  
+#set row names to the column for accession_number
+rownames(amr) <- amr$accession_number
+
+amr <- amr %>% select(!accession_number)
+
+
+#plot the heatmap for country of origin
+h1 <- gheatmap(p, country,
+         #offset = 10,
+         width = 0.02,
+         colnames = FALSE) +
+  scale_fill_viridis_d(
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  option = "D",
+  aesthetics = "fill") +
+  labs(fill = "Country") # name of the plot legend
+h1
+
+```
+
+### create heatmap for grouped countries
+```{r}
+
+h2 <-
+  h1 + new_scale_fill()
+
+#plot the heatmap
+h3 <- gheatmap(h2, group,
+         offset = 0.000001,
+         width = 0.02,
+         colnames = FALSE) +
+  scale_fill_viridis_d(
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  option = "D",
+  aesthetics = "fill") +
+  labs(fill = "Group") # name of the plot legend
+
+
+h3
+
+svg("/Users/zuza/typhi/figures/manuscript/tree4.svg",
+    width = 12,
+    height = 12)
+
+h3
+
+dev.off()
+```
+
+
+### Heatmap for the plasmid replicons
+```{r}
+
+#h4 <- h3 + new_scale_fill()
+svg("/Users/zuza/typhi/figures/manuscript/tree5.svg",
+    width = 10,
+    height = 12)
+
+h4 <- 
+  gheatmap(p, plasmid,
+         #offset = 0.00001,
+         width = 0.1,
+         #high = "purple",
+         #low = "gray",
+         colnames = TRUE,
+         colnames_angle = 90,
+         colnames_position = "top",
+         colnames_offset_y = -70,
+         font.size = 2,
+         legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  option = "D",
+  aesthetics = "plasmid")
+h4
+dev.off()
+
+h4
+
+```
+
+### add heatmap for amr genes
+```{r}
+h5 <- gheatmap(p, amr,
+         #offset = 0.00001,
+         width = 0.1,
+         #high = "purple",
+         #low = "gray",
+         colnames = TRUE,
+         colnames_angle = 90,
+         colnames_position = "top",
+         colnames_offset_y = -70,
+         font.size = 2,
+         legend_title = "AMR genes") +
+  scale_fill_viridis_d(
+  alpha = 1,
+  begin = 0,
+  end = 1,
+  direction = 1,
+  option = "D",
+  aesthetics = "amr")
+
+# write the tree to file
+svg("/Users/zuza/typhi/figures/manuscript/tree6.svg",
+    width = 10,
+    height = 12)
+
+h5
+
+dev.off()
+
+h5
+```
+
+
+### add legend to plot
+```{r}
+h5 +
+  theme(legend.position = "bottom",
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10),
+        legend.box = "vertical", legend.margin = margin())
+
+```
+
+
+
+
+## some neotrack workflows
+```{r}
+library(janitor)
+library(stringr)
+library(readxl)
+
+# load the data and keep the stool samples only
+lims <-
+  read_csv("/Users/zuza/long_reads/samples/NeotrackT07_Sample_raw.csv") %>%
+  remove_constant() %>%
+  remove_empty() %>%
+  filter(sam_typep == c(1, 2)) %>%
+  select(data_date, sam_type, pid2, sam_typep, lims_scan)
+
+# replace the hyphen in the sample id
+lims$lims_scan <-
+  str_replace_all(lims$lims_scan, "-", "")
+
+
+```
+
+### theboxplans
+```{r}
+
+# load boxplans and remove rows without sample IDS
+samples <- 
+  read_excel(config::get("boxPlans", file = "src/typhi.yml")) %>% # nolint
+  select(proj_code, box_name, pos_no, sample_id) %>%
+  filter(sample_id != "NA")
+
+# remove hyphens
+samples$sample_id <-
+  str_replace_all(samples$sample_id, "-", "")
+
+# remove spaces in sample ID
+samples$sample_id <-
+  str_replace_all(samples$sample_id, " ", "")
+
+# convert sample ID to uppercase
+samples$sample_id <-
+  toupper(samples$sample_id)
+
+# remove spaces from box name
+samples$box_name <-
+  str_replace_all(samples$box_name, " ", "")
+
+# convert boxname to lower case
+samples$box_name <-
+  tolower(samples$box_name)
+
+samples$sample_id <-
+  substr(samples$sample_id, 1,8)
+
+# create a column with the lab id
+samples$lab_id <-
+  str_sub(samples$sample_id, start = 1, end = 6)
+
+# display uniq box names
+View(levels(as.factor(samples$box_name)))
+
+#filter out the rows with direct stool samples
+stool_samples <- samples[str_detect(samples$box_name, "neotrackstoolbox"), ]
+
+
+# day 1 sweeps
+stool_uriselect <-
+  samples[str_detect(samples$box_name, "day1sweepsbox"), ]
+
+```
+
+the following section requires data on all samples collected.
+will pick this up when i get the data
+
+```{r}
+# add column indicating if it is stored
+lims$stool_stored <-
+  case_when(lims$lims_scan %in% stool_samples$proper_sample_id ~ "1")
+
+# add column indicating plate sweep
+lims$stool_uriselect <-
+  case_when(lims$lims_scan %in% stool_uriselect$sample_id ~ "1")
+View(lims)
+```
+
+### redcap data
+load data from redcap, group the samples into maternal, neonatal and env
+samples, then extract the neonatal, env and maternal into
+individual dataframes
+```{r}
+library(config)
+library(tidyverse)
+library(janitor)
+
+setwd("/Users/zuza/typhi/")
+
+redcap <-
+  read_csv(config::get("redCap", file = "src/typhi.yml")) %>% # nolint
+  remove_empty() %>%
+  remove_constant()
+
+# remove hyphens
+redcap$id <-
+  str_replace_all(redcap$id, "-", "")
+
+# clean the sample id
+redcap$id <-
+  substr(redcap$id, 1,8)
+
+# create an ID field with the first 6 characters
+redcap$lab_id <-
+  substr(redcap$id, 1, 6)
+
+redcap$tmp <-
+  str_sub(redcap$id, start = -2)
+
+redcap$group <-
+  case_when(redcap$tmp == "F1" ~ "maternal",
+  redcap$tmp == "F2" ~ "maternal",
+  redcap$tmp == "F3" ~ "Neonatal",
+  redcap$tmp == "F4" ~ "Neonatal",
+  TRUE ~ "environmental" )
+
+# extract the maternal samples from the mixed stool dataset
+maternal_redcapped_samples <-
+  redcap %>%
+  filter(group == "maternal")
+
+# extract the environmental samples from the mixed stool dataset
+env_redcapped_samples <-
+  redcap %>%
+  filter(group == "environmental")
+
+# extract the neonatal samples from the mixed stool dataset
+neonatal_redcapped_samples <-
+  redcap %>%
+  filter(group == "Neonatal")
+```
+
+### stool querry
+
+```{r}
+library(readxl)
+library(tidyverse)
+
+stool <- read_xlsx("~/OneDrive - Malawi-Liverpool Wellcome Trust/2024/jobs/neotrack_stool/stool_sample_processing.xlsx", sheet = "taken")
+
+sort(stool)
+
+
+unique_pid <-
+  stool %>%
+  distinct(pid2, .keep_all = TRUE)
+
+write_csv(unique_pid, file = "~/OneDrive - Malawi-Liverpool Wellcome Trust/2024/jobs/neotrack_stool/unique_stool.csv")
+
+unique(stool$pid2)
+stool %>% filter(pid2 == unique(pid2))
+```
+
+
+
+```{r}
+# collect stool samples with no growth
+stool_no_growth <- filter(redcap, stool_growth == 0)
+
+# collect stool samples with growth
+stool_with_growth <- filter(redcap, stool_growth == 1) %>%
+  remove_constant(na.rm = TRUE)
+
+# collect env samples with growth
+env_with_growth <- filter(redcap, env_neat_growth == 1) %>%
+  remove_constant(na.rm = TRUE)
+
+# keep columns with blue isolates
+env_with_growth <- env_with_growth %>% filter(env_neat_blue == 1)
+
+
+```
+
+check the samples in the archive to see if they are in redcap
+
+```{r}
+# arrange stool samples based on the sample id to visually see if
+# i can see which samples have not been processed
+id_arranged_stool_samples <-
+  stool_samples %>%
+  arrange(sample_id)
+
+# add a temporary column to use when grouping the samples 
+id_arranged_stool_samples$tmp <-
+  str_sub(id_arranged_stool_samples$sample_id, start = -2)
+
+# create a lab id column
+id_arranged_stool_samples$lab_id <-
+  str_sub(id_arranged_stool_samples$sample_id, start = 1, end = 6)
+
+# group the samples into maternal and neonatal
+id_arranged_stool_samples$group <-
+  case_when(id_arranged_stool_samples$tmp == "F1" ~ "maternal",
+  id_arranged_stool_samples$tmp == "F2" ~ "maternal",
+  TRUE ~ "Neonatal" )
+
+# extract the maternal samples from the mixed stool dataset
+maternal_stool_samples <-
+  id_arranged_stool_samples %>%
+  filter(group == "maternal")
+
+# extract the neonatal samples from the mixed stool dataset
+neonatal_stool_samples <-
+  id_arranged_stool_samples %>%
+  filter(group == "Neonatal")
+
+
+# ADD  a column to indicate which maternal samples have results in redcap
+maternal_stool_samples$processed <-
+  case_when(maternal_stool_samples$lab_id %in%
+  maternal_redcapped_samples$lab_id ~ "redcapped",
+  TRUE ~ "check")
+
+# add a column to idicate which neonatal samples have results in redcap
+neonatal_stool_samples$processed <-
+  case_when(neonatal_stool_samples$lab_id %in%
+  neonatal_redcapped_samples$lab_id ~ "redcapped",
+  TRUE ~ "check")
+
+#extract the unprocessed maternal samples 
+maternal_stool_not_redcapped <-
+  maternal_stool_samples %>%
+  filter(processed == "check")
+
+# extract the ubprocessed neonatal samples
+neonatal_stool_not_redcapped <-
+  neonatal_stool_samples %>%
+  filter(processed == "check")
+
+```
+
+use the stool uriselect to check if the
+samples not in redcap are not processed already but not entered in redcap
+
+```{r}
+# check the neonatal samples not in redcap in uriselect
+neonatal_stool_not_redcapped$sweep_available <-
+  case_when(neonatal_stool_not_redcapped$sample_id %in%
+  stool_uriselect$sample_id ~ 1,
+  TRUE ~ 0)
+
+# check the maternal samples not in redcap in uriselect
+maternal_stool_not_redcapped$sweep_available <-
+  case_when(maternal_stool_not_redcapped$sample_id %in%
+  stool_uriselect$sample_id ~ 1,
+  TRUE ~ 0)
+
+# get neonatal samples with sweeps
+neonatal_processed <-
+  neonatal_stool_not_redcapped %>%
+  filter(sweep_available == 1)
+
+# get maternal samples with sweeps
+maternal_processed <-
+  maternal_stool_not_redcapped %>%
+  filter(sweep_available == 1)
+
+# get neonatal samples without sweeps
+neonatal_not_processed <-
+  neonatal_stool_not_redcapped %>%
+  filter(sweep_available == 0)
+
+# get maternal samples without sweeps
+maternal_not_processed <-
+  maternal_stool_not_redcapped %>%
+  filter(sweep_available == 0)
+
+# remove duplicate neonatal samples which have sweeps
+neonatal_not_processed$done <-
+  case_when(neonatal_not_processed$lab_id %in%
+  neonatal_processed$lab_id ~ 1,
+  TRUE ~ 0)
+
+#remove duplicate maternal samples which have sweeps
+maternal_not_processed$done <-
+  case_when(maternal_not_processed$lab_id %in%
+  maternal_processed$lab_id ~ 1,
+  TRUE ~ 0)
+
+# filter to get the samples not in redcap and not in sweeps
+neonatal_not_processed <-
+  neonatal_not_processed %>%
+  filter(done == 0)
+
+maternal_not_processed <-
+  maternal_not_processed %>%
+  filter(done == 0)
+
+# remove the backup samples
+neonatal_not_processed <-
+  neonatal_not_processed[!duplicated(neonatal_not_processed[, 'lab_id']),] # nolint
+
+maternal_not_processed <-
+  maternal_not_processed[!duplicated(maternal_not_processed[, 'lab_id']),] # nolint
+
+# combine the stool samples not processed
+stool_not_processed <-
+  rbind(neonatal_not_processed, maternal_not_processed)
+
+# write samples needing further processing
+write_csv(stool_not_processed %>%
+select(sample_id, box_name,pos_no), file = "data/stool_to_grow.csv")
+```
+
+### CORE Klebs
+filter the klebs out of all core samples. This is part of Klebs
+are sending on swabs to UCL
+
+```{r}
+#load the core box plans
+core_boxes <-
+  read_excel(config::get("coreBoxes", file = "src/typhi.yml"))
+
+#convert isolate name to levels to get the index for filtering
+levels_for_boxes <- levels(as.factor(core_boxes$ISOLATE))
+
+# convert the extracted levels to data frame for filtering
+levels_for_boxes <- as_tibble(levels_for_boxes)
+
+# extract the rows with kleb isolate
+organisms <-
+  levels_for_boxes[603:717, ]
+
+# using the extracted isolate names, filter the core box data frame
+# to get klebs 
+core_kleb_boxes <-
+  filter(core_boxes, core_boxes$ISOLATE %in% organisms$value)
+
+# write klebs to disk
+write.csv(core_kleb_boxes, file = "data/core_klebs.csv")
+
+```
+
+### neotrack extractions
+
+sort and filter the extracted samples. both isolate and sweeps
+```{r}
+library(readxl)
+library(tidyverse)
+library(janitor)
+library(stringr)
+#load the extracted isolates
+extracted <-
+  read_excel(config::get("extracted", file = "src/typhi.yml")) %>%
+  remove_constant() %>%
+  clean_names() %>%
+  select(sample_id_study, organism, sample_type_study)
+
+# remove hyphens
+extracted$sample_id_study <-
+  str_replace_all(extracted$sample_id_study, "-", "")
+
+# clean the sample id
+extracted$id <-
+  substr(extracted$sample_id_study, 1,8)
+
+# get isolates
+isolates <-
+  extracted %>%
+  filter(sample_type_study == "isolate")
+
+# get plate sweeps
+sweeps <-
+  extracted %>%
+  filter(sample_type_study == "uriselect plate sweep")
+
+View(sweeps)
+```
+
+load the requested samples and check if they have already been extracted
+```{r}
+#load requested sweeps
+requested_sweeps <-
+  read_csv(config::get("sweeps", file = "src/typhi.yml"))
+
+# load requested isolates
+requested_isolates <-
+  read_csv(config::get("isolates", file = "src/typhi.yml"))
+
+# check if sweeps are already extracted
+requested_sweeps$status <-
+  case_when(requested_sweeps$sample_id2 %in% sweeps$id ~ "extracted",
+  TRUE ~ "pending")
+
+setdiff(requested_sweeps$sample_id2, sweeps$id)
+
+setdiff(sweeps$id, requested_sweeps$sample_id2)
+isolates <-
+  extracted %>%
+  filter(sample_type_study %in% c("isolate", "Isolate"))
+
+isolates
+View(requested_isolates)
+requested_isolates$status <-
+  case_when(requested_isolates$id %in% isolates$id ~ "extracted",
+  TRUE ~ "pending")
+setdiff(requested_isolates$id, isolates$id)
+setdiff(isolates$id, requested_isolates$id)
+# write the sweeps to disk
+requested_sweeps <-
+  requested_sweeps %>%
+  filter(status == "pending")
+write_csv(requested_sweeps,
+  file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/sweeps.csv")
+
+View(requested_sweeps)
+requested_sweeps
+```
+### get box plans of the various sample types
+
+### get env uriselct sweeps
+```{r}
+# env uselect
+env_uriselect <-
+  samples[str_detect(samples$box_name, "envsweepsbox"), ]
+
+# combine uriselect box plans
+uriselect <-
+  rbind(stool_uriselect, env_uriselect)
+
+#write the box plans to disk
+write_csv(uriselect,
+  file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/uriselect.csv")
+
+
+```
+
+### get kleb pick box plans
+```{r}
+# stool kleb
+stool_kleb <-
+  samples[str_detect(samples$box_name, "klpsinglecolony"), ]
+
+# stool kleb
+env_kleb <-
+  samples[str_detect(samples$box_name, "envblueisolates"), ]
+
+kleb_pick <-
+  rbind(stool_kleb, env_kleb)
+
+write_csv(kleb_pick,
+  file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/kleb_pick.csv")
+
+```
+
+### get kleb sweep box plans
+
+```{r}
+# stool kleb
+stool_kleb_sweep <-
+  samples[str_detect(samples$box_name, "klpsweeps"), ]
+
+kleb_sweep <-
+  rbind(stool_kleb_sweep, env_kleb_sweep)
+
+write_csv(kleb_sweep,
+  file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/kleb_sweep.csv")
+
+```
+
+### original samples
+```{r}
+# stool kleb
+env_swabs <-
+  samples[str_detect(samples$box_name, "neotrackenvwholeswab"), ]
+
+direct_samples <-
+  rbind(stool_samples, env_swabs)
+
+write_csv(direct_samples,
+  file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/direct_samples.csv")
+
+View(direct_samples)
+```
+
+### the requested isolates
+```{r}
+# load the requested isolates
+isolates <- 
+  read_csv(file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/isolates_to_extractaug23_secondv_isolates_filtered.csv")
+
+# check in direct samples
+isolates$direct_box <-
+  case_when(isolates$id %in% direct_samples$sample_id ~ 1)
+
+# check in uriselect sweeps
+isolates$uriselect_box <-
+  case_when(isolates$id %in% uriselect$sample_id ~ 1)
+
+# check in kleb sweeps
+isolates$kleb_sweep_box <-
+  case_when(isolates$id %in% kleb_sweep ~1 )
+
+# check in kleb pick
+isolates$kleb_pick_box <-
+  case_when(isolates$id %in% kleb_pick ~ 1)
+
+write_csv(isolates,
+  file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/filled_isolates.csv")
+
+View(isolates)
+```
+
+
+### the last 120 isolates and sweeps
+```{r}
+extra_sweeps <-
+  read_csv(config::get("last_sweeps", file = "src/typhi.yml"))
+
+extra_sweeps$sample_id2 <-
+  str_replace_all(extra_sweeps$sample_id2, "-", "")
+
+extra_sweeps$status <-
+  case_when(extra_sweeps$sample_id2 %in% sweeps$id ~ 1)
+
+extra_sweeps %>%
+  filter(status == 1)
+extracted
+
+View(extra_sweeps)
+```
+
+
+### cres enterobacter
+```{r}
+boxes <-
+  read_excel(config::get("cres_boxes", file = "src/typhi.yml"))
+
+blue <-
+  boxes[str_detect(boxes$box_name, "CHATINKHA_RES_BLUE_BOX"), ]
+
+write_csv(blue, file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/blue_boxes.csv")
+
+write_csv(enterobacter, file = "/Users/zuza/OneDrive - Malawi-Liverpool Wellcome Trust/Work/neotrack/jobs/extractions/request/enterobacter.csv")
+
+enterobacter <-
+  read_excel(config::get("cres_isolates", file = "src/typhi.yml"))
+
+
+
+View(enterobacter)
+View(blue)
+
+levels(as.factor(boxes$box_name))
+View(boxes)
+```
+
+
+## HELM samples
+```{r}
+library(config)
+library(tidyverse)
+library(readxl)
+library(janitor)
+
+#set the working directory
+setwd("/Users/zuza/typhi")
+
+# load the spreadsheet with isolate data
+helm <-
+  readxl::read_xlsx(config::get("helm", file = "src/typhi.yml")) %>%
+  clean_names()
+
+
+baseline <-
+  filter(helm, status1 == "growth")
+first_followup <-
+  filter(helm, status2 == "growth" & status1 == "NG")
+
+filter(helm, status4 == "growth" & status1 == "NG" & status2 == "NG")
+with_growth <-
+  rbind(baseline, first_followup)
+first <- with_growth %>% filter(status1 == "NG")
+first$x1st_follow_up
+with_growth$baseline
+sample_ids <- c(first$x1st_follow_up, with_growth$baseline)
+
+
+# check if they have been prepared
+prepared <-
+  readxl::read_xlsx(config::get("prepared", file = "src/typhi.yml"))
+
+setdiff(sample_ids, prepared$DCB101S1)
+
+sample_ids
+prepared
+```
+
+
+## snp_distance matrix
+
+```{r snp_distance_matrix}
+library(tidyverse)
+library(reshape2)
+library(viridis)
+
+
+x <- read.table(file = "/Users/zuza/typhi/results/iqtree/26.09.2023/clean_snp_distance_matrix.tab", sep = "\t", header = TRUE)
+
+#x <- read.table(file = "/Users/zuza/typhi/results/snippy/distance_matrix.tsv", sep = "\t", header = TRUE)
+
+# reshape the data frame
+
+gene1 <-
+  melt(x, na.rm = FALSE, value.name = "value")
+
+
+plot <-
+  ggplot(gene1, aes(x = X, y = variable, fill = value)) +
+  geom_tile() +
+  scale_fill_viridis() +
+  theme(axis.text.y = element_blank()) +
+  labs(x = "Sample IDs",
+       title = "Gene Presence/Absence Matrix")
+
+plot
+
+gene1 %>% group_by(value) %>% count() %>% ggplot() + geom_col(aes(value, n))
+head(gene1)
+
+```
+
+
+```{r}
+#extract the accesion numbers from malawi and remove them from the snioy core thingie
+malawi_accesion <- metadata %>%
+  filter(country == "Malawi") %>%
+  select(accession_number)
+
+#write_csv(malawi_accesion, file = "malawi_accesion.csv")
+
+#write the first 100
+write_csv(as_tibble(malawi_accesion[1: 100, ]), file = "one_to_fifty.csv", col_names = FALSE)
+
+#write the second 100
+write_csv(as_tibble(malawi_accesion[101: 200, ]), file = "100to200.csv", col_names = FALSE)
+
+#write the third 100
+write_csv(as_tibble(malawi_accesion[201: 300, ]), file = "200to300.csv", col_names = FALSE)
+
+#write the remainder
+write_csv(as_tibble(malawi_accesion[301: 400, ]), file = "300plus.csv", col_names = FALSE)
+```
+
+
+# Cellchat
+```{r}
+# library(CellChat)
+
+data <- load("/Users/zuza/typhi/cellchat/data_humanSkin_CellChat.rda")
+
+
+data.input <- data_humanSkin$data
+meta <- data_humanSkin$meta
+cell.use <- row.names(meta)[meta$condition == "LS"]
+
+# prepare input data for cell chat
+data.input <- data.input[, cell.use]
+meta <- meta[cell.use, ]
+
+# checking lables
+unique(meta$labels)
+
+# create cell chat object if data not in surat
+cellchat <- createCellChat(object = data.input,
+                           meta = meta,
+                           group.by = "labels")
+
+## add information into meta slot of cellchat object
+cellchat <- addMeta(cellchat, meta = meta)
+cellchat <- setIdent(cellchat, ident.use = "labels")
+# show levels of cell labels
+levels(cellchat@idents)
+
+# get number of cells in each group
+groupsize <- as.numeric(table(cellchat@idents))
+
+# set the ligand databse to use for interactions
+CellChatDB <- CellChatDB.human
+
+# plots a visual of the database
+showDatabaseCategory(CellChatDB)
+
+dplyr::glimpse(CellChatDB$interaction)
+
+# you can subset the database to check for cell-to-cell communication
+CellChatDB.use <-
+  subsetDB(CellChatDB, search = "Secreted Signaling")
+
+# set the used database in the cellchat object created earlier
+cellchat@DB <- CellChatDB.use
+
+#subset data to save on computational cost
+cellchat <- subsetData(cellchat)
+
+# runn the processes in paralles
+future::plan("multisession", workers = 4)
+
+# identify overexpressed genes
+cellchat <- identifyOverExpressedGenes(cellchat)
+
+cellchat <- identifyOverExpressedInteractions(cellchat)
+
+
+# calculate communication probability (i dont know what it means yet)
+# this stores the parameters in an object@options$paramter variable
+cellchat <- computeCommunProb(cellchat)
+
+
+# export interactions to dataframe
+df.net <- subsetCommunication(cellchat, slot.name = "netP")
+
+# infer communicationa at signalling pathway level
+cellchat <- computeCommunProbPathway(cellchat)
+
+# calculate agregated network of interactions
+cellchat <- aggregateNet(cellchat)
+
+
+# we can visualise this
+groupSize <-
+  as.numeric(table(cellchat@idents))
+
+par(mfrow = c(1,2), xpd=TRUE)
+
+netVisual_circle(cellchat@net$count,
+                 vertex.weight = groupSize,
+                 weight.scale = T,
+                 label.edge= F,
+                 title.name = "Number of interactions")
+
+
+netVisual_circle(cellchat@net$weight,
+                 vertex.weight = groupSize,
+                 weight.scale = T,
+                 label.edge= F,
+                 title.name = "Interaction weights/strength")
+
+# we can also see per group interactionc
+mat <- cellchat@net$weight # produce a matric
+par(mfrow = c(3,4), xpd=TRUE) # plotting parameters
+
+for (i in 1:nrow(mat)) {
+  mat2 <- matrix(0, nrow = nrow(mat),
+                 ncol = ncol(mat),
+                 dimnames = dimnames(mat))
+  mat2[i, ] <- mat[i, ]
+  netVisual_circle(mat2,
+                   vertex.weight = groupSize,
+                   weight.scale = T,
+                   edge.weight.max = max(mat),
+                   title.name = rownames(mat)[i])
+}
+
+
+
+```
+
+
+# phylogenetics again
+```{r}
+library(tidyverse)
+library(readr)
+library(plotly)
+setwd("/Users/zuza/typhi/snippy")
+
+core <- readr::read_table("core.txt") %>%
+  rename("accession_number" = "ID")
+
+metadata <- read_csv("/Users/zuza/typhi/docs/metadata_with_mykrobe.csv")
+
+# merge the data frames
+data <-
+  base::merge(metadata, core, by = "accession_number",
+        all.x = TRUE)
+
+
+aligned <- data %>% ggplot() +
+  geom_point(aes(y = ALIGNED, accession_number, color = genotype)) +
+  theme(axis.text.x = element_blank())
+
+lowcov <- data %>% ggplot() +
+  geom_point(aes(y = LOWCOV, accession_number, color = genotype))
+
+
+variant <- data %>% ggplot() +
+  geom_point(aes(y = VARIANT, accession_number, color = genotype))
+
+variant <- data %>% ggplot() +
+  geom_point(aes(y = HET, accession_number, color = genotype))
+
+ggplotly(aligned)
+```
+
+# colors
+```{r}
+library(RColorBrewer)
+library(viridis)
+library(scales)
+display.brewer.all(colorblindFriendly = TRUE)
+
+brewer.pal(n = 11, name = "Paired")
+
+# set colors for samples through out the paper
+reference = "#A6CEE3"#b35806
+"#e08214"
+#fdb863
+#fee0b6
+#f7f7f7
+#d8daeb
+#b2abd2
+#8073ac
+#542788
+BKQT8S = "#1F78B4"
+BKQU3X = "#B2DF8A"
+1017142 = "#33A02C"
+A53789 = "#6A3D9A"
+A58390 = "#CAB2D6" 
+amr = "#A6CEE3"
+is =  "#FFFF99"
+
+
+
+
+
+
+
+
+
+
+#"#E31A1C" "#FDBF6F" "#FF7F00" "#CAB2D6" "#6A3D9A" "#FFFF99""#FB9A99"
+```
+
+# pangenome
+
+this section is for consitructing a gene presence/absense plots for data generated by roary
+```{r code_for_pangenome_of_the_typhi}
+
+library(tidyverse)
+#install.packages("reshape2")
+library(reshape2)
+library(viridis)
+
+
+setwd("/Users/zuza/typhi/results/roary")
+
+gene_presence_absense <-
+  read_table("./gene_presence_absence.Rtab")
+
+# reshape the data frame
+
+gene1 <-
+  melt(gene_presence_absense, na.rm = FALSE, value.name = "value")
+
+plot <-
+  ggplot(gene1, aes(x = variable, y = Gene, fill = value)) +
+  geom_tile() +
+  scale_fill_viridis() +
+  theme(axis.text.y = element_blank()) +
+  labs(x = "Sample IDs",
+       title = "Gene Presence/Absence Matrix")
+
+ggsave("plot.pdf", plot)
+```
+
+
+
+# stool sample processing 2024
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+df1 <-
+read.csv("/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/Work/neotrack/jobs/extractions/data_from_R/pcr_results.csv")
+
+requested <-
+read_excel("/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/2024/jobs/neotrack_stool/stool_sample_processing.xlsx",
+sheet = "taken")
+
+df1$sample_name <- str_replace_all(df1$sample_name, "-", "") 
+
+df1$id <-
+substr(df1$sample_name, 1,8)
+
+not_processed <- requested %>% filter(is.na(ids_on_redcap))
+
+not_processed$pcr <-
+case_when(not_processed$lims_scan %in% df1$id ~ 1,
+TRUE ~ 0)
+
+# sample IDs not yet pit on redcap but we have pcr results for
+not_on_redcap_but_processed <-
+not_processed %>% filter(not_processed$pcr == 1)
+
+write.csv(not_on_redcap_but_processed %>% select(lims_scan, pid2, pcr), file = "/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/2024/jobs/neotrack_stool/samples_with_pcr_not_on_redcap.csv")
+
+
+# sample IDS which are not on redcap and there are no pcr results for them
+write.csv(not_processed %>% filter(not_processed$pcr == 0) %>%
+select(lims_scan, pid2, pcr),
+file = "/Users/zuza/Library/CloudStorage/OneDrive-Malawi-LiverpoolWellcomeTrust/2024/jobs/neotrack_stool/samples_not_on_red_cap_and_missing_results.csv") 
+
+
+```
