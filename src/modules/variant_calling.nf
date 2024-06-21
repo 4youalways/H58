@@ -2,7 +2,9 @@ process SNIPPY{
     tag "calling snps for ${sample_id}"
     container 'staphb/snippy:4.6.0-SC2'
     cpus 8
-    
+    maxForks 5 // change this parameter as needed depending on the amount of resources needed
+
+
     input:
     tuple val(sample_id), path(reads)
     each path('ref')
@@ -55,7 +57,8 @@ process SNP_SITES{
  
     script :
     """
-    snp-sites -b -c -o phylo.aln ${full_aln}/core.full.aln
+    snp-sites -b -c -o ref_phylo.aln ${full_aln}/core.full.aln
+    sed -e '/Reference/,+1d' ref_phylo.aln > phylo.aln
     snp-sites -C ${full_aln}/core.full.aln > constant.txt
     """
 }
