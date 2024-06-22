@@ -19,7 +19,7 @@ pacman::p_load(ape,
 
 
 
-```{r}
+```{r combine_metadata_files, eval=FALSE}
 metadata <-
     read_csv("./docs/isolate_metadata.csv") %>%
     select(!c(accession_number))
@@ -45,6 +45,8 @@ metadata$origin_country <-
   case_when(metadata$country == "Malawi" ~ "Malawi",
   TRUE ~ "Other")
 
+# save metadata to object
+save(metadata, file = "./docs/metadata_plus_mykrobe.RData")
 
 #write the metadata to disk
 write_csv(metadata,
@@ -52,7 +54,7 @@ write_csv(metadata,
 ```
 
 
-```{r , eval=FALSE}
+```{r read_newick_files, eval=FALSE}
 #read in the trees
 
 tree <-
@@ -77,6 +79,9 @@ save(tree, malawi, malawi_no_ref, global, global_no_ref,
 
 
 ```{r}
+
+load("./data/r/trees.Rdata")
+load("./docs/metadata_plus_mykrobe.RData")
 
 tree <- global
 
