@@ -22,19 +22,17 @@ pacman::p_load(ape,
 ```{r}
 metadata <-
     read_csv("./docs/isolate_metadata.csv") %>%
-    select(!c(genotype))
-
+    select(!c(accession_number))
 
 mykrobe <-
     read.table("./docs/mykrobe.out_predictResults.tsv",
     sep="\t", header=TRUE) %>%
-    remove_empty() %>%
     remove_constant() %>%
-    rename("accession_number" = "genome")
+    rename("sample_name" = "genome")
 
 #merge the metadata file and mykrobe results
 metadata <-
-  base::merge(metadata, mykrobe, by = "accession_number",
+  base::merge(metadata, mykrobe, by = "sample_name",
         all.x = TRUE)
 
 # group isolates into this study and others
@@ -54,10 +52,33 @@ write_csv(metadata,
 ```
 
 
-```{r}
+```{r , eval=FALSE}
+#read in the trees
 
 tree <-
-  ape::read.tree("/Users/zuza/repos/H58/outputs/newick/2024-04-19/phylo.aln.treefile")
+  ape::read.tree("./outputs/newick/2024-04-19/phylo.aln.treefile")
+
+malawi <-
+  ape::read.tree("./outputs/iqtree/malawi/filtered_alignment.fas.treefile")
+
+malawi_no_ref <-
+  ape::read.tree("./outputs/iqtree/malawi/phylo.aln.treefile")
+
+global <-
+  ape::read.tree("./outputs/iqtree/global/filtered_alignment.fas.treefile")
+
+global_no_ref <-
+  ape::read.tree("./outputs/iqtree/global/phylo.aln.treefile")
+
+# save to an R object
+save(tree, malawi, malawi_no_ref, global, global_no_ref,
+  file = "./data/r/trees.Rdata")
+```
+
+
+```{r}
+
+tree <- global
 
 tree <- ladderize(tree, right = TRUE)
 
@@ -69,6 +90,7 @@ tree <- reorder.phylo(tree, order = "cladewise")
 #get tip labels in the current tree
 labels <- TipLabels(tree)
 
+write.csv(labels, file="./docs/tree_labels.csv")
 #subset metadata file using the labels in the tree
 data <- metadata %>% filter(accession_number %in% c(labels))
 
@@ -76,6 +98,7 @@ data <- metadata %>% filter(accession_number %in% c(labels))
 
 p <- ggtree(tree, layout = "rectangular",
   ladderize = TRUE)
+p
 p <-
     p + geom_cladelab(node = 160, label="ERR279153", angle=0) +
     geom_cladelab(node = 161, label="ERR2602821", angle=0)
@@ -111,7 +134,7 @@ p1 <-
   ) +
   geom_tippoint(aes(color=genotype),
                 size = 0.5)
-
+p1
 p1 + tiplabels()
 
 ```

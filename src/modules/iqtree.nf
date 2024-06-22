@@ -14,7 +14,7 @@ process IQTREE {
     script:
     """
     #!/bin/bash
-    iqtree2 -nt AUTO -fconst \$(cat ${constant}) -s ${phylo} -m GTR+G -keep-ident -bb 1000  -T AUTO
+    iqtree2 -nt AUTO -fconst \$(cat ${constant}) -s ${phylo} -m GTR+G -bb 1000  -T AUTO
 
     """
 }
