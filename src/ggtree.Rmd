@@ -6,6 +6,7 @@ editor_options:
 ---
 
 ```{r}
+setwd("./repos/H58")
 pacman::p_load(ape,
                ggtree,
                ggnewscale,
@@ -13,6 +14,7 @@ pacman::p_load(ape,
                TreeTools,
                tidyverse,
                janitor,
+               plotly,
                viridis)
 ```
 
@@ -57,7 +59,7 @@ write_csv(metadata,
 ```{r read_newick_files, eval=FALSE}
 #read in the trees
 
-tree <-
+first_tree <-
   ape::read.tree("./outputs/newick/2024-04-19/phylo.aln.treefile")
 
 malawi <-
@@ -83,7 +85,7 @@ save(tree, malawi, malawi_no_ref, global, global_no_ref,
 load("./data/r/trees.Rdata")
 load("./docs/metadata_plus_mykrobe.RData")
 
-tree <- global
+tree <- tree
 
 tree <- ladderize(tree, right = TRUE)
 
@@ -92,32 +94,23 @@ tree <- midpoint(tree)
 tree <- reorder.phylo(tree, order = "cladewise")
 
 
-#get tip labels in the current tree
-labels <- TipLabels(tree)
-
-write.csv(labels, file="./docs/tree_labels.csv")
-#subset metadata file using the labels in the tree
-data <- metadata %>% filter(accession_number %in% c(labels))
-
 
 
 p <- ggtree(tree, layout = "rectangular",
   ladderize = TRUE)
+
 p
-p <-
-    p + geom_cladelab(node = 160, label="ERR279153", angle=0) +
-    geom_cladelab(node = 161, label="ERR2602821", angle=0)
-
-
-
-
-p + geom_hilight(node=161, fill="steelblue", alpha=.6) +
-    geom_hilight(node=160, fill="steelblue", alpha=.6) +
-    geom_cladelab(node = 161)
-p + geom_hilight(mapping = aes(node %in% c(160, 161), fill = S))
-
+#p <-
+#    p + geom_cladelab(node = 160, label="ERR279153", angle=0) +
+#    geom_cladelab(node = 161, label="ERR2602821", angle=0)
+# 
+# p + geom_hilight(node=161, fill="steelblue", alpha=.6) +
+#     geom_hilight(node=160, fill="steelblue", alpha=.6) +
+#     geom_cladelab(node = 161)
+# p + geom_hilight(mapping = aes(node %in% c(160, 161), fill = S))
+# 
 # get the node ids for annotation later
-nodeid(tree, label = c("ERR2602821", "ERR360832", "ERR279139", "ERR2602832", "ERR279153"))
+# nodeid(tree, label = c("ERR2602821", "ERR360832", "ERR279139", "ERR2602832", "ERR279153"))
 ```
 
 
@@ -127,7 +120,7 @@ nodeid(tree, label = c("ERR2602821", "ERR360832", "ERR279139", "ERR2602832", "ER
 # color the tips of the tree
 p1 <-
   p %<+% data +
-  theme(legend.position = "none",
+  theme(legend.position = "right",
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
         plot.title = element_text(
@@ -140,59 +133,73 @@ p1 <-
   geom_tippoint(aes(color=genotype),
                 size = 0.5)
 p1
-p1 + tiplabels()
 
 ```
 
-
-
-### create a heatmap for the country
-
 ```{r}
-
 # create heatmap with multiple variables
 colors <- c("#f9f6f3", "#3a0177")
-y_offset <- 3
+y_offset <- 50
 outdir <- "outputs/plots"
+font_size <- 2
+
+
+point_mutations <- 
+  data %>% select("sample_name", matches(c("par", "gyr"))) %>% remove_constant()
+
+rownames(point_mutations) <- point_mutations$sample_name
+
+point_mutations <- point_mutations %>% select(!sample_name)
+
+
+# create heatmap for country
+country <-
+  data %>%
+  select(sample_name, country) %>%
+  mutate(country = factor(country))
+
+
+rownames(country) <- country$sample_name
+
+country <- country %>% select(!sample_name)
+
+# heatmap for the year
+year <-
+  data %>%
+  select(sample_name, year) %>%
+  mutate(year = factor(year))
+
+
+rownames(year) <- year$sample_name
+
+year <- year %>% select(!sample_name)
+
+# plasmids
 
 #select columns with plasmids
+plasmid_replicons <- 
+  c("IncFIAHI1", "IncHI1A", "IncHI1BR27", "IncHI1_ST6", "IncY", "IncFIB_pHCM2",
+    "IncFIB_K", "IncN")
+
 plasmid <-
    data %>%
-  select("accession_number", contains(c("IncFIAHI1", "IncHI1A", "IncHI1BR27")))
-
+    select("sample_name", all_of(plasmid_replicons))
 
 #set row names to the column for accession_number
-rownames(plasmid) <- plasmid$accession_number
+rownames(plasmid) <- plasmid$sample_name
 
 # remove accession number column so that the country variable
 #has the accession variable as the row nakes
 plasmid <- plasmid %>%
-    select(!accession_number) %>%
+    select(!sample_name) %>%
     mutate_at(c("IncFIAHI1", "IncHI1A", "IncHI1BR27"),
     as.factor)
-
-
-plasmid_plot <-
-    gheatmap(p, plasmid,
-        width = 0.08,
-        colnames_position = "top",
-        colnames_angle = 90,
-        colnames_offset_y = y_offset,
-        hjust = 0.2,
-        legend_title = "Plasmid Replicons") +
-        scale_fill_manual(values = colors,
-        aesthetics = "fill") +
-    labs(fill = "Presence/Absence")
-
-plasmid_plot
-
-h1 <- plasmid_plot + new_scale_fill()
 
 
 #select columns with amr genes
 amr <-
    data %>%
-  select("accession_number",
+  select("sample_name",
          "blaTEM.1D",
          "blaCTX.M.15",
          "catA1",
@@ -204,62 +211,128 @@ amr <-
          "tetB")
   
 #set row names to the column for accession_number
-rownames(amr) <- amr$accession_number
+rownames(amr) <- amr$sample_name
 
 amr <- amr %>%
-    select(!accession_number) 
+    select(!sample_name) 
 
 genes <- colnames(amr)
 amr <- amr %>% mutate_at(genes,
     as.factor)
 
-
-amr_plot <-
-    gheatmap(h1, amr,
-        width = 0.36,
-        offset = 0.0000001,
-        colnames_position = "top",
-        colnames_angle = 90,
-        colnames_offset_y = y_offset,
-        hjust = 0.2,
-        legend_title = "AMR genes") +
-        scale_fill_manual(values = colors,
-        aesthetics = "fill") +
-        labs(fill = NULL) + theme(plot.margin = unit(c(3, 0.5, 0.5, 0.5), "cm"))
-
-amr_plot
-
-h2 <- amr_plot + new_scale_fill()
-
 # qunolone sceptibility
 mutations <-
    data %>%
-  select("accession_number", contains(c("gyrA_S83F", "gyrB_S464F")))
+  select("sample_name", contains(c("gyrA_S83F", "gyrB_S464F")))
 
-rownames(mutations) <- mutations$accession_number
+rownames(mutations) <- mutations$sample_name
 
 mutations <- mutations %>%
-    select(!accession_number) 
+    select(!sample_name) 
 
 points <- colnames(mutations)
 mutations <- mutations %>% mutate_at(points,
     as.factor)
 
+```
 
-mutations_plot <-
-    gheatmap(h2, mutations,
-        width = 0.054,
-        offset = 0.00000047,
+
+### malawi only
+
+
+### create a heatmap for the country
+
+
+# malawi only isolates
+
+```{r}
+tree <- global
+tree <- midpoint(tree)
+tree <- reorder.phylo(tree, order = "cladewise")
+
+#get tip labels in the current tree
+labels <- TipLabels(tree)
+
+#write.csv(labels, file="./docs/tree_labels.csv")
+
+#subset metadata file using the labels in the tree
+data <- metadata %>% filter(sample_name %in% c(labels))
+
+p <- ggtree(tree, layout = "rectangular",
+  ladderize = TRUE, right = FALSE)
+
+p3 <-
+    gheatmap(p, year,
+        width = 0.05 ,
         colnames_position = "top",
         colnames_angle = 90,
-        colnames_offset_y = y_offset,
-        hjust = 0.2,
-        legend_title = "AMR genes") +
-        scale_fill_manual(values = colors,
+        colnames_offset_y = 4,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(
         aesthetics = "fill") +
-        labs(fill = NULL) + theme(plot.margin = unit(c(3, 0.5, 0.5, 0.5), "cm"))
+    labs(fill = "Year") +
+  hexpand(.2) +
+  vexpand(0.04) +
+  theme(legend.justification = "left")
+p3
 
-mutations_plot
+# extend the tree to include plasmid replicons and amr genes
+mbe <-
+  cbind(year,plasmid, amr) %>%
+  select(c("IncFIAHI1", "IncHI1A", "IncHI1BR27","blaTEM.1D",
+         "catA1",
+         "sul1",
+         "sul2",
+         "dfrA7",
+         "dfrA14",
+         "tetB"))
+
+p4 <- p3 + new_scale_fill()
+
+p5 <-
+    gheatmap(p4, mbe,
+        width = 0.8,
+        offset = 0.00000004,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = 4,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(
+        aesthetics = "fill") +
+    labs(fill = "Presence/Absence") +
+  hexpand(.2) +
+  vexpand(0.04)
+
+p5
+
+
+# include point mutation
+p6 <- p5 + new_scale_fill()
+
+p7 <-
+    gheatmap(p, point_mutations,
+        width = 0.8,
+        offset = 0.0000008,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = 4,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_c(
+        aesthetics = "fill") +
+    labs(fill = "Presence/Absence") +
+  hexpand(.2) +
+  vexpand(0.04)
+
+p7
+
+
+ggplotly(p3)
 ```
 
 
