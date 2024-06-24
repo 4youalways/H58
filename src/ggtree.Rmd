@@ -134,12 +134,13 @@ p1 <-
                 size = 0.5)
 p1
 
+tree %>% drop.tip("AL513382.1") %>% ggtree() %<+% data + aes(color = genotype)
 ```
 
 ```{r}
 # create heatmap with multiple variables
 colors <- c("#f9f6f3", "#3a0177")
-y_offset <- 50
+
 outdir <- "outputs/plots"
 font_size <- 2
 
@@ -151,17 +152,37 @@ rownames(point_mutations) <- point_mutations$sample_name
 
 point_mutations <- point_mutations %>% select(!sample_name)
 
+point_mutations <- point_mutations %>%
+  mutate(across(where(is.integer), as.factor))
 
-# create heatmap for country
-country <-
+# create heatmap for country, and group
+group <-
   data %>%
-  select(sample_name, country) %>%
-  mutate(country = factor(country))
+  select(sample_name, group) %>%
+  mutate(group = factor(group))
 
+rownames(group) <-
+  group$sample_name
 
-rownames(country) <- country$sample_name
+group <-
+  group %>% select(!sample_name)
 
-country <- country %>% select(!sample_name)
+# create a country object
+data$region <-
+  case_when(data$country == "Malawi" ~ "Malawi",
+            TRUE ~ "Other")
+
+region <-
+  data %>%
+  select(sample_name, region) %>%
+  mutate(region = factor(region))
+
+rownames(region) <-
+  region$sample_name
+
+region <-
+  region %>% select(!sample_name)
+
 
 # heatmap for the year
 year <-
@@ -243,7 +264,8 @@ mutations <- mutations %>% mutate_at(points,
 ### create a heatmap for the country
 
 
-# malawi only isolates
+# global isolates
+this section will plot a tree for the global isolates.
 
 ```{r}
 tree <- global
@@ -258,25 +280,86 @@ labels <- TipLabels(tree)
 #subset metadata file using the labels in the tree
 data <- metadata %>% filter(sample_name %in% c(labels))
 
-p <- ggtree(tree, layout = "rectangular",
-  ladderize = TRUE, right = FALSE)
+# plot parameters
+y_offset <- 15
+vertical_expansion = c( 0.0002)
 
+# use nodeid() to get the node number for a particular lab
+
+# node_id <-
+#   nodeid(tree, c("ERR2602821", "ERR2602832"))
+# 
+# p <- ggtree(tree, layout = "rectangular",
+#   ladderize = TRUE, right = FALSE) +
+#   geom_cladelab(node = node_id,
+#                 label = "ERR2602832",
+#                 align = TRUE,
+#                 barcolor = "blue") +
+#   geom_tiplab(as_ylab = TRUE)
+
+p <- tree %>%
+  drop.tip("AL513382.1") %>%
+  ggtree(cex = .2) %<+% data +
+  aes(color = genotype)
+
+p
 p3 <-
     gheatmap(p, year,
-        width = 0.05 ,
+        width = 0.01 ,
         colnames_position = "top",
         colnames_angle = 90,
-        colnames_offset_y = 4,
+        colnames_offset_y = y_offset,
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(
-        aesthetics = "fill") +
+  scale_fill_viridis_d(aesthetics = "fill") +
     labs(fill = "Year") +
   hexpand(.2) +
-  vexpand(0.04) +
-  theme(legend.justification = "left")
+  vexpand(vertical_expansion) +
+  theme(legend.justification = "left") + guides(fill=guide_legend(ncol = 1, byrow = TRUE))
+
 p3
+
+# add the country of isolation
+p4 <- p3 + new_scale_fill()
+
+p5 <-
+    gheatmap(p4, group,
+        width = 0.01 ,
+        offset = 0.000004,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(aesthetics = "fill") +
+    labs(fill = "Year") +
+  hexpand(.2) +
+  vexpand(vertical_expansion) +
+  theme(legend.justification = "left")
+p5
+
+# add region column
+
+p6 <- p5 + new_scale_fill()
+
+p7 <-
+    gheatmap(p6, region,
+        width = 0.01 ,
+        offset = 0.000002,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(aesthetics = "fill") +
+    labs(fill = "Region") +
+  hexpand(.2) +
+  vexpand(vertical_expansion) +
+  theme(legend.justification = "left")
+p7
 
 # extend the tree to include plasmid replicons and amr genes
 mbe <-
@@ -289,15 +372,15 @@ mbe <-
          "dfrA14",
          "tetB"))
 
-p4 <- p3 + new_scale_fill()
+p8 <- p7 + new_scale_fill()
 
-p5 <-
-    gheatmap(p4, mbe,
-        width = 0.8,
-        offset = 0.00000004,
+p9 <-
+    gheatmap(p8, mbe,
+        width = 0.1,
+        offset = 0.000006,
         colnames_position = "top",
         colnames_angle = 90,
-        colnames_offset_y = 4,
+        colnames_offset_y = y_offset,
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Plasmid Replicons") +
@@ -305,32 +388,33 @@ p5 <-
         aesthetics = "fill") +
     labs(fill = "Presence/Absence") +
   hexpand(.2) +
-  vexpand(0.04)
+  vexpand(vertical_expansion)
 
-p5
+p9
 
 
 # include point mutation
-p6 <- p5 + new_scale_fill()
+p10 <- p9 + new_scale_fill()
 
-p7 <-
-    gheatmap(p, point_mutations,
-        width = 0.8,
-        offset = 0.0000008,
+p11 <-
+    gheatmap(p10, point_mutations,
+        width = 0.1,
+        offset = 0.000017,
         colnames_position = "top",
         colnames_angle = 90,
-        colnames_offset_y = 4,
+        colnames_offset_y = y_offset,
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_c(
-        aesthetics = "fill") +
+  scale_fill_viridis_d(aesthetics = "fill") +
     labs(fill = "Presence/Absence") +
   hexpand(.2) +
-  vexpand(0.04)
+  vexpand(vertical_expansion)
 
-p7
-
+p11 + theme(legend.key.size = unit(.1, "cm")) +
+  theme_light(base_size = 5) +
+  xlim(NA, 0.00013) +
+  ylim(-0.000001, NA)
 
 ggplotly(p3)
 ```
@@ -339,7 +423,7 @@ ggplotly(p3)
 ```{r}
 # save the phages
 plotting_dir <- file.path(outdir, Sys.Date())
-plot_name <- file.path(plotting_dir, "jillian_tree_plot.svg")
+plot_name <- file.path(plotting_dir, "global_tree.svg")
 
 if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
 
@@ -347,7 +431,7 @@ svg(plot_name,
     width = 9,
     height = 20)
 
-mutations_plot + theme(plot.margin = unit(c(3, 0.5, 0.5, 0.5), "cm"))
+p11 + theme(legend.key.size = unit(.1, "cm")) + theme_light(base_size = 5) + xlim(NA, 0.00013) + ylim(-0.000001, NA)
 
 
 dev.off() 
