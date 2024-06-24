@@ -93,9 +93,6 @@ tree <- midpoint(tree)
 
 tree <- reorder.phylo(tree, order = "cladewise")
 
-
-
-
 p <- ggtree(tree, layout = "rectangular",
   ladderize = TRUE)
 
@@ -144,6 +141,7 @@ colors <- c("#f9f6f3", "#3a0177")
 outdir <- "outputs/plots"
 font_size <- 2
 
+data <- metadata #%>% filter(sample_name %in% c(labels))
 
 point_mutations <- 
   data %>% select("sample_name", matches(c("par", "gyr"))) %>% remove_constant()
@@ -241,27 +239,9 @@ genes <- colnames(amr)
 amr <- amr %>% mutate_at(genes,
     as.factor)
 
-# qunolone sceptibility
-mutations <-
-   data %>%
-  select("sample_name", contains(c("gyrA_S83F", "gyrB_S464F")))
-
-rownames(mutations) <- mutations$sample_name
-
-mutations <- mutations %>%
-    select(!sample_name) 
-
-points <- colnames(mutations)
-mutations <- mutations %>% mutate_at(points,
-    as.factor)
 
 ```
 
-
-### malawi only
-
-
-### create a heatmap for the country
 
 
 # global isolates
@@ -278,29 +258,17 @@ labels <- TipLabels(tree)
 #write.csv(labels, file="./docs/tree_labels.csv")
 
 #subset metadata file using the labels in the tree
-data <- metadata %>% filter(sample_name %in% c(labels))
-
+data <- metadata
 # plot parameters
 y_offset <- 15
 vertical_expansion = c( 0.0002)
 
-# use nodeid() to get the node number for a particular lab
 
-# node_id <-
-#   nodeid(tree, c("ERR2602821", "ERR2602832"))
-# 
-# p <- ggtree(tree, layout = "rectangular",
-#   ladderize = TRUE, right = FALSE) +
-#   geom_cladelab(node = node_id,
-#                 label = "ERR2602832",
-#                 align = TRUE,
-#                 barcolor = "blue") +
-#   geom_tiplab(as_ylab = TRUE)
 
 p <- tree %>%
   drop.tip("AL513382.1") %>%
   ggtree(cex = .2) %<+% data +
-  aes(color = genotype)
+  geom_tippoint(aes(color=genotype), size = 0.5) #aes(color = genotype)
 
 p
 p3 <-
@@ -333,7 +301,7 @@ p5 <-
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(aesthetics = "fill") +
+  scale_fill_viridis_d(aesthetics = "fill", option = "H") +
     labs(fill = "Year") +
   hexpand(.2) +
   vexpand(vertical_expansion) +
@@ -354,7 +322,7 @@ p7 <-
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(aesthetics = "fill") +
+  scale_fill_viridis_d(aesthetics = "fill", option = "H", direction = -1) +
     labs(fill = "Region") +
   hexpand(.2) +
   vexpand(vertical_expansion) +
@@ -385,7 +353,7 @@ p9 <-
         font.size = font_size,
         legend_title = "Plasmid Replicons") +
   scale_fill_viridis_d(
-        aesthetics = "fill") +
+        aesthetics = "fill", direction = -1) +
     labs(fill = "Presence/Absence") +
   hexpand(.2) +
   vexpand(vertical_expansion)
@@ -406,7 +374,7 @@ p11 <-
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(aesthetics = "fill") +
+  scale_fill_viridis_d(aesthetics = "fill", direction = -1) +
     labs(fill = "Presence/Absence") +
   hexpand(.2) +
   vexpand(vertical_expansion)
@@ -423,11 +391,11 @@ ggplotly(p3)
 ```{r}
 # save the phages
 plotting_dir <- file.path(outdir, Sys.Date())
-plot_name <- file.path(plotting_dir, "global_tree.svg")
+plot_name <- file.path(plotting_dir, "global_tree.pdf")
 
 if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
 
-svg(plot_name,
+pdf(plot_name,
     width = 9,
     height = 20)
 
@@ -436,6 +404,277 @@ p11 + theme(legend.key.size = unit(.1, "cm")) + theme_light(base_size = 5) + xli
 
 dev.off() 
 
+
+```
+
+
+# Malawi only isolates
+
+
+```{r}
+tree <- first_tree
+tree <- midpoint(tree)
+tree <- reorder.phylo(tree, order = "cladewise")
+
+#get tip labels in the current tree
+labels <- TipLabels(tree)
+
+#write.csv(labels, file="./docs/tree_labels.csv")
+
+#subset metadata file using the labels in the tree
+data <- metadata %>% filter(sample_name %in% c(labels))
+
+# plot parameters
+y_offset <- 3
+vertical_expansion = c( 0.0002)
+
+# get nodeid based on tip label
+nodes <- nodeid(tree, c("ERR2602821", "ERR2602832"))
+
+p <-
+  tree %>%
+  drop.tip("AL513382.1") %>%
+  ggtree(cex = 1) +
+  geom_tiplab(align = TRUE,
+              family="mono",
+              size = 2,
+              linesize = 0.2,
+              as_ylab = FALSE) +
+  geom_highlight(node = nodes,, fill = "#3a0177", alpha = .6, extend = 1)
+
+p
+p3 <-
+    gheatmap(p, year,
+        width = 0.02 ,
+        offset = 0.0000004,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(aesthetics = "fill") +
+    labs(fill = "Year") +
+  hexpand(.2) +
+  vexpand(vertical_expansion) +
+  theme(legend.justification = "left") + guides(fill=guide_legend(ncol = 1, byrow = TRUE))
+
+p3
+
+# extend the tree to include plasmid replicons and amr genes
+mbe <-
+  cbind(year,plasmid, amr) %>%
+  select(c("IncFIAHI1", "IncHI1A", "IncHI1BR27","blaTEM.1D",
+         "catA1",
+         "sul1",
+         "sul2",
+         "dfrA7",
+         "dfrA14",
+         "tetB"))
+
+p8 <- p3 + new_scale_fill()
+
+p9 <-
+    gheatmap(p8, mbe,
+        width = 0.2,
+        offset = 0.0000006,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(
+        aesthetics = "fill",
+        direction = -1) +
+    labs(fill = "Presence/Absence") +
+  hexpand(.2) +
+  vexpand(vertical_expansion)
+
+p9
+
+
+# include point mutation
+p10 <- p9 + new_scale_fill()
+
+p11 <-
+    gheatmap(p10, point_mutations %>% select(c("gyrA_S83F", "gyrB_S464F")),
+        width = 0.07,
+        offset = 0.0000014,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(aesthetics = "fill", direction = -1) +
+    labs(fill = "Presence/Absence") +
+  hexpand(.2) +
+  vexpand(vertical_expansion)
+p11
+
+p11 + theme(legend.key.size = unit(1, "cm")) +
+  theme_light(base_size = 10) +
+  xlim(NA, 0.000006) +
+  ylim(-0.000001, NA)
+
+ggplotly(p3)
+```
+
+
+```{r}
+# save the phages
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "malawi_tree.pdf")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+pdf(plot_name,
+    width = 10,
+    height = 20)
+
+p11 + theme(legend.key.size = unit(1, "cm")) +
+  theme_light(base_size = 10) +
+  xlim(NA, 0.000006) +
+  ylim(-0.000001, NA)
+
+
+dev.off() 
+
+
+```
+
+
+# malawi first tree
+```{r}
+tree <- first_tree
+tree <- midpoint(tree)
+tree <- reorder.phylo(tree, order = "cladewise")
+
+#get tip labels in the current tree
+labels <- TipLabels(tree)
+
+#write.csv(labels, file="./docs/tree_labels.csv")
+
+#subset metadata file using the labels in the tree
+data <- metadata %>% filter(sample_name %in% c(labels))
+
+# plot parameters
+y_offset <- 3
+vertical_expansion = c( 0.0002)
+
+# get nodeid based on tip label
+nodes <- nodeid(tree, c("ERR2602821", "ERR2602832"))
+
+p <-
+  tree %>%
+  drop.tip("AL513382.1") %>%
+  ggtree(cex = 1) +
+  geom_tiplab(align = TRUE,
+              family="mono",
+              size = 2,
+              linesize = 0.2,
+              as_ylab = FALSE) +
+  geom_highlight(node = nodes,, fill = "#3a0177", alpha = .6, extend = 1)
+
+p
+p3 <-
+    gheatmap(p, year,
+        width = 0.02 ,
+        offset = 0.0000001,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(aesthetics = "fill") +
+    labs(fill = "Year") +
+  hexpand(.2) +
+  vexpand(vertical_expansion) +
+  theme(legend.justification = "left") + guides(fill=guide_legend(ncol = 1, byrow = TRUE))
+
+p3
+
+# extend the tree to include plasmid replicons and amr genes
+mbe <-
+  cbind(year,plasmid, amr) %>%
+  select(c("IncFIAHI1", "IncHI1A", "IncHI1BR27","blaTEM.1D",
+         "catA1",
+         "sul1",
+         "sul2",
+         "dfrA7",
+         "dfrA14",
+         "tetB"))
+
+p8 <- p3 + new_scale_fill()
+
+p9 <-
+    gheatmap(p8, mbe,
+        width = 0.2,
+        offset = 0.00000015,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(
+        aesthetics = "fill",
+        direction = -1) +
+    labs(fill = "Presence/Absence") +
+  hexpand(.2) +
+  vexpand(vertical_expansion)
+
+p9
+
+
+# include point mutation
+p10 <- p9 + new_scale_fill()
+
+p11 <-
+    gheatmap(p10, point_mutations %>% select(c("gyrA_S83F", "gyrB_S464F")),
+        width = 0.07,
+        offset = 0.00000036,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Plasmid Replicons") +
+  scale_fill_viridis_d(aesthetics = "fill", direction = -1) +
+    labs(fill = "Presence/Absence") +
+  hexpand(.2) +
+  vexpand(vertical_expansion)
+p11
+
+p11 + theme(legend.key.size = unit(1, "cm")) +
+  theme_light(base_size = 10) +
+  xlim(NA, 0.0000014) +
+  ylim(-0.000001, NA)
+
+ggplotly(p3)
+```
+
+
+```{r}
+# save the phages
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "malawi_first_tree.pdf")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+pdf(plot_name,
+    width = 10,
+    height = 20)
+
+p11 + theme(legend.key.size = unit(1, "cm")) +
+  theme_light(base_size = 10) +
+  xlim(NA, 0.0000014) +
+  ylim(-0.000001, NA)
+
+
+dev.off() 
 
 
 ```
