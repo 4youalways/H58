@@ -6,21 +6,42 @@ editor_options:
 ---
 
 ```{r}
-setwd("./repos/H58")
 pacman::p_load(ape,
                ggtree,
                ggnewscale,
                phangorn,
-               TreeTools,
                tidyverse,
                janitor,
                plotly,
                viridis)
+
+# library(pak)
+# pak("ggtree")
+# pak("igraph")
+
+library(ape)
+library(ggtree)
+library(ggnewscale)
+library(phangorn)
+library(tidyverse)
+library(janitor)
+library(plotly)
+library(viridis)
+library(tidytree)
+library(ggbreak)
+# load the metadata
+load(file = "./docs/metadata_plus_mykrobe.RData")
+
+# load the metadata
+load(file = "./docs/metadata_plus_mykrobe.RData")
+
+# load the metadata
+
 ```
 
 
 
-
+# process metadata
 ```{r combine_metadata_files, eval=FALSE}
 metadata <-
     read_csv("./docs/isolate_metadata.csv") %>%
@@ -32,9 +53,19 @@ mykrobe <-
     remove_constant() %>%
     rename("sample_name" = "genome")
 
+
+ariba <-
+  read_csv("./docs/ariba_clean.csv") %>%
+  remove_constant() %>%
+  rename("sample_name" = "sample_id")
+
 #merge the metadata file and mykrobe results
 metadata <-
   base::merge(metadata, mykrobe, by = "sample_name",
+        all.x = TRUE)
+
+metadata <-
+  base::merge(metadata, ariba, by = "sample_name",
         all.x = TRUE)
 
 # group isolates into this study and others
@@ -49,6 +80,7 @@ metadata$origin_country <-
 
 # save metadata to object
 save(metadata, file = "./docs/metadata_plus_mykrobe.RData")
+save(ariba, file = "./docs/amr_genes.RData")
 
 #write the metadata to disk
 write_csv(metadata,
@@ -56,8 +88,11 @@ write_csv(metadata,
 ```
 
 
+# load newick files
 ```{r read_newick_files, eval=FALSE}
 #read in the trees
+big_tree <-
+  ape::read.tree("~/Downloads/iq2.contree")
 
 first_tree <-
   ape::read.tree("./outputs/newick/2024-04-19/phylo.aln.treefile")
@@ -84,30 +119,8 @@ save(tree, malawi, malawi_no_ref, global, global_no_ref,
 
 load("./data/r/trees.Rdata")
 load("./docs/metadata_plus_mykrobe.RData")
+load("./docs/amr_genes.RData")
 
-tree <- tree
-
-tree <- ladderize(tree, right = TRUE)
-
-tree <- midpoint(tree)
-
-tree <- reorder.phylo(tree, order = "cladewise")
-
-p <- ggtree(tree, layout = "rectangular",
-  ladderize = TRUE)
-
-p
-#p <-
-#    p + geom_cladelab(node = 160, label="ERR279153", angle=0) +
-#    geom_cladelab(node = 161, label="ERR2602821", angle=0)
-# 
-# p + geom_hilight(node=161, fill="steelblue", alpha=.6) +
-#     geom_hilight(node=160, fill="steelblue", alpha=.6) +
-#     geom_cladelab(node = 161)
-# p + geom_hilight(mapping = aes(node %in% c(160, 161), fill = S))
-# 
-# get the node ids for annotation later
-# nodeid(tree, label = c("ERR2602821", "ERR360832", "ERR279139", "ERR2602832", "ERR279153"))
 ```
 
 
@@ -115,23 +128,11 @@ p
 ### color the tips of the tree by country of sample isolation
 ```{r}
 # color the tips of the tree
-p1 <-
-  p %<+% data +
-  theme(legend.position = "right",
-        axis.title.x = element_blank(),
-        axis.title.y = element_blank(),
-        plot.title = element_text(
-          size = 12,
-          face = "bold",
-          hjust = 0.5,
-          vjust = -15
-        )
-  ) +
-  geom_tippoint(aes(color=genotype),
-                size = 0.5)
-p1
+data <- metadata
+tree <- ape::read.tree("/Users/zuza/repos/H58/outputs/iqtree/20240629/iqtree/phylo.aln.contree")
 
-tree %>% drop.tip("AL513382.1") %>% ggtree() %<+% data + aes(color = genotype)
+tree %>% drop.tip("AL513382.1") %>% ggtree() %<+% data + aes(color = year)# + scale_colour_grey()
+
 ```
 
 ```{r}
@@ -139,7 +140,7 @@ tree %>% drop.tip("AL513382.1") %>% ggtree() %<+% data + aes(color = genotype)
 colors <- c("#f9f6f3", "#3a0177")
 
 outdir <- "outputs/plots"
-font_size <- 2
+
 
 data <- metadata #%>% filter(sample_name %in% c(labels))
 
@@ -211,34 +212,31 @@ rownames(plasmid) <- plasmid$sample_name
 #has the accession variable as the row nakes
 plasmid <- plasmid %>%
     select(!sample_name) %>%
-    mutate_at(c("IncFIAHI1", "IncHI1A", "IncHI1BR27"),
+    mutate_at(c("IncFIAHI1", "IncHI1A", "IncHI1BR27", "IncHI1_ST6", "IncY", "IncFIB_pHCM2",
+    "IncFIB_K", "IncN"),
     as.factor)
 
 
 #select columns with amr genes
+
+genes <- colnames(ariba)
 amr <-
-   data %>%
-  select("sample_name",
-         "blaTEM.1D",
-         "blaCTX.M.15",
-         "catA1",
-         "sul1",
-         "sul2",
-         "dfrA7",
-         "dfrA14",
-         "tetA",
-         "tetB")
+   data %>% select(all_of(genes))
   
 #set row names to the column for accession_number
 rownames(amr) <- amr$sample_name
 
 amr <- amr %>%
-    select(!sample_name) 
+    mutate_at(genes,
+    as.factor) %>%
+    select(!sample_name)
 
-genes <- colnames(amr)
-amr <- amr %>% mutate_at(genes,
-    as.factor)
+amr[] <- lapply(amr, function(x) str_replace_all(x, "yes", "1"))
+amr[] <- lapply(amr, function(x) str_replace_all(x, "no", "0"))
 
+# merge the amr determinants for tree vis
+amr_determinants <- 
+  cbind(amr, point_mutations, plasmid)
 
 ```
 
@@ -249,38 +247,79 @@ this section will plot a tree for the global isolates.
 
 ```{r}
 tree <- global
-tree <- midpoint(tree)
+data <- metadata
+#tree <- midpoint(tree)
+tree <- root(tree, "AL513382.1")
 tree <- reorder.phylo(tree, order = "cladewise")
-
 #get tip labels in the current tree
-labels <- TipLabels(tree)
+#labels <- TipLabels(tree)
 
 #write.csv(labels, file="./docs/tree_labels.csv")
 
 #subset metadata file using the labels in the tree
-data <- metadata
+#data <- metadata
 # plot parameters
 y_offset <- 15
 vertical_expansion = c( 0.0002)
+scale_fill_grey()
+font_size <- 1
+value_colors <-
+  c("black", "grey")
+value_colors <- c("#f9f6f3", "#3a0177")
+# # convert tree to tible for easy assessing
+# tree %>% as.tibble() %>% filter(label %in% c("AL513382.1", "ERR279139"))
+# 
+# tree %>% as.tibble() %>% filter(node == "100/100")
+# child(tree, 1204)
+# 
+# tree %>% ggtree() + geom_nodelab(nudge_y = -10, size = 1.4, nudge_x = -0.00004) #+ theme(element_text(size = 1))
+# nodeid(tree, "AL513382.1")
+# 
+# pdf("test.pdf", width = 10,  height = 60)
+# #p + geom_nodelab( size = 1.4)
+# ggtree(y, aes(linetype = group)) + theme(legend.position = "none")# + scale_x_break(c(0.000034, 0.0000004)) #+ geom_tiplab(as_ylab = TRUE)
+# dev.off()
+# child(tree, "99.1/100")
+# 
+# MRCA(tree, 548, 547)
+# 
+# MRCA(tree, "99.1/100")
+# y <- groupClade(tree, 1058)
+# 
+# x <- ggtree(y, aes(linetype = group), cex = .2) +scale_x_break(c(0.000034, 0.0000004)) #%<+% data
+# 
+# x
+# 
+# y <- ggtree(y, aes(linetype = group)) + theme(legend.position = "none") + scale_x_break(c(0.000034, 0.0000004)) %<+% data +
+#   geom_tippoint(aes(color=genotype), size = 0.5)
+# 
+# ggtree(y, aes(linetype = group), cex = .2)
+# y
+# 
+# p + scale_x_break()
 
 
-
-p <- tree %>%
-  drop.tip("AL513382.1") %>%
+p <- 
+  tree %>%
+  #drop.tip("AL513382.1") %>%
   ggtree(cex = .2) %<+% data +
-  geom_tippoint(aes(color=genotype), size = 0.5) #aes(color = genotype)
+  geom_tippoint(aes(color=genotype), size = 0.1) +
+  scale_fill_brewer(na.translate = F)
 
 p
+
 p3 <-
     gheatmap(p, year,
-        width = 0.01 ,
+        width = 0.005 ,
         colnames_position = "top",
         colnames_angle = 90,
         colnames_offset_y = y_offset,
         hjust = 0.5,
         font.size = font_size,
-        legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(aesthetics = "fill") +
+        legend_title = "Year") +
+      scale_fill_grey(end = 1, na.translate = FALSE) +
+      #scale_fill_manual(c()) +
+  #scale_fill_viridis_d(aesthetics = "fill") +
     labs(fill = "Year") +
   hexpand(.2) +
   vexpand(vertical_expansion) +
@@ -293,15 +332,16 @@ p4 <- p3 + new_scale_fill()
 
 p5 <-
     gheatmap(p4, group,
-        width = 0.01 ,
-        offset = 0.000004,
+        width = 0.005 ,
+        offset = 0.000001,
         colnames_position = "top",
         colnames_angle = 90,
         colnames_offset_y = y_offset,
         hjust = 0.5,
         font.size = font_size,
-        legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(aesthetics = "fill", option = "H") +
+        legend_title = "Group") +
+  #scale_fill_viridis_d(aesthetics = "fill", option = "H") +
+  scale_fill_manual(values = value_colors, na.translate = F)+
     labs(fill = "Year") +
   hexpand(.2) +
   vexpand(vertical_expansion) +
@@ -314,77 +354,46 @@ p6 <- p5 + new_scale_fill()
 
 p7 <-
     gheatmap(p6, region,
-        width = 0.01 ,
+        width = 0.005 ,
         offset = 0.000002,
         colnames_position = "top",
         colnames_angle = 90,
         colnames_offset_y = y_offset,
         hjust = 0.5,
         font.size = font_size,
-        legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(aesthetics = "fill", option = "H", direction = -1) +
-    labs(fill = "Region") +
+        legend_title = "Region") +
+  #scale_fill_viridis_d(aesthetics = "fill", option = "H", direction = -1) +
+  scale_fill_manual(values = value_colors, na.translate = F) + 
+   labs(fill = "Region") +
   hexpand(.2) +
   vexpand(vertical_expansion) +
   theme(legend.justification = "left")
 p7
 
-# extend the tree to include plasmid replicons and amr genes
-mbe <-
-  cbind(year,plasmid, amr) %>%
-  select(c("IncFIAHI1", "IncHI1A", "IncHI1BR27","blaTEM.1D",
-         "catA1",
-         "sul1",
-         "sul2",
-         "dfrA7",
-         "dfrA14",
-         "tetB"))
 
 p8 <- p7 + new_scale_fill()
 
 p9 <-
-    gheatmap(p8, mbe,
-        width = 0.1,
-        offset = 0.000006,
+    gheatmap(p8, amr_determinants,
+        width = 0.2,
+        offset = 0.000003,
         colnames_position = "top",
         colnames_angle = 90,
         colnames_offset_y = y_offset,
         hjust = 0.5,
         font.size = font_size,
-        legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(
-        aesthetics = "fill", direction = -1) +
+        legend_title = "AMR genes and Plasmids") +
+  scale_fill_manual(values = value_colors, na.translate = F) +
     labs(fill = "Presence/Absence") +
   hexpand(.2) +
   vexpand(vertical_expansion)
 
-p9
-
-
-# include point mutation
-p10 <- p9 + new_scale_fill()
-
-p11 <-
-    gheatmap(p10, point_mutations,
-        width = 0.1,
-        offset = 0.000017,
-        colnames_position = "top",
-        colnames_angle = 90,
-        colnames_offset_y = y_offset,
-        hjust = 0.5,
-        font.size = font_size,
-        legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(aesthetics = "fill", direction = -1) +
-    labs(fill = "Presence/Absence") +
-  hexpand(.2) +
-  vexpand(vertical_expansion)
-
-p11 + theme(legend.key.size = unit(.1, "cm")) +
+p9 + theme(legend.key.size = unit(.1, "cm")) +
   theme_light(base_size = 5) +
-  xlim(NA, 0.00013) +
+  xlim(NA, 0.000155) +
   ylim(-0.000001, NA)
 
-ggplotly(p3)
+
 ```
 
 
@@ -399,7 +408,10 @@ pdf(plot_name,
     width = 9,
     height = 20)
 
-p11 + theme(legend.key.size = unit(.1, "cm")) + theme_light(base_size = 5) + xlim(NA, 0.00013) + ylim(-0.000001, NA)
+p9 + theme(legend.key.size = unit(.1, "cm")) +
+  theme_light(base_size = 5) +
+  xlim(NA, 0.000155) +
+  ylim(-0.000001, NA)
 
 
 dev.off() 
