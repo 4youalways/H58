@@ -114,7 +114,7 @@ load("./docs/amr_genes.RData")
 
 
 
-### color the tips of the tree by country of sample isolation
+# color the tips of the tree by country of sample isolation
 ```{r}
 # color the tips of the tree
 data <- metadata
@@ -124,6 +124,7 @@ tree %>% drop.tip("AL513382.1") %>% ggtree() %<+% data + aes(color = year)# + sc
 
 ```
 
+# annotation files
 ```{r}
 # create heatmap with multiple variables
 colors <- c("#f9f6f3", "#3a0177")
@@ -412,6 +413,134 @@ dev.off()
 
 
 # Malawi only isolates
+
+```{r}
+tree <- malawi
+#data <- metadata
+#tree <- midpoint(tree)
+tree <- root(tree, "AL513382.1")
+tree <- reorder.phylo(tree, order = "cladewise")
+#get tip labels in the current tree
+labels <- TipLabels(tree)
+
+malawi_amr <-
+  subset(amr_determinants, rownames(amr_determinants) %in%
+           tree$tip.label) %>% remove_constant()
+
+# plot parameters
+y_offset <- 15
+vertical_expansion = c( 0.0002)
+font_size <- 3
+
+# tree %>% as_tibble() %>% filter(label == "AL513382.1")
+# 
+# MRCA(tree, 257)
+# tree
+# y <- groupClade(tree, 257)
+# 
+# ggtree(y, aes(linetype = group)) + scale_x_break(c(0.00001, 0.00013), expand = F) + theme_bw() + hexpand(0.000009, direction = -1)#%<+% data
+
+p <- 
+  ggtree(y) %<+% data + scale_x_break(c(0.00001, 0.00013), expand = F) +  hexpand(0.00009, direction = -1) + hexpand(0.09, direction = 1) + theme_dark() #+ xlim(NA, 0.00013)
+# p
+# hehe
+# gheatmap(hehe, year, width = 0.005)
+# parent(tree, 127)
+# p + geom_nodepoint()
+
+p <- 
+  tree %>%
+  #drop.tip("AL513382.1") %>%
+  ggtree(cex = .2) %<+% data
+gheatmap(p, year)
+
+p1 <-
+    gheatmap(p, year,
+        width = 0.007 ,
+        offset = 0.00001,#0.000015,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size) +
+      scale_fill_manual(values = date_col,
+                        guide = guide_legend(order = 2)) +
+      labs(fill = "Year") +
+      hexpand(0.2, direction = 1) +
+      vexpand(vertical_expansion)
+p1
+
+# add the country of isolation
+p2 <- p1 + new_scale_fill()
+
+p3 #<-
+    gheatmap(p2, malawi_amr,
+        width = 0.1 ,
+        offset = 0.000012,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        #hjust = 0.5,
+        font.size = font_size) +
+  scale_fill_manual(values = amr_gene_col,
+                    na.translate = F,
+                    labels = c("Yes", "No"),
+                    guide = guide_legend(order = 3)) +
+  labs(fill = "AMR genes and Plasmids") +
+  #hexpand(.02) +
+  vexpand(vertical_expansion) + xlim(-.0000005, 0.000145) + theme_dark()
+
+p3
+
+# add region column
+
+p6 <- p5 + new_scale_fill()
+
+p7 <-
+    gheatmap(p6, amr_determinants,
+        width = 0.005 ,
+        offset = 0.000002,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "Region") +
+  scale_fill_manual(values = region_col, na.translate = F,
+                    guide = guide_legend(order = 4)) + 
+   labs(fill = "Region") +
+  #hexpand(.2) +
+  vexpand(vertical_expansion)
+p7
+
+
+p8 <- p7 + new_scale_fill()
+
+p9 <-
+    gheatmap(p8, amr_determinants,
+        width = 0.2,
+        offset = 0.000003,
+        colnames_position = "top",
+        colnames_angle = 90,
+        colnames_offset_y = y_offset,
+        hjust = 0.5,
+        font.size = font_size,
+        legend_title = "AMR genes and Plasmids") +
+  scale_fill_manual(values = amr_gene_col, na.translate = F,
+                    labels = c("Absent", "Present"),
+                    guide = guide_legend(order = 5)) +
+    labs(fill = "AMR/Plasmid") +
+  hexpand(.2) +
+  vexpand(vertical_expansion) #+
+  guides(fill=guide_legend(ncol = 1, byrow = TRUE))
+
+p9 + theme(legend.key.size = unit(.1, "cm")) +
+  theme_light(base_size = 5) +
+  xlim(NA, 0.000155) +
+  ylim(-0.000001, NA)
+
+
+```
 
 
 ```{r}
