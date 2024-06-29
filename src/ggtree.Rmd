@@ -6,15 +6,6 @@ editor_options:
 ---
 
 ```{r}
-pacman::p_load(ape,
-               ggtree,
-               ggnewscale,
-               phangorn,
-               tidyverse,
-               janitor,
-               plotly,
-               viridis)
-
 # library(pak)
 # pak("ggtree")
 # pak("igraph")
@@ -29,13 +20,11 @@ library(plotly)
 library(viridis)
 library(tidytree)
 library(ggbreak)
-# load the metadata
-load(file = "./docs/metadata_plus_mykrobe.RData")
+library(devtools)
 
 # load the metadata
 load(file = "./docs/metadata_plus_mykrobe.RData")
 
-# load the metadata
 
 ```
 
@@ -114,7 +103,7 @@ save(tree, malawi, malawi_no_ref, global, global_no_ref,
   file = "./data/r/trees.Rdata")
 ```
 
-
+# load data
 ```{r}
 
 load("./data/r/trees.Rdata")
@@ -261,11 +250,9 @@ tree <- reorder.phylo(tree, order = "cladewise")
 # plot parameters
 y_offset <- 15
 vertical_expansion = c( 0.0002)
-scale_fill_grey()
-font_size <- 1
-value_colors <-
-  c("black", "grey")
-value_colors <- c("#f9f6f3", "#3a0177")
+font_size <- 0.5
+
+
 # # convert tree to tible for easy assessing
 # tree %>% as.tibble() %>% filter(label %in% c("AL513382.1", "ERR279139"))
 # 
@@ -303,8 +290,9 @@ p <-
   tree %>%
   #drop.tip("AL513382.1") %>%
   ggtree(cex = .2) %<+% data +
-  geom_tippoint(aes(color=genotype), size = 0.1) +
-  scale_fill_brewer(na.translate = F)
+  geom_tippoint(aes(color=genotype), size = 0.02) +
+  scale_color_viridis_d(na.translate = FALSE,
+                        guide = guide_legend(order = 1))
 
 p
 
@@ -317,13 +305,12 @@ p3 <-
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Year") +
-      scale_fill_grey(end = 1, na.translate = FALSE) +
-      #scale_fill_manual(c()) +
-  #scale_fill_viridis_d(aesthetics = "fill") +
-    labs(fill = "Year") +
-  hexpand(.2) +
-  vexpand(vertical_expansion) +
-  theme(legend.justification = "left") + guides(fill=guide_legend(ncol = 1, byrow = TRUE))
+      scale_fill_manual(values = date_col,
+                        guide = guide_legend(order = 2)) +
+      labs(fill = "Year") +
+      hexpand(.2) +
+      vexpand(vertical_expansion) #+
+      guides(fill=guide_legend(ncol = 1, byrow = TRUE)) 
 
 p3
 
@@ -340,12 +327,14 @@ p5 <-
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Group") +
-  #scale_fill_viridis_d(aesthetics = "fill", option = "H") +
-  scale_fill_manual(values = value_colors, na.translate = F)+
-    labs(fill = "Year") +
+  scale_fill_manual(values = group_col,
+                    na.translate = F,
+                    labels = c("Yes", "No"),
+                    guide = guide_legend(order = 3)) +
+  labs(fill = "This Study") +
   hexpand(.2) +
-  vexpand(vertical_expansion) +
-  theme(legend.justification = "left")
+  vexpand(vertical_expansion)
+
 p5
 
 # add region column
@@ -362,12 +351,11 @@ p7 <-
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Region") +
-  #scale_fill_viridis_d(aesthetics = "fill", option = "H", direction = -1) +
-  scale_fill_manual(values = value_colors, na.translate = F) + 
+  scale_fill_manual(values = region_col, na.translate = F,
+                    guide = guide_legend(order = 4)) + 
    labs(fill = "Region") +
   hexpand(.2) +
-  vexpand(vertical_expansion) +
-  theme(legend.justification = "left")
+  vexpand(vertical_expansion)
 p7
 
 
@@ -383,10 +371,13 @@ p9 <-
         hjust = 0.5,
         font.size = font_size,
         legend_title = "AMR genes and Plasmids") +
-  scale_fill_manual(values = value_colors, na.translate = F) +
-    labs(fill = "Presence/Absence") +
+  scale_fill_manual(values = amr_gene_col, na.translate = F,
+                    labels = c("Absent", "Present"),
+                    guide = guide_legend(order = 5)) +
+    labs(fill = "AMR/Plasmid") +
   hexpand(.2) +
-  vexpand(vertical_expansion)
+  vexpand(vertical_expansion) #+
+  guides(fill=guide_legend(ncol = 1, byrow = TRUE))
 
 p9 + theme(legend.key.size = unit(.1, "cm")) +
   theme_light(base_size = 5) +
@@ -465,11 +456,12 @@ p3 <-
         hjust = 0.5,
         font.size = font_size,
         legend_title = "Plasmid Replicons") +
-  scale_fill_viridis_d(aesthetics = "fill") +
-    labs(fill = "Year") +
+  scale_fill_manual(values = date_col) +
+  labs(fill = "Year") +
   hexpand(.2) +
   vexpand(vertical_expansion) +
-  theme(legend.justification = "left") + guides(fill=guide_legend(ncol = 1, byrow = TRUE))
+  theme(legend.justification = "left") +
+  guides(fill=guide_legend(ncol = 1, byrow = TRUE))
 
 p3
 
