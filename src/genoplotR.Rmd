@@ -17,7 +17,7 @@ install.packages("genoPlotR")
 install.packages("janitor")
 install.packages("stringr")
 install.packages("config")
-remotes::install_github("clauswilke/colorblindr")
+#remotes::install_github("clauswilke/colorblindr")
 ```
 
 # the chromosome
@@ -496,9 +496,133 @@ dev.off()
 ```
 
 
-the output of phaster shows some phage regions which are conserved across
-the isolates. Now we will look at these phages in more detail using GenoPlotR
+
+# the plasmid vs pHCM1
 
 ```{r}
+
+setwd("/Users/zuza/typhi")
+
+pHCM1 <- "outputs/gbk/pHCM1/pHCM1.gbk"
+#pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/R27/R27.gbk"
+  
+
+
+# BKQT8S <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/BKQT8S/BKQT8S.gbk"
+
+BKQT8S <- "outputs/gbk/BKQT8S/BKQT8S.gbk"
+
+comparison_file <- "docs/pHCM1-BKQT8S.tsv"
+
+# read the dna segments into genoplotR
+segment1 <-
+  read_dna_seg_from_file(pHCM1, fileType = "detect")
+
+segment2 <-
+  read_dna_seg_from_file(BKQT8S, fileType = "detect")
+
+comparison <- read_comparison_from_blast(comparison_file)
+
+#plot the segments
+whole_plasmid <-
+  plot_gene_map(dna_segs = list(segment1, segment2),
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"))
+             
+
+#subset the comparison above
+dna_seg1 <- filter(segment1, start >= 105911, end <= 187475)
+dna_seg2 <- filter(segment2, start >= 64601, end <= 114328)
+
+
+# write dnaseg 1 for manual annotation
+##write_csv(dna_seg1 %>% select(gene, product), "docs/pHCM1_manual_annotation.csv")
+#write_csv(dna_seg2 %>% select(gene, product), "docs/BKQT8S_manual_annotation.csv")
+
+dna_seg1_gene_names <- read_csv("docs/pHCM1_manual_annotation.csv")
+dna_seg2_gene_names <- read_csv("docs/BKQT8S_manual_annotation.csv")
+
+dna_seg1$gene <- dna_seg1_gene_names$gene
+
+dna_seg2$gene <- dna_seg2_gene_names$gene
+
+# color the is elements
+is_elements <- c("IS1X2", "TnAs2" , "tetC" , "IS4321R" , "tetR" , "IS4321L", "ISVsa5" , "ISBcen27", "IS4321R", "IS26", "ISStma11" , "IS5075", "IS1R" , "ISVsa5", "TnAs3", "ISVsa5",  "IS1R" , "IS26")
+
+amr_genes <- c("merR",  "merT_1", "merP_1", "merC_1", "merA_1", "dfrA14" , "blaTEM-1", "sul2", "aph(3'')-Ib",  "aph(6)-Id" , "merA_2" , "merC_2" , "merP_2" , "merP_2" , "merT_2" , "tet(B)", "Sul2" )
+
+other_genes <- c("repE" , "xerC" , "hin" , "hns" , "smc" , "dcm" , "tnpR" , "repA" , "yqjZ" , "umuD" , "umuC", "-", "gltS", "gltS_1", "gltS_2")
+
+# change colors of blocks for pHCM1
+dna_seg1$fill <- 
+  case_when(dna_seg1$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$fill <- 
+  case_when(dna_seg1$gene %in% amr_genes ~ "#440154",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$fill <- 
+  case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$col <- 
+  case_when(dna_seg1$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg1$col)
+
+dna_seg1$col <- 
+  case_when(dna_seg1$gene %in% amr_genes ~ "#440154",
+            TRUE ~ dna_seg1$col)
+
+dna_seg1$col <- 
+  case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg1$col)
+
+# change colors for BKQT8S
+dna_seg2$fill <- 
+  case_when(dna_seg2$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg2$fill)
+
+dna_seg2$fill <- 
+  case_when(dna_seg2$gene %in% amr_genes ~ "#440154",
+            TRUE ~ dna_seg2$fill)
+
+dna_seg2$fill <- 
+  case_when(dna_seg2$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg2$fill)
+
+dna_seg2$col <- 
+  case_when(dna_seg2$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg2$col)
+
+dna_seg2$col <- 
+  case_when(dna_seg2$gene %in% amr_genes ~ "#440154",
+            TRUE ~ dna_seg2$col)
+
+dna_seg2$col <- 
+  case_when(dna_seg2$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg2$col)
+annotation1 <-
+  annotation(text = dna_seg1$gene,
+             x1 = middle(dna_seg1),
+             rot = 30)
+annotation2 <-
+  annotation(text = dna_seg2$gene,
+             x1 = middle(dna_seg2),
+             rot = 30)
+
+#plot the new comparison
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
+              gene_type = "arrows",
+              comparisons = list(comparison),
+              dna_seg_labels = c("pHCM1", "BKQT8S"),
+              annotations = list(annotation1, annotation2),
+              annotation_height = c(2, 1.2),
+              annotation_cex = .5,
+              dna_seg_scale = TRUE, scale = FALSE,
+              main = "Comparison of AMR region in pHCM1 and BKQT8S",
+              legend = TRUE,
+              dna_seg_label_cex = 1)
+
 
 ```
