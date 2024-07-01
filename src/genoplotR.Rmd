@@ -540,13 +540,13 @@ dna_seg1$gene <- dna_seg1_gene_names$gene
 dna_seg2$gene <- dna_seg2_gene_names$gene
 
 # color the is elements
-is_elements <- c("IS1X2", "TnAs2" , "tetC" , "IS4321R" , "tetR" , "IS4321L", "ISVsa5" , "ISBcen27", "IS4321R", "IS26", "ISStma11" , "IS5075", "IS1R" , "ISVsa5", "TnAs3", "ISVsa5",  "IS1R" , "IS26")
+is_elements <- c("IS1X2", "TnAs2" , "tetC" , "IS4321R" , "tetR" , "IS4321L", "ISVsa5" , "ISBcen27", "IS4321R", "IS26", "ISStma11" , "IS5075", "IS1R" , "ISVsa5", "TnAs3", "ISVsa5",  "IS1R" , "IS26", "IS1D")
 
 amr_genes <- c( "dfrA14" , "blaTEM-1", "sul2", "aph(3'')-Ib",  "aph(6)-Id" , "tet(B)", "Sul2", "catA1" )
 
 mercury_resistance <- c("merR",  "merT_1", "merP_1", "merC_1", "merA_1",  "merA_2" , "merC_2" , "merP_2" , "merP_2" , "merT_2" )
 
-other_genes <- c("repE" , "xerC" , "hin" , "hns" , "smc" , "dcm" , "tnpR" , "repA" , "yqjZ" , "umuD" , "umuC", "-", "gltS", "gltS_1", "gltS_2", "hha")
+other_genes <- c("repE" , "xerC" , "hin" , "hns" , "smc" , "dcm" , "tnpR" , "repA" , "yqjZ" , "umuD" , "umuC", "-", "gltS", "gltS_1", "gltS_2", "hha", "cyaA", "cyaY")
 
 # change colors of blocks for pHCM1
 dna_seg1$fill <- 
@@ -635,3 +635,179 @@ plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
 
 dev.off() 
 ```
+
+
+```{r}
+# load assemblies
+ct18 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/AL513382.1/AL513382.1.gbk"
+s1017142 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/1017142/1017142.gbk"
+A53789 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/A53789/A53789.gbk"
+A58390 <-
+  "/Users/zuza/typhi/results/prokka/chromosome/A58390/A58390.gbk"
+BKQT8S <-
+  "/Users/zuza/typhi/results/prokka/chromosome/BKQT8S/BKQT8S.gbk"
+BKQU3X <-
+  "/Users/zuza/typhi/results/prokka/chromosome/BKQU3X/BKQU3X.gbk"
+  
+# load blast comparisons
+comparison_file_1 <-
+  "/Users/zuza/typhi/results/blast/ct18_vs_1017142.txt"
+comparison_file_2 <-
+  "/Users/zuza/typhi/results/blast/1017142_vs_A3789.txt"
+comparison_file_3 <-
+  "/Users/zuza/typhi/results/blast/A53789_vs_A58390.txt"
+comparison_file_4 <-
+  "/Users/zuza/typhi/results/blast/A58390_vs_BKQT8S.txt"
+comparison_file_5 <-
+  "/Users/zuza/typhi/results/blast/BKQT8S_vs_BKQU3X.txt"
+
+# create dna segments
+dna_seg_ref <-
+  read_dna_seg_from_genbank(ct18)
+dna_seg1 <- filter(dna_seg_ref, start > 3467657, end <= 3475923)
+dna_seg1 <- dna_seg1 %>% filter(gene != "hemC") %>% filter( synonym != "STY_03442")
+plot_gene_map(list(dna_seg1), gene_type = "arrows", annotations = list(annot1))
+annot1 <- annotation(text = dna_seg1$gene, x1=middle(dna_seg1), rot = 30)
+
+
+
+dna_seq_1017142 <-
+  read_dna_seg_from_genbank(s1017142)
+
+dna_seg2 <- filter(dna_seq_1017142, start >= 4502005, end <= 4508283)
+plot_gene_map(list(dna_seg2), gene_type = "arrows", annotations = list(annot2))
+annot2 <- annotation(text = dna_seg2$gene, x1=middle(dna_seg2), rot = 30)
+
+dna_seg2 <- dna_seg2 %>% filter(gene != "hemC")
+
+dna_seq_A58390 <-
+  read_dna_seg_from_genbank(A58390)
+dna_seg3 <- filter(dna_seq_A58390, start >= 4447227, end <= 4454218)
+plot_gene_map(list(dna_seg3), gene_type = "arrows", annotations = list(annot3))
+
+dna_seg3$gene[3] <- "IS1D"
+dna_seg3$gene[4] <- "IS1R"
+annot3 <- annotation(text = dna_seg3$gene, x1=middle(dna_seg3), rot = 30)
+
+dna_seg3 <- dna_seg3 %>% filter(gene != "hemC") %>% filter(synonym != "STY_04383")
+
+
+
+dna_seq_BKQT8S <-
+  read_dna_seg_from_genbank(BKQT8S)
+dna_seg4 <- filter(dna_seq_BKQT8S, start >= 4447227, end <= 4454442)
+
+plot_gene_map(list(dna_seg4), gene_type = "arrows", annotations = list(annot4))
+dna_seg4$gene[5] <- "IS1D"
+dna_seg4$gene[6] <- "IS1R"
+annot4 <- annotation(text = dna_seg4$gene, x1=middle(dna_seg4), rot = 30)
+dna_seg4 <- dna_seg4 %>% filter(synonym != "STY_04384")
+
+
+dna_seq_BKQU3X <-
+  read_dna_seg_from_genbank(BKQU3X)
+dna_seg5 <- filter(dna_seq_BKQU3X, start >= 4447227, end <= 4454803)
+plot_gene_map(list(dna_seg5), gene_type = "arrows", annotations = list(annot5))
+dna_seg5$gene[5] <- "IS1D"
+dna_seg5$gene[6] <- "IS1R"
+annot5 <- annotation(text = dna_seg5$gene, x1=middle(dna_seg5), rot = 30)
+dna_seg5 <- dna_seg5 %>% filter(gene != "hemC") %>% filter(synonym != "STY_04381")
+
+
+# create comparison files
+system(command = "blastn -query /Users/zuza/repos/H58/docs/sequence.fasta -subject /Users/zuza/repos/H58/outputs/assemblies/polca/A58390.fasta -outfmt 6 -out docs/ct18_a58390_comparison.txt")
+
+comparison_1 <-
+  read_comparison_from_blast("docs/ct18_a58390_comparison.txt")
+comparison_2 <-
+  read_comparison_from_blast(comparison_file_2,
+                           sort_by = "per_id")
+comparison_3 <-
+  read_comparison_from_blast(comparison_file_3,
+                           sort_by = "per_id")
+comparison_4 <-
+  read_comparison_from_blast(comparison_file_4,
+                           sort_by = "per_id")
+comparison_5 <-
+  read_comparison_from_blast(comparison_file_5,
+                           sort_by = "per_id")
+
+
+
+dna_seg1$fill <- 
+  case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg3$fill <- 
+  case_when(dna_seg3$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg3$fill)
+
+dna_seg3$fill <- 
+  case_when(dna_seg3$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg3$fill)
+
+
+dna_seg4$fill <- 
+  case_when(dna_seg4$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg4$fill)
+
+dna_seg4$fill <- 
+  case_when(dna_seg4$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg4$fill)
+
+
+dna_seg5$fill <- 
+  case_when(dna_seg5$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg5$fill)
+
+dna_seg5$fill <- 
+  case_when(dna_seg5$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg5$fill)
+
+
+dna_seg1$col <- "black"
+dna_seg3$col <- "black"
+dna_seg4$col <- "black"
+dna_seg5$col <- "black"
+
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg3, dna_seg4, dna_seg5),
+              gene_type = "arrows",
+              annotations = list(annot1, annot3, annot4, annot5),
+              comparisons = list(comparison_1, comparison_4, comparison_5),
+              dna_seg_scale = TRUE,
+              dna_seg_labels = c("CT18", "A58390", "BKQT8S", "BKQU3X"),
+              annotation_height = 2,
+              main  = "Comparison of the insertion site at cyaA")
+
+
+```
+
+
+```{r}
+# save the phages
+outdir <- "outputs/plots"
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "cyaA_region.pdf")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+pdf(plot_name,
+    width = 40,
+    height = 12,
+    pointsize = 30)
+
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg3, dna_seg4, dna_seg5),
+              gene_type = "arrows",
+              annotations = list(annot1, annot3, annot4, annot5),
+              comparisons = list(comparison_1, comparison_4, comparison_5),
+              dna_seg_scale = TRUE,
+              dna_seg_labels = c("CT18", "A58390", "BKQT8S", "BKQU3X"),
+              annotation_height = 2,
+              main  = "Comparison of the insertion site at cyaA")
+
+dev.off() 
+```
+
