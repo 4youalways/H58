@@ -12,11 +12,11 @@ this scripts contains code used to plot the dna segments from the assemblies
 # installing packages
 ```{r, eval=FALSE}
 
-install.packages("tidyverse") 
-install.packages("genoPlotR")
-install.packages("janitor")
-install.packages("stringr")
-install.packages("config")
+# install.packages("tidyverse") 
+# install.packages("genoPlotR")
+# install.packages("janitor")
+# install.packages("stringr")
+# install.packages("config")
 #remotes::install_github("clauswilke/colorblindr")
 ```
 
@@ -501,14 +501,7 @@ dev.off()
 
 ```{r}
 
-setwd("/Users/zuza/typhi")
-
 pHCM1 <- "outputs/gbk/pHCM1/pHCM1.gbk"
-#pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/R27/R27.gbk"
-  
-
-
-# BKQT8S <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/BKQT8S/BKQT8S.gbk"
 
 BKQT8S <- "outputs/gbk/BKQT8S/BKQT8S.gbk"
 
@@ -549,9 +542,11 @@ dna_seg2$gene <- dna_seg2_gene_names$gene
 # color the is elements
 is_elements <- c("IS1X2", "TnAs2" , "tetC" , "IS4321R" , "tetR" , "IS4321L", "ISVsa5" , "ISBcen27", "IS4321R", "IS26", "ISStma11" , "IS5075", "IS1R" , "ISVsa5", "TnAs3", "ISVsa5",  "IS1R" , "IS26")
 
-amr_genes <- c("merR",  "merT_1", "merP_1", "merC_1", "merA_1", "dfrA14" , "blaTEM-1", "sul2", "aph(3'')-Ib",  "aph(6)-Id" , "merA_2" , "merC_2" , "merP_2" , "merP_2" , "merT_2" , "tet(B)", "Sul2" )
+amr_genes <- c( "dfrA14" , "blaTEM-1", "sul2", "aph(3'')-Ib",  "aph(6)-Id" , "tet(B)", "Sul2", "catA1" )
 
-other_genes <- c("repE" , "xerC" , "hin" , "hns" , "smc" , "dcm" , "tnpR" , "repA" , "yqjZ" , "umuD" , "umuC", "-", "gltS", "gltS_1", "gltS_2")
+mercury_resistance <- c("merR",  "merT_1", "merP_1", "merC_1", "merA_1",  "merA_2" , "merC_2" , "merP_2" , "merP_2" , "merT_2" )
+
+other_genes <- c("repE" , "xerC" , "hin" , "hns" , "smc" , "dcm" , "tnpR" , "repA" , "yqjZ" , "umuD" , "umuC", "-", "gltS", "gltS_1", "gltS_2", "hha")
 
 # change colors of blocks for pHCM1
 dna_seg1$fill <- 
@@ -566,17 +561,10 @@ dna_seg1$fill <-
   case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
             TRUE ~ dna_seg1$fill)
 
-dna_seg1$col <- 
-  case_when(dna_seg1$gene %in% is_elements ~ "#01665e",
-            TRUE ~ dna_seg1$col)
 
-dna_seg1$col <- 
-  case_when(dna_seg1$gene %in% amr_genes ~ "#440154",
-            TRUE ~ dna_seg1$col)
-
-dna_seg1$col <- 
-  case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
-            TRUE ~ dna_seg1$col)
+dna_seg1$fill <-
+  case_when(dna_seg1$gene %in% mercury_resistance ~ "white",
+            TRUE ~ dna_seg1$fill)
 
 # change colors for BKQT8S
 dna_seg2$fill <- 
@@ -591,18 +579,10 @@ dna_seg2$fill <-
   case_when(dna_seg2$gene %in% other_genes ~ "#C9C9C9",
             TRUE ~ dna_seg2$fill)
 
-dna_seg2$col <- 
-  case_when(dna_seg2$gene %in% is_elements ~ "#01665e",
-            TRUE ~ dna_seg2$col)
+dna_seg1$col <- "black"
+dna_seg2$col <- "black"
 
-dna_seg2$col <- 
-  case_when(dna_seg2$gene %in% amr_genes ~ "#440154",
-            TRUE ~ dna_seg2$col)
-
-dna_seg2$col <- 
-  case_when(dna_seg2$gene %in% other_genes ~ "#C9C9C9",
-            TRUE ~ dna_seg2$col)
-annotation1 <-
+ annotation1 <-
   annotation(text = dna_seg1$gene,
              x1 = middle(dna_seg1),
              rot = 30)
@@ -615,8 +595,8 @@ annotation2 <-
 plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
               gene_type = "arrows",
               comparisons = list(comparison),
-              dna_seg_labels = c("pHCM1", "BKQT8S"),
-              annotations = list(annotation1, annotation2),
+              #dna_seg_labels = c(dna_seg1 ="pHCM1", dna_seg2 ="BKQT8S"),
+              annotations = list( annotation1, annotation2),
               annotation_height = c(2, 1.2),
               annotation_cex = .5,
               dna_seg_scale = TRUE, scale = FALSE,
@@ -625,4 +605,33 @@ plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
               dna_seg_label_cex = 1)
 
 
+```
+
+
+```{r}
+# save the phages
+outdir <- "outputs/plots"
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "plasmid_comparison.pdf")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+pdf(plot_name,
+    width = 40,
+    height = 8,
+    pointsize = 30)
+
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
+              gene_type = "arrows",
+              comparisons = list(comparison),
+              #dna_seg_labels = c(dna_seg1 ="pHCM1", dna_seg2 ="BKQT8S"),
+              annotations = list( annotation1, annotation2),
+              annotation_height = c(2, 1.2),
+              annotation_cex = .5,
+              dna_seg_scale = TRUE, scale = FALSE,
+              main = "Comparison of AMR region in pHCM1 and BKQT8S",
+              legend = TRUE,
+              dna_seg_label_cex = 1)
+
+dev.off() 
 ```
