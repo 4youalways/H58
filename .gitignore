@@ -406,3 +406,4 @@ work/
 # r session history
 .Rhistory
 
+.Rproj.user
