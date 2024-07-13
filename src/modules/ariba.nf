@@ -19,6 +19,7 @@ process ARIBA_RUN {
 
     cpus 10
     maxForks 2
+    errorStrategy 'finish'
     
     container 'sangerpathogens/ariba:release-v2.14.6 '
     
