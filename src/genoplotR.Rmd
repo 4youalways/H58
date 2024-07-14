@@ -72,7 +72,7 @@ outdir <- "outputs/plots"
 ```
 
 
-## bacteriophage region positions in the reference
+# bacteriophage region positions in the reference
 Using phaster we located bacteriophages on the chromosome. 
 these regions are plotted over the next few lines. a total of 8 phage regions were identified and 5 of them are intact
 
@@ -664,6 +664,11 @@ comparison_file_4 <-
 comparison_file_5 <-
   "/Users/zuza/typhi/results/blast/BKQT8S_vs_BKQU3X.txt"
 
+```
+
+# Figure4
+
+```{r}
 # create dna segments
 dna_seg_ref <-
   read_dna_seg_from_genbank(ct18)
@@ -718,16 +723,22 @@ dna_seg5 <- dna_seg5 %>% filter(gene != "hemC") %>% filter(synonym != "STY_04381
 
 
 # create comparison files
-system(command = "blastn -query /Users/zuza/repos/H58/docs/sequence.fasta -subject /Users/zuza/repos/H58/outputs/assemblies/polca/A58390.fasta -outfmt 6 -out docs/ct18_a58390_comparison.txt")
+system(command = "blastn -query /Users/zuza/repos/H58/outputs/assemblies/polca/1017142.fasta -subject /Users/zuza/repos/H58/outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
+
+# comparison file for ct18_a58390
+#comparison_1 <-
+#  read_comparison_from_blast("docs/ct18_a58390_comparison.txt")
 
 comparison_1 <-
-  read_comparison_from_blast("docs/ct18_a58390_comparison.txt")
+  read_comparison_from_blast(comparison_file_1,
+                           sort_by = "per_id")
+
 comparison_2 <-
-  read_comparison_from_blast(comparison_file_2,
+  read_comparison_from_blast("docs/1017142_a58390_comparison.txt",
                            sort_by = "per_id")
-comparison_3 <-
-  read_comparison_from_blast(comparison_file_3,
-                           sort_by = "per_id")
+#comparison_3 <-
+#  read_comparison_from_blast(comparison_file_3,
+#                           sort_by = "per_id")
 comparison_4 <-
   read_comparison_from_blast(comparison_file_4,
                            sort_by = "per_id")
@@ -769,16 +780,17 @@ dna_seg5$fill <-
 
 
 dna_seg1$col <- "black"
+dna_seg2$col <- "black"
 dna_seg3$col <- "black"
 dna_seg4$col <- "black"
 dna_seg5$col <- "black"
 
-plot_gene_map(dna_segs = list(dna_seg1, dna_seg3, dna_seg4, dna_seg5),
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
               gene_type = "arrows",
-              annotations = list(annot1, annot3, annot4, annot5),
-              comparisons = list(comparison_1, comparison_4, comparison_5),
+              annotations = list(annot1, annot2, annot3, annot4, annot5),
+              comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
               dna_seg_scale = TRUE,
-              dna_seg_labels = c("CT18", "A58390", "BKQT8S", "BKQU3X"),
+              dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
               annotation_height = 2,
               main  = "Comparison of the insertion site at cyaA")
 
@@ -790,23 +802,317 @@ plot_gene_map(dna_segs = list(dna_seg1, dna_seg3, dna_seg4, dna_seg5),
 # save the phages
 outdir <- "outputs/plots"
 plotting_dir <- file.path(outdir, Sys.Date())
-plot_name <- file.path(plotting_dir, "cyaA_region.pdf")
+plot_name <- file.path(plotting_dir, "Figure4.pdf")
 
 if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
 
 pdf(plot_name,
     width = 40,
-    height = 12,
+    height = 18,
     pointsize = 30)
 
-plot_gene_map(dna_segs = list(dna_seg1, dna_seg3, dna_seg4, dna_seg5),
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
               gene_type = "arrows",
-              annotations = list(annot1, annot3, annot4, annot5),
-              comparisons = list(comparison_1, comparison_4, comparison_5),
+              annotations = list(annot1, annot2, annot3, annot4, annot5),
+              comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
               dna_seg_scale = TRUE,
-              dna_seg_labels = c("CT18", "A58390", "BKQT8S", "BKQU3X"),
+              dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
               annotation_height = 2,
               main  = "Comparison of the insertion site at cyaA")
+
+dev.off() 
+```
+
+
+# FigureS1
+
+```{r}
+# create dna segments
+
+dna_seg_ref <-
+  read_dna_seg_from_genbank("data/ref/sequence.gb")
+
+dna_seg_ref <-
+  read_dna_seg_from_genbank(ct18)
+dna_seg1 <- filter(dna_seg_ref, start >= 1682538, end <= 1698553)
+plot_gene_map(list(dna_seg1), gene_type = "arrows", annotations = list(annot1))
+annot1 <- annotation(text = dna_seg1$gene, x1=middle(dna_seg1), rot = 30)
+
+
+
+dna_seq_1017142 <-
+  read_dna_seg_from_genbank(s1017142)
+dna_seg2 <- filter(dna_seq_1017142, start >= 2467391, end <= 2483298)
+plot_gene_map(list(dna_seg2), gene_type = "arrows", annotations = list(annot2))
+annot2 <- annotation(text = dna_seg2$gene, x1=middle(dna_seg2), rot = 30)
+
+
+dna_seq_A58390 <-
+  read_dna_seg_from_genbank(A58390)
+dna_seg3 <- filter(dna_seq_A58390, start >= 2551524, end <= 2567431)
+plot_gene_map(list(dna_seg3), gene_type = "arrows", annotations = list(annot3))
+annot3 <- annotation(text = dna_seg3$gene, x1=middle(dna_seg3), rot = 30)
+
+
+dna_seq_BKQT8S <-
+  read_dna_seg_from_genbank(BKQT8S)
+dna_seg4 <- filter(dna_seq_BKQT8S, start >= 2551470, end <= 2567377)
+
+plot_gene_map(list(dna_seg4), gene_type = "arrows", annotations = list(annot4))
+annot4 <- annotation(text = dna_seg4$gene, x1=middle(dna_seg4), rot = 30)
+
+
+dna_seq_BKQU3X <-
+  read_dna_seg_from_genbank(BKQU3X)
+dna_seg5 <- filter(dna_seq_BKQU3X, start >= 2551463, end <= 2567370)
+plot_gene_map(list(dna_seg5), gene_type = "arrows", annotations = list(annot5))
+annot5 <- annotation(text = dna_seg5$gene, x1=middle(dna_seg5), rot = 30)
+
+
+# create comparison files
+# system(command = "blastn -query /Users/zuza/repos/H58/outputs/assemblies/polca/1017142.fasta -subject /Users/zuza/repos/H58/outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
+
+# comparison file for ct18_a58390
+#comparison_1 <-
+#  read_comparison_from_blast("docs/ct18_a58390_comparison.txt")
+
+comparison_1 <-
+  read_comparison_from_blast(comparison_file_1,
+                           sort_by = "per_id")
+
+comparison_2 <-
+  read_comparison_from_blast("docs/1017142_a58390_comparison.txt",
+                           sort_by = "per_id")
+#comparison_3 <-
+#  read_comparison_from_blast(comparison_file_3,
+#                           sort_by = "per_id")
+comparison_4 <-
+  read_comparison_from_blast(comparison_file_4,
+                           sort_by = "per_id")
+comparison_5 <-
+  read_comparison_from_blast(comparison_file_5,
+                           sort_by = "per_id")
+
+
+
+dna_seg1$fill <- 
+  case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg3$fill <- 
+  case_when(dna_seg3$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg3$fill)
+
+dna_seg3$fill <- 
+  case_when(dna_seg3$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg3$fill)
+
+
+dna_seg4$fill <- 
+  case_when(dna_seg4$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg4$fill)
+
+dna_seg4$fill <- 
+  case_when(dna_seg4$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg4$fill)
+
+
+dna_seg5$fill <- 
+  case_when(dna_seg5$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg5$fill)
+
+dna_seg5$fill <- 
+  case_when(dna_seg5$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg5$fill)
+
+
+dna_seg1$col <- "black"
+dna_seg2$col <- "black"
+dna_seg3$col <- "black"
+dna_seg4$col <- "black"
+dna_seg5$col <- "black"
+
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
+              gene_type = "arrows",
+              annotations = list(annot1, annot2, annot3, annot4, annot5),
+              comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
+              dna_seg_scale = TRUE,
+              dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
+              annotation_height = 2,
+              main  = "Comparison of the insertion site at nlpC")
+
+
+```
+
+
+```{r}
+# save the phages
+outdir <- "outputs/plots"
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "FigureS1.pdf")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+pdf(plot_name,
+    width = 40,
+    height = 18,
+    pointsize = 30)
+
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
+              gene_type = "arrows",
+              annotations = list(annot1, annot2, annot3, annot4, annot5),
+              comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
+              dna_seg_scale = TRUE,
+              dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
+              annotation_height = 2,
+              main  = "Comparison of the insertion site at nlpC")
+
+dev.off() 
+```
+
+
+#Figure s2
+
+```{r}
+# create dna segments
+
+dna_seg_ref <-
+  read_dna_seg_from_genbank("data/ref/sequence.gb")
+
+dna_seg_ref <-
+  read_dna_seg_from_genbank(ct18)
+dna_seg1 <- filter(dna_seg_ref, start >= 3813583, end <= 3822270)
+plot_gene_map(list(dna_seg1), gene_type = "arrows", annotations = list(annot1))
+annot1 <- annotation(text = dna_seg1$gene, x1=middle(dna_seg1), rot = 30)
+
+
+
+dna_seq_1017142 <-
+  read_dna_seg_from_genbank(s1017142)
+dna_seg2 <- filter(dna_seq_1017142, start >= 8457, end <= 17144)
+plot_gene_map(list(dna_seg2), gene_type = "arrows", annotations = list(annot2))
+annot2 <- annotation(text = dna_seg2$gene, x1=middle(dna_seg2), rot = 30)
+
+
+dna_seq_A58390 <-
+  read_dna_seg_from_genbank(A58390)
+dna_seg3 <- filter(dna_seq_A58390, start >= 8457, end <= 17144)
+plot_gene_map(list(dna_seg3), gene_type = "arrows", annotations = list(annot3))
+annot3 <- annotation(text = dna_seg3$gene, x1=middle(dna_seg3), rot = 30)
+
+
+dna_seq_BKQT8S <-
+  read_dna_seg_from_genbank(BKQT8S)
+dna_seg4 <- filter(dna_seq_BKQT8S, start >= 8457, end <= 17144)
+
+plot_gene_map(list(dna_seg4), gene_type = "arrows", annotations = list(annot4))
+annot4 <- annotation(text = dna_seg4$gene, x1=middle(dna_seg4), rot = 30)
+
+
+dna_seq_BKQU3X <-
+  read_dna_seg_from_genbank(BKQU3X)
+dna_seg5 <- filter(dna_seq_BKQU3X, start >= 8457, end <= 17144)
+plot_gene_map(list(dna_seg5), gene_type = "arrows", annotations = list(annot5))
+annot5 <- annotation(text = dna_seg5$gene, x1=middle(dna_seg5), rot = 30)
+
+
+# create comparison files
+# system(command = "blastn -query /Users/zuza/repos/H58/outputs/assemblies/polca/1017142.fasta -subject /Users/zuza/repos/H58/outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
+
+# comparison file for ct18_a58390
+#comparison_1 <-
+#  read_comparison_from_blast("docs/ct18_a58390_comparison.txt")
+
+comparison_1 <-
+  read_comparison_from_blast(comparison_file_1,
+                           sort_by = "per_id")
+
+comparison_2 <-
+  read_comparison_from_blast("docs/1017142_a58390_comparison.txt",
+                           sort_by = "per_id")
+#comparison_3 <-
+#  read_comparison_from_blast(comparison_file_3,
+#                           sort_by = "per_id")
+comparison_4 <-
+  read_comparison_from_blast(comparison_file_4,
+                           sort_by = "per_id")
+comparison_5 <-
+  read_comparison_from_blast(comparison_file_5,
+                           sort_by = "per_id")
+
+
+
+dna_seg1$fill <- 
+  case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg3$fill <- 
+  case_when(dna_seg3$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg3$fill)
+
+dna_seg3$fill <- 
+  case_when(dna_seg3$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg3$fill)
+
+
+dna_seg4$fill <- 
+  case_when(dna_seg4$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg4$fill)
+
+dna_seg4$fill <- 
+  case_when(dna_seg4$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg4$fill)
+
+
+dna_seg5$fill <- 
+  case_when(dna_seg5$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg5$fill)
+
+dna_seg5$fill <- 
+  case_when(dna_seg5$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg5$fill)
+
+
+dna_seg1$col <- "black"
+dna_seg2$col <- "black"
+dna_seg3$col <- "black"
+dna_seg4$col <- "black"
+dna_seg5$col <- "black"
+
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
+              gene_type = "arrows",
+              annotations = list(annot1, annot2, annot3, annot4, annot5),
+              comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
+              dna_seg_scale = TRUE,
+              dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
+              annotation_height = 2,
+              main  = "Comparison of the insertion site at yidA")
+
+
+```
+
+
+```{r}
+# save the phages
+outdir <- "outputs/plots"
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "FigureS2.pdf")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+pdf(plot_name,
+    width = 40,
+    height = 18,
+    pointsize = 30)
+
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
+              gene_type = "arrows",
+              annotations = list(annot1, annot2, annot3, annot4, annot5),
+              comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
+              dna_seg_scale = TRUE,
+              dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
+              annotation_height = 2,
+              main  = "Comparison of the insertion site at yidA")
 
 dev.off() 
 ```

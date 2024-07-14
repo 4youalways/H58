@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
 # load packages
 ```{r}
@@ -14,43 +19,169 @@ outdir <- "outputs/plots"
 ```{r}
 
 plasmid <-
-  read_csv("docs/plasmid_data.csv")
+  read_csv("docs/plasmid_data.csv") %>%
+  rename("isolate_id" = "isolate id")
 
-#assign colnames for the table
-column_names <- colnames(plasmid)
+plasmid
 
-# draw the table
+reads <-
+  read_csv("docs/read_accessions.txt") %>%
+  clean_names() %>% rename("isolate_id" = "sample")
+ 
+reads
+
+sequencing_overview <-
+  read_csv("docs/sequencing_overview.csv") %>%
+  clean_names()
+
+sequencing_overview
+
+long_reads <-
+  base::merge(sequencing_overview, reads, by = "isolate_id") %>%
+  rename("long_read_accession_number" = "accession") %>%
+    select(c(isolate_id, year_of_isolation, source, short_read_accession_number,
+             long_read_accession_number, assembly_accession)) %>%
+             rename("assembly_accession_number" = "assembly_accession")
+  
+long_reads
+# remove underscore from column names
+column_names <- long_reads %>%
+  names() %>%
+  str_replace_all("_", " ") %>%
+  str_to_title()
+
+colnames(long_reads) <- column_names
+
+
+table_1_data <-
+  long_reads %>%
+  rename("isolate_id" = "Isolate Id")
+
+table_1_data
+
+
+#data for table 2
+assembly_stats <-
+  sequencing_overview %>%
+  select(isolate_id,
+           lineage,
+           length_of_assembly,
+           gc_percent,
+           number_of_contigs,
+           n50,
+           gc_percent)
+assembly_stats
+# remove underscore from column names
+column_names <- assembly_stats %>%
+  names() %>%
+  str_replace_all("_", " ") %>%
+  str_to_title()
+
+# assign the new column names to the dataframe
+colnames(assembly_stats) <- column_names
+
+table_2_data <-
+  merge(assembly_stats %>%
+      rename("isolate_id" = "Isolate Id"),
+      plasmid, by = "isolate_id") %>%
+      rename("Isolate Id" = "isolate_id")
+
+
+```
+
+
+# draw Table 1
+
+```{r}
 options(knitr.kable.NA = '')
-x <- plasmid %>%
+table_1 <- table_1_data %>%
+  rename("Isolate Id" = "isolate_id") %>%
   knitr::kable(booktabs = TRUE,
                longtable = TRUE,
                linesep = "",
                align = "l",
-               escape = FALSE,
-   col.names = linebreak(column_names, align = "l")) %>%
-  kable_styling(position = "left",
-                full_width = FALSE,
-                latex_options = c("striped", "repeat_header"),
-                stripe_color = "gray")
+               escape = FALSE) %>%
+  kable_styling(position = "center",
+                font_size = 15) %>%
+  column_spec(1,
+              bold = TRUE)
 
 
-
+table_1
 ```
 
 # save to plot plasmid and amr table
 ```{r}
 plotting_dir <- file.path(outdir, Sys.Date())
-plot_name <- file.path(plotting_dir, "Table2.png")
+plot_name <- file.path(plotting_dir, "Table1.pdf")
 
 if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
 
-save_kable(x, file = plot_name,
+save_kable(table_1, file = plot_name,
+           bs_theme = "simplex",
+           density = 10000)
+
+
+```
+
+# draw Table 2
+
+```{r}
+options(knitr.kable.NA = '')
+table_2 <- table_2_data %>%
+  knitr::kable(booktabs = TRUE,
+               longtable = TRUE,
+               linesep = "",
+               align = "l",
+               escape = FALSE,
+               "html") %>%
+  add_header_above(header =
+                     c("","Assembly Stats"= 5, "Plasmid replicons" = 3, "AMR determinants" = 6),
+                   font_size = 17) %>%
+  kable_styling(position = "center",
+                font_size = 14) %>%
+  column_spec(1,
+              bold = TRUE)
+
+
+table_2
+```
+
+#save table 2
+```{r}
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "Table2.pdf")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+save_kable(table_2, file = plot_name,
            bs_theme = "simplex")
 
 ```
 
 
-# load the isolate metadata
+# Save table 1
+```{r}
+plotting_dir <- file.path(outdir, Sys.Date())
+plot_name <- file.path(plotting_dir, "Table1.pdf")
+
+if (!dir.exists(plotting_dir)) {dir.create(plotting_dir, recursive = TRUE)}
+
+save_kable(table_1, file = plot_name,
+           bs_theme = "simplex")
+```
+
+
+
+
+
+
+
+
+
+
+
+
 ```{r}
 
 sequencing_overview <-
