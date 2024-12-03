@@ -7,7 +7,7 @@ usethis::use_data(date_col, overwrite = TRUE)
 
 genotype_col <- c("4.1.1" = "blue", "4.3.1.1" = "green", "4.3.1.1.EA1" = "Yellow", "4.3.1.2" = "Pink")
 
-group_col <- c("This study" = "#440154", "Other" = "#f6e8c3")
+group_col <- c("This study" = "#CC6677", "Other" = "#f6e8c3")
 
 region_col <- c("Other"  = "#f6e8c3", "Malawi" = "#440154")
 
