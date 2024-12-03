@@ -59,6 +59,10 @@ table_1_data <-
 
 table_1_data
 
+read_qc <-
+  read_table("/Users/zuza/repos/H58/outputs/nanoplot/nanostats/nanostats.tsv") %>%
+    tibble() %>%
+  clean_names()
 
 #data for table 2
 assembly_stats <-
@@ -69,22 +73,45 @@ assembly_stats <-
            gc_percent,
            number_of_contigs,
            n50,
-           gc_percent)
+           gc_percent,
+         busco_completeness_score_percent)
+
 assembly_stats
+
+table_data <-
+  merge(read_qc, assembly_stats) %>%
+    select(isolate_id,
+           number_of_reads,
+           mean_read_length,
+           mean_read_quality,
+           number_of_bases,
+           mean_length_n50,
+           mean_depth,
+           length_of_assembly,
+           gc_percent,
+           number_of_contigs,
+           n50,
+           gc_percent,
+           busco_completeness_score_percent,
+           lineage)
+
 # remove underscore from column names
-column_names <- assembly_stats %>%
+column_names <-
+  table_data %>%
   names() %>%
   str_replace_all("_", " ") %>%
   str_to_title()
 
 # assign the new column names to the dataframe
-colnames(assembly_stats) <- column_names
+colnames(table_data) <- column_names
 
-table_2_data <-
-  merge(assembly_stats %>%
+table_2_data_1 <-
+  merge(table_data %>%
       rename("isolate_id" = "Isolate Id"),
       plasmid, by = "isolate_id") %>%
       rename("Isolate Id" = "isolate_id")
+
+
 
 
 ```
@@ -128,7 +155,8 @@ save_kable(table_1, file = plot_name,
 
 ```{r}
 options(knitr.kable.NA = '')
-table_2 <- table_2_data %>%
+#table_2 <-
+  table_2_data_1 %>%
   knitr::kable(booktabs = TRUE,
                longtable = TRUE,
                linesep = "",
@@ -136,7 +164,7 @@ table_2 <- table_2_data %>%
                escape = FALSE,
                "html") %>%
   add_header_above(header =
-                     c("","Assembly Stats"= 5, "Plasmid replicons" = 3, "AMR determinants" = 6),
+                     c(" "= 1, "Oxford Nanopore Read Stats" = 6,"Assembly Stats"= 5, " " = 1, "Plasmid Replicons" = 3, "AMR Determinants" = 6),
                    font_size = 17) %>%
   kable_styling(position = "center",
                 font_size = 14) %>%
@@ -146,6 +174,249 @@ table_2 <- table_2_data %>%
 
 table_2
 ```
+
+# Table 2A
+this table has the read stats and assembly stats
+```{r}
+
+#table_2 <-
+  table_data %>%
+  select(!c(Lineage)) %>%
+  knitr::kable(booktabs = TRUE,
+               longtable = TRUE,
+               linesep = "",
+               align = "l",
+               escape = FALSE,
+               "html") %>%
+  add_header_above(header =
+                     c(" "= 1, "Oxford Nanopore Read Stats" = 6,"Assembly Stats"= 5),
+                   font_size = 17) %>%
+  kable_styling(position = "center",
+                font_size = 14) %>%
+  column_spec(1,
+              bold = TRUE)
+
+
+```
+
+
+# Table 2B
+
+```{r}
+
+#table2A <-
+  plasmid %>%
+  mutate(Lineage =
+           case_when(plasmid$isolate_id %in%
+                       table_data$`Isolate Id` ~
+                       table_data$Lineage)) %>%
+  select(c(isolate_id,
+           Lineage,
+           IncFIAHI1,
+           IncHI1A,
+           IncHI1BR27,
+           gyrA_S83F,
+           `blaTEM-1D`,
+           sul2,
+           dfrA14,
+           tetB,
+           `aph(3'')-Ib`)) %>%
+  knitr::kable(booktabs = TRUE,
+               longtable = TRUE,
+               linesep = "",
+               align = "l",
+               escape = FALSE,
+               "html") %>%
+  add_header_above(header =
+                     c(" "= 2,
+                       "Plasmid Replicons" = 3,
+                       "AMR Determinants" = 6),
+                   font_size = 17) %>%
+  kable_styling(position = "center",
+                font_size = 14) %>%
+  column_spec(1,
+              bold = TRUE)
+
+```
+
+
+
+# QC plots
+
+```{r}
+library(scales)
+reads_col <- "#01665e"
+assemblies_col = "#440154"
+y_axis_size = 10
+y_lab_size = 11
+
+plot_data <-table_data %>%
+  clean_names()
+
+read_length <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, mean_read_length),
+           fill = reads_col) +
+    ylab("Mean Read Length") +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+mean_read_quality <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, mean_read_quality),
+           fill = reads_col) +
+    ylab("Mean Read Phred Quality Score") +
+    ylim(0,15) +
+    scale_y_continuous(n.breaks = 10) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+number_of_bases <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, number_of_bases),
+           fill = reads_col) +
+    ylab("Total Number of Bases") +
+    scale_y_continuous(labels = label_bytes(),
+                       limits = c(0, 400000000),
+                       n.breaks = 10) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+num_reads <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, number_of_reads),
+           fill = reads_col) +
+    ylab("Number of Reads") +
+    ylim(0,40000) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+mean_length_n50 <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, mean_length_n50),
+           fill = reads_col) +
+    ylab("Mean Read N50") +
+    ylim(0,15000) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+mean_depth <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, mean_depth),
+           fill = reads_col) +
+    ylab("Mean Read Coverage Depth") +
+    ylim(0,80) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+length_of_assembly <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, length_of_assembly), fill = assemblies_col) +
+    ylab("Total Length of Assembly") +
+    scale_y_continuous(labels = label_bytes(),
+                       n.breaks = 5) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+gc_percent <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, gc_percent),
+           fill = assemblies_col) +
+    ylab("GC%") +
+    scale_y_continuous(n.breaks = 15, limits = c(0, 60)) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+number_of_contigs <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, as.factor(number_of_contigs)), fill = assemblies_col) +
+    ylab("Number of Contigs") +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+n50 <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id, n50),
+           fill = assemblies_col) +
+    ylab("N50") +
+    scale_y_continuous(labels = label_bytes(),
+                       n.breaks = 5) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+busco_completeness_score_percent <-
+  plot_data %>%
+  ggplot() +
+  geom_col(aes(isolate_id,
+               as.integer( busco_completeness_score_percent)), fill = assemblies_col) +
+    ylab("BUSCO Completeness Score (%)") +
+    scale_y_continuous(n.breaks = 10) +
+      theme(axis.text.y = element_text(size = y_axis_size,
+                                 face = "bold"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(face = "bold",
+                                  size = y_lab_size))
+
+
+read_length + mean_length_n50 +
+  mean_read_quality + number_of_bases +
+  num_reads + mean_length_n50 + mean_depth +
+  length_of_assembly + n50 +
+  gc_percent + number_of_contigs +
+  busco_completeness_score_percent +
+  plot_annotation(title =
+                    "ONT read and hybrid assembly statistics",
+                  theme =
+                    theme(plot.title =
+                            element_text(size = 15,
+                                         face = "bold",
+                                         hjust = 0.5)))
+
+```
+
+
+
+
 
 #save table 2
 ```{r}
@@ -214,7 +485,8 @@ column_names <- table %>%
 
 
 # draw the table
-y <- table %>%
+#y <-
+  table %>%
   knitr::kable(booktabs = TRUE,
                longtable = TRUE,
                linesep = "",
