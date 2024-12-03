@@ -400,6 +400,7 @@ FodyWeavers.xsd
 # Nextflow 
 .nextflow.log*
 .nextflow/
+nextflow/
 work/
 
 
@@ -407,3 +408,7 @@ work/
 .Rhistory
 
 .Rproj.user
+
+test*
+outputs/
+
