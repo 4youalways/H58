@@ -8,22 +8,6 @@ editor_options:
 # Styphi
 before running this script you will need to install the package [pacman](https://github.com/trinker/pacman). It can be installed by running the following in the r console
 
-## installing packages for rna-seq
-```{r , eval=false}
-install.packages("pacman")
-install.packages("viridis")  # Install
-
-workdir <- "/Users/zuza/typhi"
-
-# the pak package manager assists installing apps
-install.packages("pak",
-  repos =
-  sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s",
-  .Platform$pkgType, R.Version()$os, R.Version()$arch))
-
-install.packages("patchwork")
-
-```
 
 # assembly statistics and tables
 
@@ -543,7 +527,14 @@ comparison_5 <-
 
 ```
 
+
+
+```{r}
+plot_gene_map(list(dna_seg_ref, dna_seq_1017142), comparisons = list(comparison_1))
+```
+
 #### plot ct18
+
 
 ```{r}
 # which gets the row number of the matched item
@@ -784,8 +775,8 @@ library(tidyverse)
 
 setwd("/Users/zuza/typhi")
 
-#pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/pHCM1/pHCM1.gbk"
-pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/R27/R27.gbk"
+pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/pHCM1/pHCM1.gbk"
+#pHCM1 <- "/Users/zuza/typhi/results/brig/assemblies/plasmids/R27/R27.gbk"
   
 
 
@@ -811,129 +802,99 @@ whole_plasmid <-
              
 
 #subset the comparison above
-dna_seg1 <- filter(segment1, start >= 106624, end <= 186232)
+dna_seg1 <- filter(segment1, start >= 105911, end <= 187475)
 dna_seg2 <- filter(segment2, start >= 64601, end <= 114328)
 
 
-dna_seg1 <- segment1
-dna_seg2 <- segment2
-x <- strsplit(dna_seg1$product, split = " ")
+# write dnaseg 1 for manual annotation
+##write_csv(dna_seg1 %>% select(gene, product), "docs/pHCM1_manual_annotation.csv")
+#write_csv(dna_seg2 %>% select(gene, product), "docs/BKQT8S_manual_annotation.csv")
 
-case_when(grepl(c("IS|Tn"), strsplit(dna_seg1$product, split = " "), ignore.case = FALSE) ~
-              dna_seg1$product,
-          TRUE ~ dna_seg1$gene)
+dna_seg1_gene_names <- read_csv("docs/pHCM1_manual_annotation.csv")
+dna_seg2_gene_names <- read_csv("docs/BKQT8S_manual_annotation.csv")
 
-#case_when(strsplit(dna_seg1$product, split = " ") ~ "x")
-# create new variable to use for annotation
-dna_seg1$annotation <-
-  case_when(grepl(c("IS|Tn"), dna_seg1$product, ignore.case = FALSE) ~
-              dna_seg1$product,
-          TRUE ~ dna_seg1$gene)
+dna_seg1$gene <- dna_seg1_gene_names$gene
 
-# manually annotate dna segs
-dna_seg1$annotation[1] = "IS1R"
-dna_seg1$annotation[25] = "TnAs2"
-dna_seg1$annotation[26] = "IS4321R"
-dna_seg1$annotation[27] = "IS432L"
-dna_seg1$annotation[50] = "IS4"
-dna_seg1$annotation[57] = "ISNCY"
-dna_seg1$annotation[63] = "IS4321R"
-dna_seg1$annotation[59] = "IS1R"
-dna_seg1$annotation[63] = "IS4321R"
-dna_seg1$annotation[65] = "IS26"
-dna_seg1$annotation[66] = "IS26"
-dna_seg1$annotation[67] = "Tn3"
-dna_seg1$annotation[68] = "bla"
-dna_seg1$annotation[70] = "IS26"
-dna_seg1$annotation[76] = "IS26"
-dna_seg1$annotation[85] = "ISL3"
-dna_seg1$annotation[86] = "IS110"
-dna_seg1$annotation[89] = "Tn10 TetC"
-dna_seg1$annotation[91] = "Tn10"
-dna_seg1$annotation[99] = "ISVsa5"
-dna_seg1$annotation[87] = "IS1"
-dna_seg1$annotation[64] = "Tn3"
+dna_seg2$gene <- dna_seg2_gene_names$gene
 
 # color the is elements
+is_elements <- c("IS1X2", "TnAs2" , "tetC" , "IS4321R" , "tetR" , "IS4321L", "ISVsa5" , "ISBcen27", "IS4321R", "IS26", "ISStma11" , "IS5075", "IS1R" , "ISVsa5", "TnAs3", "ISVsa5",  "IS1R" , "IS26")
+
+amr_genes <- c("merR",  "merT_1", "merP_1", "merC_1", "merA_1", "dfrA14" , "blaTEM-1", "sul2", "aph(3'')-Ib",  "aph(6)-Id" , "merA_2" , "merC_2" , "merP_2" , "merP_2" , "merT_2" , "tet(B)", "Sul2" )
+
+other_genes <- c("repE" , "xerC" , "hin" , "hns" , "smc" , "dcm" , "tnpR" , "repA" , "yqjZ" , "umuD" , "umuC", "-", "gltS", "gltS_1", "gltS_2")
+
+# change colors of blocks for pHCM1
 dna_seg1$fill <- 
-  case_when(grepl(c("IS|Tn"), dna_seg1$annotation) ~ "#A6CEE3",
+  case_when(dna_seg1$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$fill <- 
+  case_when(dna_seg1$gene %in% amr_genes ~ "#440154",
+            TRUE ~ dna_seg1$fill)
+
+dna_seg1$fill <- 
+  case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
             TRUE ~ dna_seg1$fill)
 
 dna_seg1$col <- 
-  case_when(grepl(c("IS|Tn"), dna_seg1$annotation) ~ "#A6CEE3",
+  case_when(dna_seg1$gene %in% is_elements ~ "#01665e",
             TRUE ~ dna_seg1$col)
 
-
-# color amr genes
-amr_genes <- c("merR",
-               "merT_1",
-               "merP_1",
-               "merC_1",
-               "merA_1",
-               "dhfrI",
-               "cat",
-               "bla",
-               "folP",
-               "merA_2",
-               "merC_2",
-               "merP_2",
-               "merT_2",
-               "tetC",
-               "tetA",
-               "tetR")
-
-dna_seg1$fill <-
-  case_when(dna_seg1$gene %in% amr_genes ~ "#6A3D9A",
-            TRUE ~ dna_seg1$fill)
-
-dna_seg1$col <-
-  case_when(dna_seg1$gene %in% amr_genes ~ "#6A3D9A",
+dna_seg1$col <- 
+  case_when(dna_seg1$gene %in% amr_genes ~ "#440154",
             TRUE ~ dna_seg1$col)
+
+dna_seg1$col <- 
+  case_when(dna_seg1$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg1$col)
+
+# change colors for BKQT8S
+dna_seg2$fill <- 
+  case_when(dna_seg2$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg2$fill)
+
+dna_seg2$fill <- 
+  case_when(dna_seg2$gene %in% amr_genes ~ "#440154",
+            TRUE ~ dna_seg2$fill)
+
+dna_seg2$fill <- 
+  case_when(dna_seg2$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg2$fill)
+
+dna_seg2$col <- 
+  case_when(dna_seg2$gene %in% is_elements ~ "#01665e",
+            TRUE ~ dna_seg2$col)
+
+dna_seg2$col <- 
+  case_when(dna_seg2$gene %in% amr_genes ~ "#440154",
+            TRUE ~ dna_seg2$col)
+
+dna_seg2$col <- 
+  case_when(dna_seg2$gene %in% other_genes ~ "#C9C9C9",
+            TRUE ~ dna_seg2$col)
+annotation1 <-
+  annotation(text = dna_seg1$gene,
+             x1 = middle(dna_seg1),
+             rot = 30)
+annotation2 <-
+  annotation(text = dna_seg2$gene,
+             x1 = middle(dna_seg2),
+             rot = 30)
 
 #plot the new comparison
-plasmid_subset <-
-  plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
-              gene_type = "side_blocks",
+plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
+              gene_type = "arrows",
               comparisons = list(comparison),
               dna_seg_labels = c("pHCM1", "BKQT8S"),
-              annotations = 
-                annotation(text = dna_seg1$annotation,
-                           x1 = middle(dna_seg1),
-                           rot = 30),
-              annotation_height=8)
-
-
-
-jpeg(filename = "figures/whole_plasmid_comparison.jpeg", 
-     width = 1000,
-     height = 300,
-     )
-
-plot_gene_map(dna_segs = list(segment1, segment2),
-              comparisons = list(comparison),
-              dna_seg_labels = c("pHCM1", "BKQT8S"))
-
-dev.off()
-
-
-pdf(file = "/Users/zuza/typhi/figures/plasmid_amr.pdf",
-    width = 14)
-
-  plot_gene_map(dna_segs = list(dna_seg1, dna_seg2),
-              gene_type = "side_blocks",
-              comparisons = list(comparison),
-              dna_seg_labels = c("pHCM1", "BKQT8S"),
-              annotations = 
-                annotation(text = dna_seg1$annotation,
-                           x1 = middle(dna_seg1),
-                           rot = 90),
-              annotation_height=3,
-              annotation_cex = 0.4,
+              annotations = list(annotation1, annotation2),
+              annotation_height = c(2, 1.2),
+              annotation_cex = .5,
               dna_seg_scale = TRUE, scale = FALSE,
-              main = "Plot of AMR region in pHCM1 and BKQT8S")
+              main = "Comparison of AMR region in pHCM1 and BKQT8S",
+              legend = TRUE,
+              dna_seg_label_cex = 1)
 
-
-dev.off()
 
 ```
 
