@@ -1,0 +1,1057 @@
+sample_name,read_1,read_2,accession_number,year,country,publication,purpose
+ERR2525488,/data/slow/bdri/azuza/samples/ERR2525488_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2525488_2.fastq.gz,ERR2525488,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332780,/data/slow/bdri/azuza/samples/ERR3332780_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332780_2.fastq.gz,ERR3332780,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909568,/data/slow/bdri/azuza/samples/ERR2909568_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909568_2.fastq.gz,ERR2909568,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909557,/data/slow/bdri/azuza/samples/ERR2909557_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909557_2.fastq.gz,ERR2909557,2013,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332746,/data/slow/bdri/azuza/samples/ERR3332746_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332746_2.fastq.gz,ERR3332746,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332634,/data/slow/bdri/azuza/samples/ERR3332634_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332634_2.fastq.gz,ERR3332634,2013,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2525487,/data/slow/bdri/azuza/samples/ERR2525487_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2525487_2.fastq.gz,ERR2525487,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332745,/data/slow/bdri/azuza/samples/ERR3332745_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332745_2.fastq.gz,ERR3332745,2013,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332769,/data/slow/bdri/azuza/samples/ERR3332769_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332769_2.fastq.gz,ERR3332769,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332555,/data/slow/bdri/azuza/samples/ERR3332555_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332555_2.fastq.gz,ERR3332555,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332596,/data/slow/bdri/azuza/samples/ERR3332596_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332596_2.fastq.gz,ERR3332596,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909592,/data/slow/bdri/azuza/samples/ERR2909592_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909592_2.fastq.gz,ERR2909592,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332623,/data/slow/bdri/azuza/samples/ERR3332623_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332623_2.fastq.gz,ERR3332623,2013,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332643,/data/slow/bdri/azuza/samples/ERR3332643_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332643_2.fastq.gz,ERR3332643,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332633,/data/slow/bdri/azuza/samples/ERR3332633_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332633_2.fastq.gz,ERR3332633,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332701,/data/slow/bdri/azuza/samples/ERR3332701_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332701_2.fastq.gz,ERR3332701,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332750,/data/slow/bdri/azuza/samples/ERR3332750_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332750_2.fastq.gz,ERR3332750,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332737,/data/slow/bdri/azuza/samples/ERR3332737_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332737_2.fastq.gz,ERR3332737,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332539,/data/slow/bdri/azuza/samples/ERR3332539_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332539_2.fastq.gz,ERR3332539,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332694,/data/slow/bdri/azuza/samples/ERR3332694_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332694_2.fastq.gz,ERR3332694,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332677,/data/slow/bdri/azuza/samples/ERR3332677_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332677_2.fastq.gz,ERR3332677,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332744,/data/slow/bdri/azuza/samples/ERR3332744_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332744_2.fastq.gz,ERR3332744,2013,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909611,/data/slow/bdri/azuza/samples/ERR2909611_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909611_2.fastq.gz,ERR2909611,2013,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332755,/data/slow/bdri/azuza/samples/ERR3332755_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332755_2.fastq.gz,ERR3332755,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332641,/data/slow/bdri/azuza/samples/ERR3332641_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332641_2.fastq.gz,ERR3332641,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332573,/data/slow/bdri/azuza/samples/ERR3332573_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332573_2.fastq.gz,ERR3332573,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332726,/data/slow/bdri/azuza/samples/ERR3332726_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332726_2.fastq.gz,ERR3332726,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909532,/data/slow/bdri/azuza/samples/ERR2909532_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909532_2.fastq.gz,ERR2909532,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909508,/data/slow/bdri/azuza/samples/ERR2909508_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909508_2.fastq.gz,ERR2909508,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909540,/data/slow/bdri/azuza/samples/ERR2909540_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909540_2.fastq.gz,ERR2909540,2014,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2525481,/data/slow/bdri/azuza/samples/ERR2525481_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2525481_2.fastq.gz,ERR2525481,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909503,/data/slow/bdri/azuza/samples/ERR2909503_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909503_2.fastq.gz,ERR2909503,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332779,/data/slow/bdri/azuza/samples/ERR3332779_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332779_2.fastq.gz,ERR3332779,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332576,/data/slow/bdri/azuza/samples/ERR3332576_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332576_2.fastq.gz,ERR3332576,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332778,/data/slow/bdri/azuza/samples/ERR3332778_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332778_2.fastq.gz,ERR3332778,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332548,/data/slow/bdri/azuza/samples/ERR3332548_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332548_2.fastq.gz,ERR3332548,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909505,/data/slow/bdri/azuza/samples/ERR2909505_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909505_2.fastq.gz,ERR2909505,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332676,/data/slow/bdri/azuza/samples/ERR3332676_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332676_2.fastq.gz,ERR3332676,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909495,/data/slow/bdri/azuza/samples/ERR2909495_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909495_2.fastq.gz,ERR2909495,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909474,/data/slow/bdri/azuza/samples/ERR2909474_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909474_2.fastq.gz,ERR2909474,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909487,/data/slow/bdri/azuza/samples/ERR2909487_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909487_2.fastq.gz,ERR2909487,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2525515,/data/slow/bdri/azuza/samples/ERR2525515_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2525515_2.fastq.gz,ERR2525515,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332777,/data/slow/bdri/azuza/samples/ERR3332777_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332777_2.fastq.gz,ERR3332777,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2525467,/data/slow/bdri/azuza/samples/ERR2525467_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2525467_2.fastq.gz,ERR2525467,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909483,/data/slow/bdri/azuza/samples/ERR2909483_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909483_2.fastq.gz,ERR2909483,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332575,/data/slow/bdri/azuza/samples/ERR3332575_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332575_2.fastq.gz,ERR3332575,2016,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR2909477,/data/slow/bdri/azuza/samples/ERR2909477_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2909477_2.fastq.gz,ERR2909477,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR4921815,/data/slow/bdri/azuza/samples/ERR4921815_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR4921815_2.fastq.gz,ERR4921815,2013,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR3332551,/data/slow/bdri/azuza/samples/ERR3332551_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332551_2.fastq.gz,ERR3332551,2015,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR984774,/data/slow/bdri/azuza/samples/ERR984774_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984774_2.fastq.gz,ERR984774,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR338131,/data/slow/bdri/azuza/samples/ERR338131_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338131_2.fastq.gz,ERR338131,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338132,/data/slow/bdri/azuza/samples/ERR338132_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338132_2.fastq.gz,ERR338132,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338133,/data/slow/bdri/azuza/samples/ERR338133_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338133_2.fastq.gz,ERR338133,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338136,/data/slow/bdri/azuza/samples/ERR338136_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338136_2.fastq.gz,ERR338136,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338137,/data/slow/bdri/azuza/samples/ERR338137_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338137_2.fastq.gz,ERR338137,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338139,/data/slow/bdri/azuza/samples/ERR338139_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338139_2.fastq.gz,ERR338139,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338140,/data/slow/bdri/azuza/samples/ERR338140_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338140_2.fastq.gz,ERR338140,2009,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338141,/data/slow/bdri/azuza/samples/ERR338141_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338141_2.fastq.gz,ERR338141,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338143,/data/slow/bdri/azuza/samples/ERR338143_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338143_2.fastq.gz,ERR338143,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338145,/data/slow/bdri/azuza/samples/ERR338145_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338145_2.fastq.gz,ERR338145,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338147,/data/slow/bdri/azuza/samples/ERR338147_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338147_2.fastq.gz,ERR338147,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338148,/data/slow/bdri/azuza/samples/ERR338148_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338148_2.fastq.gz,ERR338148,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338151,/data/slow/bdri/azuza/samples/ERR338151_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338151_2.fastq.gz,ERR338151,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338152,/data/slow/bdri/azuza/samples/ERR338152_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338152_2.fastq.gz,ERR338152,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338157,/data/slow/bdri/azuza/samples/ERR338157_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338157_2.fastq.gz,ERR338157,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338159,/data/slow/bdri/azuza/samples/ERR338159_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338159_2.fastq.gz,ERR338159,2009,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338160,/data/slow/bdri/azuza/samples/ERR338160_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338160_2.fastq.gz,ERR338160,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338163,/data/slow/bdri/azuza/samples/ERR338163_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338163_2.fastq.gz,ERR338163,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR338164,/data/slow/bdri/azuza/samples/ERR338164_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338164_2.fastq.gz,ERR338164,2007,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212564,/data/slow/bdri/azuza/samples/ERR212564_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212564_2.fastq.gz,ERR212564,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212636,/data/slow/bdri/azuza/samples/ERR212636_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212636_2.fastq.gz,ERR212636,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212638,/data/slow/bdri/azuza/samples/ERR212638_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212638_2.fastq.gz,ERR212638,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212639,/data/slow/bdri/azuza/samples/ERR212639_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212639_2.fastq.gz,ERR212639,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212640,/data/slow/bdri/azuza/samples/ERR212640_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212640_2.fastq.gz,ERR212640,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212643,/data/slow/bdri/azuza/samples/ERR212643_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212643_2.fastq.gz,ERR212643,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212646,/data/slow/bdri/azuza/samples/ERR212646_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212646_2.fastq.gz,ERR212646,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212648,/data/slow/bdri/azuza/samples/ERR212648_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212648_2.fastq.gz,ERR212648,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212651,/data/slow/bdri/azuza/samples/ERR212651_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212651_2.fastq.gz,ERR212651,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212652,/data/slow/bdri/azuza/samples/ERR212652_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212652_2.fastq.gz,ERR212652,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212653,/data/slow/bdri/azuza/samples/ERR212653_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212653_2.fastq.gz,ERR212653,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212654,/data/slow/bdri/azuza/samples/ERR212654_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212654_2.fastq.gz,ERR212654,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212655,/data/slow/bdri/azuza/samples/ERR212655_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212655_2.fastq.gz,ERR212655,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212657,/data/slow/bdri/azuza/samples/ERR212657_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212657_2.fastq.gz,ERR212657,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212659,/data/slow/bdri/azuza/samples/ERR212659_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212659_2.fastq.gz,ERR212659,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212660,/data/slow/bdri/azuza/samples/ERR212660_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212660_2.fastq.gz,ERR212660,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212661,/data/slow/bdri/azuza/samples/ERR212661_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212661_2.fastq.gz,ERR212661,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212662,/data/slow/bdri/azuza/samples/ERR212662_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212662_2.fastq.gz,ERR212662,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212664,/data/slow/bdri/azuza/samples/ERR212664_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212664_2.fastq.gz,ERR212664,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212665,/data/slow/bdri/azuza/samples/ERR212665_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212665_2.fastq.gz,ERR212665,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212666,/data/slow/bdri/azuza/samples/ERR212666_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212666_2.fastq.gz,ERR212666,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR212667,/data/slow/bdri/azuza/samples/ERR212667_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR212667_2.fastq.gz,ERR212667,2008,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR217406,/data/slow/bdri/azuza/samples/ERR217406_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR217406_2.fastq.gz,ERR217406,2004,Kenya,Wong et al. 2016,Global H58 Phylogeny
+ERR984748,/data/slow/bdri/azuza/samples/ERR984748_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984748_2.fastq.gz,ERR984748,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984761,/data/slow/bdri/azuza/samples/ERR984761_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984761_2.fastq.gz,ERR984761,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984767,/data/slow/bdri/azuza/samples/ERR984767_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984767_2.fastq.gz,ERR984767,2013,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984768,/data/slow/bdri/azuza/samples/ERR984768_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984768_2.fastq.gz,ERR984768,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984781,/data/slow/bdri/azuza/samples/ERR984781_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984781_2.fastq.gz,ERR984781,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984788,/data/slow/bdri/azuza/samples/ERR984788_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984788_2.fastq.gz,ERR984788,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984790,/data/slow/bdri/azuza/samples/ERR984790_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984790_2.fastq.gz,ERR984790,2013,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984826,/data/slow/bdri/azuza/samples/ERR984826_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984826_2.fastq.gz,ERR984826,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984828,/data/slow/bdri/azuza/samples/ERR984828_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984828_2.fastq.gz,ERR984828,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984835,/data/slow/bdri/azuza/samples/ERR984835_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984835_2.fastq.gz,ERR984835,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984836,/data/slow/bdri/azuza/samples/ERR984836_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984836_2.fastq.gz,ERR984836,2013,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984842,/data/slow/bdri/azuza/samples/ERR984842_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984842_2.fastq.gz,ERR984842,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984843,/data/slow/bdri/azuza/samples/ERR984843_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984843_2.fastq.gz,ERR984843,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984844,/data/slow/bdri/azuza/samples/ERR984844_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984844_2.fastq.gz,ERR984844,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984850,/data/slow/bdri/azuza/samples/ERR984850_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984850_2.fastq.gz,ERR984850,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984851,/data/slow/bdri/azuza/samples/ERR984851_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984851_2.fastq.gz,ERR984851,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984852,/data/slow/bdri/azuza/samples/ERR984852_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984852_2.fastq.gz,ERR984852,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984859,/data/slow/bdri/azuza/samples/ERR984859_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984859_2.fastq.gz,ERR984859,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984866,/data/slow/bdri/azuza/samples/ERR984866_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984866_2.fastq.gz,ERR984866,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984867,/data/slow/bdri/azuza/samples/ERR984867_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984867_2.fastq.gz,ERR984867,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984868,/data/slow/bdri/azuza/samples/ERR984868_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984868_2.fastq.gz,ERR984868,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984875,/data/slow/bdri/azuza/samples/ERR984875_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984875_2.fastq.gz,ERR984875,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984876,/data/slow/bdri/azuza/samples/ERR984876_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984876_2.fastq.gz,ERR984876,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984885,/data/slow/bdri/azuza/samples/ERR984885_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984885_2.fastq.gz,ERR984885,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984917,/data/slow/bdri/azuza/samples/ERR984917_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984917_2.fastq.gz,ERR984917,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010016,/data/slow/bdri/azuza/samples/ERR1010016_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010016_2.fastq.gz,ERR1010016,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010018,/data/slow/bdri/azuza/samples/ERR1010018_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010018_2.fastq.gz,ERR1010018,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010021,/data/slow/bdri/azuza/samples/ERR1010021_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010021_2.fastq.gz,ERR1010021,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010089,/data/slow/bdri/azuza/samples/ERR1010089_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010089_2.fastq.gz,ERR1010089,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010098,/data/slow/bdri/azuza/samples/ERR1010098_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010098_2.fastq.gz,ERR1010098,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010104,/data/slow/bdri/azuza/samples/ERR1010104_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010104_2.fastq.gz,ERR1010104,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010105,/data/slow/bdri/azuza/samples/ERR1010105_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010105_2.fastq.gz,ERR1010105,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010106,/data/slow/bdri/azuza/samples/ERR1010106_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010106_2.fastq.gz,ERR1010106,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010090,/data/slow/bdri/azuza/samples/ERR1010090_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010090_2.fastq.gz,ERR1010090,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010113,/data/slow/bdri/azuza/samples/ERR1010113_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010113_2.fastq.gz,ERR1010113,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010119,/data/slow/bdri/azuza/samples/ERR1010119_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010119_2.fastq.gz,ERR1010119,2013,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010121,/data/slow/bdri/azuza/samples/ERR1010121_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010121_2.fastq.gz,ERR1010121,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010133,/data/slow/bdri/azuza/samples/ERR1010133_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010133_2.fastq.gz,ERR1010133,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010134,/data/slow/bdri/azuza/samples/ERR1010134_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010134_2.fastq.gz,ERR1010134,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010140,/data/slow/bdri/azuza/samples/ERR1010140_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010140_2.fastq.gz,ERR1010140,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010148,/data/slow/bdri/azuza/samples/ERR1010148_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010148_2.fastq.gz,ERR1010148,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010095,/data/slow/bdri/azuza/samples/ERR1010095_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010095_2.fastq.gz,ERR1010095,2013,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010156,/data/slow/bdri/azuza/samples/ERR1010156_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010156_2.fastq.gz,ERR1010156,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010096,/data/slow/bdri/azuza/samples/ERR1010096_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010096_2.fastq.gz,ERR1010096,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010097,/data/slow/bdri/azuza/samples/ERR1010097_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010097_2.fastq.gz,ERR1010097,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984707,/data/slow/bdri/azuza/samples/ERR984707_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984707_2.fastq.gz,ERR984707,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984755,/data/slow/bdri/azuza/samples/ERR984755_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984755_2.fastq.gz,ERR984755,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984776,/data/slow/bdri/azuza/samples/ERR984776_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984776_2.fastq.gz,ERR984776,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984783,/data/slow/bdri/azuza/samples/ERR984783_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984783_2.fastq.gz,ERR984783,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984827,/data/slow/bdri/azuza/samples/ERR984827_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984827_2.fastq.gz,ERR984827,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984834,/data/slow/bdri/azuza/samples/ERR984834_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984834_2.fastq.gz,ERR984834,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR984858,/data/slow/bdri/azuza/samples/ERR984858_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR984858_2.fastq.gz,ERR984858,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010003,/data/slow/bdri/azuza/samples/ERR1010003_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010003_2.fastq.gz,ERR1010003,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR1010114,/data/slow/bdri/azuza/samples/ERR1010114_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1010114_2.fastq.gz,ERR1010114,2012,Kenya,Park et al. 2018,Global H58 Phylogeny
+ERR331368,/data/slow/bdri/azuza/samples/ERR331368_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331368_2.fastq.gz,ERR331368,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331369,/data/slow/bdri/azuza/samples/ERR331369_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331369_2.fastq.gz,ERR331369,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331372,/data/slow/bdri/azuza/samples/ERR331372_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331372_2.fastq.gz,ERR331372,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331374,/data/slow/bdri/azuza/samples/ERR331374_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331374_2.fastq.gz,ERR331374,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331375,/data/slow/bdri/azuza/samples/ERR331375_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331375_2.fastq.gz,ERR331375,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331376,/data/slow/bdri/azuza/samples/ERR331376_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331376_2.fastq.gz,ERR331376,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331377,/data/slow/bdri/azuza/samples/ERR331377_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331377_2.fastq.gz,ERR331377,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331378,/data/slow/bdri/azuza/samples/ERR331378_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331378_2.fastq.gz,ERR331378,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331379,/data/slow/bdri/azuza/samples/ERR331379_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331379_2.fastq.gz,ERR331379,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR331380,/data/slow/bdri/azuza/samples/ERR331380_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331380_2.fastq.gz,ERR331380,2008,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108648,/data/slow/bdri/azuza/samples/ERR108648_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108648_2.fastq.gz,ERR108648,2009,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108656,/data/slow/bdri/azuza/samples/ERR108656_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108656_2.fastq.gz,ERR108656,2009,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108658,/data/slow/bdri/azuza/samples/ERR108658_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108658_2.fastq.gz,ERR108658,2009,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108659,/data/slow/bdri/azuza/samples/ERR108659_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108659_2.fastq.gz,ERR108659,2009,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108660,/data/slow/bdri/azuza/samples/ERR108660_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108660_2.fastq.gz,ERR108660,2009,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108664,/data/slow/bdri/azuza/samples/ERR108664_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108664_2.fastq.gz,ERR108664,2010,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108676,/data/slow/bdri/azuza/samples/ERR108676_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108676_2.fastq.gz,ERR108676,2009,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108679,/data/slow/bdri/azuza/samples/ERR108679_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108679_2.fastq.gz,ERR108679,2009,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108693,/data/slow/bdri/azuza/samples/ERR108693_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108693_2.fastq.gz,ERR108693,2009,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR108694,/data/slow/bdri/azuza/samples/ERR108694_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR108694_2.fastq.gz,ERR108694,2010,Tanzania,Wong et al. 2016,Global H58 Phylogeny
+ERR998520,/data/slow/bdri/azuza/samples/ERR998520_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998520_2.fastq.gz,ERR998520,2012,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR998536,/data/slow/bdri/azuza/samples/ERR998536_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998536_2.fastq.gz,ERR998536,2011,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR998581,/data/slow/bdri/azuza/samples/ERR998581_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998581_2.fastq.gz,ERR998581,2012,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR998600,/data/slow/bdri/azuza/samples/ERR998600_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998600_2.fastq.gz,ERR998600,2012,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR998604,/data/slow/bdri/azuza/samples/ERR998604_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998604_2.fastq.gz,ERR998604,2012,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR998610,/data/slow/bdri/azuza/samples/ERR998610_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998610_2.fastq.gz,ERR998610,2012,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR998614,/data/slow/bdri/azuza/samples/ERR998614_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998614_2.fastq.gz,ERR998614,2011,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR998619,/data/slow/bdri/azuza/samples/ERR998619_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998619_2.fastq.gz,ERR998619,2011,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR998633,/data/slow/bdri/azuza/samples/ERR998633_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR998633_2.fastq.gz,ERR998633,2012,Tanzania,Park et al. 2018,Global H58 Phylogeny
+ERR352442,/data/slow/bdri/azuza/samples/ERR352442_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352442_2.fastq.gz,ERR352442,2012,Africa,Wong et al. 2016,Global H58 Phylogeny
+ERR360793,/data/slow/bdri/azuza/samples/ERR360793_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360793_2.fastq.gz,ERR360793,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360802,/data/slow/bdri/azuza/samples/ERR360802_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360802_2.fastq.gz,ERR360802,2010,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360805,/data/slow/bdri/azuza/samples/ERR360805_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360805_2.fastq.gz,ERR360805,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360806,/data/slow/bdri/azuza/samples/ERR360806_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360806_2.fastq.gz,ERR360806,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360807,/data/slow/bdri/azuza/samples/ERR360807_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360807_2.fastq.gz,ERR360807,2013,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360809,/data/slow/bdri/azuza/samples/ERR360809_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360809_2.fastq.gz,ERR360809,2013,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360810,/data/slow/bdri/azuza/samples/ERR360810_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360810_2.fastq.gz,ERR360810,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360811,/data/slow/bdri/azuza/samples/ERR360811_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360811_2.fastq.gz,ERR360811,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360794,/data/slow/bdri/azuza/samples/ERR360794_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360794_2.fastq.gz,ERR360794,2013,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360815,/data/slow/bdri/azuza/samples/ERR360815_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360815_2.fastq.gz,ERR360815,2013,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360816,/data/slow/bdri/azuza/samples/ERR360816_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360816_2.fastq.gz,ERR360816,2013,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360817,/data/slow/bdri/azuza/samples/ERR360817_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360817_2.fastq.gz,ERR360817,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360818,/data/slow/bdri/azuza/samples/ERR360818_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360818_2.fastq.gz,ERR360818,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360819,/data/slow/bdri/azuza/samples/ERR360819_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360819_2.fastq.gz,ERR360819,2013,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360827,/data/slow/bdri/azuza/samples/ERR360827_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360827_2.fastq.gz,ERR360827,2013,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360828,/data/slow/bdri/azuza/samples/ERR360828_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360828_2.fastq.gz,ERR360828,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360829,/data/slow/bdri/azuza/samples/ERR360829_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360829_2.fastq.gz,ERR360829,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360830,/data/slow/bdri/azuza/samples/ERR360830_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360830_2.fastq.gz,ERR360830,2013,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360797,/data/slow/bdri/azuza/samples/ERR360797_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360797_2.fastq.gz,ERR360797,2010,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360798,/data/slow/bdri/azuza/samples/ERR360798_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360798_2.fastq.gz,ERR360798,2010,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360799,/data/slow/bdri/azuza/samples/ERR360799_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360799_2.fastq.gz,ERR360799,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360801,/data/slow/bdri/azuza/samples/ERR360801_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360801_2.fastq.gz,ERR360801,2010,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279109,/data/slow/bdri/azuza/samples/ERR279109_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279109_2.fastq.gz,ERR279109,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279113,/data/slow/bdri/azuza/samples/ERR279113_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279113_2.fastq.gz,ERR279113,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279114,/data/slow/bdri/azuza/samples/ERR279114_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279114_2.fastq.gz,ERR279114,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279116,/data/slow/bdri/azuza/samples/ERR279116_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279116_2.fastq.gz,ERR279116,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279099,/data/slow/bdri/azuza/samples/ERR279099_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279099_2.fastq.gz,ERR279099,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279118,/data/slow/bdri/azuza/samples/ERR279118_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279118_2.fastq.gz,ERR279118,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279121,/data/slow/bdri/azuza/samples/ERR279121_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279121_2.fastq.gz,ERR279121,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279122,/data/slow/bdri/azuza/samples/ERR279122_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279122_2.fastq.gz,ERR279122,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279123,/data/slow/bdri/azuza/samples/ERR279123_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279123_2.fastq.gz,ERR279123,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279124,/data/slow/bdri/azuza/samples/ERR279124_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279124_2.fastq.gz,ERR279124,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279125,/data/slow/bdri/azuza/samples/ERR279125_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279125_2.fastq.gz,ERR279125,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279100,/data/slow/bdri/azuza/samples/ERR279100_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279100_2.fastq.gz,ERR279100,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279128,/data/slow/bdri/azuza/samples/ERR279128_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279128_2.fastq.gz,ERR279128,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279129,/data/slow/bdri/azuza/samples/ERR279129_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279129_2.fastq.gz,ERR279129,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279130,/data/slow/bdri/azuza/samples/ERR279130_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279130_2.fastq.gz,ERR279130,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279131,/data/slow/bdri/azuza/samples/ERR279131_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279131_2.fastq.gz,ERR279131,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279132,/data/slow/bdri/azuza/samples/ERR279132_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279132_2.fastq.gz,ERR279132,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279133,/data/slow/bdri/azuza/samples/ERR279133_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279133_2.fastq.gz,ERR279133,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279136,/data/slow/bdri/azuza/samples/ERR279136_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279136_2.fastq.gz,ERR279136,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279101,/data/slow/bdri/azuza/samples/ERR279101_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279101_2.fastq.gz,ERR279101,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279138,/data/slow/bdri/azuza/samples/ERR279138_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279138_2.fastq.gz,ERR279138,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279142,/data/slow/bdri/azuza/samples/ERR279142_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279142_2.fastq.gz,ERR279142,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279144,/data/slow/bdri/azuza/samples/ERR279144_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279144_2.fastq.gz,ERR279144,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279102,/data/slow/bdri/azuza/samples/ERR279102_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279102_2.fastq.gz,ERR279102,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279147,/data/slow/bdri/azuza/samples/ERR279147_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279147_2.fastq.gz,ERR279147,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279148,/data/slow/bdri/azuza/samples/ERR279148_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279148_2.fastq.gz,ERR279148,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279149,/data/slow/bdri/azuza/samples/ERR279149_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279149_2.fastq.gz,ERR279149,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279150,/data/slow/bdri/azuza/samples/ERR279150_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279150_2.fastq.gz,ERR279150,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279151,/data/slow/bdri/azuza/samples/ERR279151_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279151_2.fastq.gz,ERR279151,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279152,/data/slow/bdri/azuza/samples/ERR279152_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279152_2.fastq.gz,ERR279152,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279155,/data/slow/bdri/azuza/samples/ERR279155_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279155_2.fastq.gz,ERR279155,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279156,/data/slow/bdri/azuza/samples/ERR279156_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279156_2.fastq.gz,ERR279156,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279103,/data/slow/bdri/azuza/samples/ERR279103_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279103_2.fastq.gz,ERR279103,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279158,/data/slow/bdri/azuza/samples/ERR279158_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279158_2.fastq.gz,ERR279158,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279159,/data/slow/bdri/azuza/samples/ERR279159_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279159_2.fastq.gz,ERR279159,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279160,/data/slow/bdri/azuza/samples/ERR279160_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279160_2.fastq.gz,ERR279160,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279162,/data/slow/bdri/azuza/samples/ERR279162_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279162_2.fastq.gz,ERR279162,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279163,/data/slow/bdri/azuza/samples/ERR279163_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279163_2.fastq.gz,ERR279163,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279164,/data/slow/bdri/azuza/samples/ERR279164_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279164_2.fastq.gz,ERR279164,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279165,/data/slow/bdri/azuza/samples/ERR279165_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279165_2.fastq.gz,ERR279165,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279166,/data/slow/bdri/azuza/samples/ERR279166_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279166_2.fastq.gz,ERR279166,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279168,/data/slow/bdri/azuza/samples/ERR279168_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279168_2.fastq.gz,ERR279168,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279170,/data/slow/bdri/azuza/samples/ERR279170_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279170_2.fastq.gz,ERR279170,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279173,/data/slow/bdri/azuza/samples/ERR279173_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279173_2.fastq.gz,ERR279173,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279174,/data/slow/bdri/azuza/samples/ERR279174_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279174_2.fastq.gz,ERR279174,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279175,/data/slow/bdri/azuza/samples/ERR279175_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279175_2.fastq.gz,ERR279175,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279176,/data/slow/bdri/azuza/samples/ERR279176_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279176_2.fastq.gz,ERR279176,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279105,/data/slow/bdri/azuza/samples/ERR279105_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279105_2.fastq.gz,ERR279105,2012,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR279106,/data/slow/bdri/azuza/samples/ERR279106_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279106_2.fastq.gz,ERR279106,2011,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR338002,/data/slow/bdri/azuza/samples/ERR338002_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338002_2.fastq.gz,ERR338002,2005,S.Africa,Wong et al. 2016,Global H58 Phylogeny
+ERR338023,/data/slow/bdri/azuza/samples/ERR338023_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338023_2.fastq.gz,ERR338023,2010,S.Africa,Wong et al. 2016,Global H58 Phylogeny
+ERR338034,/data/slow/bdri/azuza/samples/ERR338034_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338034_2.fastq.gz,ERR338034,2011,S.Africa,Wong et al. 2016,Global H58 Phylogeny
+ERR338036,/data/slow/bdri/azuza/samples/ERR338036_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR338036_2.fastq.gz,ERR338036,2012,S.Africa,Wong et al. 2016,Global H58 Phylogeny
+ERR3332562,/data/slow/bdri/azuza/samples/ERR3332562_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3332562_2.fastq.gz,ERR3332562,2013,Kenya,"Kariuki, Dyson, et al. eLife 2021",Global H58 Phylogeny
+ERR360824,/data/slow/bdri/azuza/samples/ERR360824_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360824_2.fastq.gz,ERR360824,2010,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR360832,/data/slow/bdri/azuza/samples/ERR360832_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360832_2.fastq.gz,ERR360832,2010,Malawi,Wong et al. 2016,Global H58 Phylogeny
+ERR2602669,/data/slow/bdri/azuza/samples/ERR2602669_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602669_2.fastq.gz,ERR2602669,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602672,/data/slow/bdri/azuza/samples/ERR2602672_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602672_2.fastq.gz,ERR2602672,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602674,/data/slow/bdri/azuza/samples/ERR2602674_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602674_2.fastq.gz,ERR2602674,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602675,/data/slow/bdri/azuza/samples/ERR2602675_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602675_2.fastq.gz,ERR2602675,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602689,/data/slow/bdri/azuza/samples/ERR2602689_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602689_2.fastq.gz,ERR2602689,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602691,/data/slow/bdri/azuza/samples/ERR2602691_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602691_2.fastq.gz,ERR2602691,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602692,/data/slow/bdri/azuza/samples/ERR2602692_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602692_2.fastq.gz,ERR2602692,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602705,/data/slow/bdri/azuza/samples/ERR2602705_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602705_2.fastq.gz,ERR2602705,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602707,/data/slow/bdri/azuza/samples/ERR2602707_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602707_2.fastq.gz,ERR2602707,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602711,/data/slow/bdri/azuza/samples/ERR2602711_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602711_2.fastq.gz,ERR2602711,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602712,/data/slow/bdri/azuza/samples/ERR2602712_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602712_2.fastq.gz,ERR2602712,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602715,/data/slow/bdri/azuza/samples/ERR2602715_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602715_2.fastq.gz,ERR2602715,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602718,/data/slow/bdri/azuza/samples/ERR2602718_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602718_2.fastq.gz,ERR2602718,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602719,/data/slow/bdri/azuza/samples/ERR2602719_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602719_2.fastq.gz,ERR2602719,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602725,/data/slow/bdri/azuza/samples/ERR2602725_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602725_2.fastq.gz,ERR2602725,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602732,/data/slow/bdri/azuza/samples/ERR2602732_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602732_2.fastq.gz,ERR2602732,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602738,/data/slow/bdri/azuza/samples/ERR2602738_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602738_2.fastq.gz,ERR2602738,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602740,/data/slow/bdri/azuza/samples/ERR2602740_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602740_2.fastq.gz,ERR2602740,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602742,/data/slow/bdri/azuza/samples/ERR2602742_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602742_2.fastq.gz,ERR2602742,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602748,/data/slow/bdri/azuza/samples/ERR2602748_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602748_2.fastq.gz,ERR2602748,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602751,/data/slow/bdri/azuza/samples/ERR2602751_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602751_2.fastq.gz,ERR2602751,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602753,/data/slow/bdri/azuza/samples/ERR2602753_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602753_2.fastq.gz,ERR2602753,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602760,/data/slow/bdri/azuza/samples/ERR2602760_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602760_2.fastq.gz,ERR2602760,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602761,/data/slow/bdri/azuza/samples/ERR2602761_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602761_2.fastq.gz,ERR2602761,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602762,/data/slow/bdri/azuza/samples/ERR2602762_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602762_2.fastq.gz,ERR2602762,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602771,/data/slow/bdri/azuza/samples/ERR2602771_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602771_2.fastq.gz,ERR2602771,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602774,/data/slow/bdri/azuza/samples/ERR2602774_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602774_2.fastq.gz,ERR2602774,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602778,/data/slow/bdri/azuza/samples/ERR2602778_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602778_2.fastq.gz,ERR2602778,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602786,/data/slow/bdri/azuza/samples/ERR2602786_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602786_2.fastq.gz,ERR2602786,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602588,/data/slow/bdri/azuza/samples/ERR2602588_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602588_2.fastq.gz,ERR2602588,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602793,/data/slow/bdri/azuza/samples/ERR2602793_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602793_2.fastq.gz,ERR2602793,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602795,/data/slow/bdri/azuza/samples/ERR2602795_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602795_2.fastq.gz,ERR2602795,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602796,/data/slow/bdri/azuza/samples/ERR2602796_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602796_2.fastq.gz,ERR2602796,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602798,/data/slow/bdri/azuza/samples/ERR2602798_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602798_2.fastq.gz,ERR2602798,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602801,/data/slow/bdri/azuza/samples/ERR2602801_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602801_2.fastq.gz,ERR2602801,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602803,/data/slow/bdri/azuza/samples/ERR2602803_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602803_2.fastq.gz,ERR2602803,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602820,/data/slow/bdri/azuza/samples/ERR2602820_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602820_2.fastq.gz,ERR2602820,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602830,/data/slow/bdri/azuza/samples/ERR2602830_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602830_2.fastq.gz,ERR2602830,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602592,/data/slow/bdri/azuza/samples/ERR2602592_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602592_2.fastq.gz,ERR2602592,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602834,/data/slow/bdri/azuza/samples/ERR2602834_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602834_2.fastq.gz,ERR2602834,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602839,/data/slow/bdri/azuza/samples/ERR2602839_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602839_2.fastq.gz,ERR2602839,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602568,/data/slow/bdri/azuza/samples/ERR2602568_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602568_2.fastq.gz,ERR2602568,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602618,/data/slow/bdri/azuza/samples/ERR2602618_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602618_2.fastq.gz,ERR2602618,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602619,/data/slow/bdri/azuza/samples/ERR2602619_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602619_2.fastq.gz,ERR2602619,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602621,/data/slow/bdri/azuza/samples/ERR2602621_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602621_2.fastq.gz,ERR2602621,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602629,/data/slow/bdri/azuza/samples/ERR2602629_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602629_2.fastq.gz,ERR2602629,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602635,/data/slow/bdri/azuza/samples/ERR2602635_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602635_2.fastq.gz,ERR2602635,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602642,/data/slow/bdri/azuza/samples/ERR2602642_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602642_2.fastq.gz,ERR2602642,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602655,/data/slow/bdri/azuza/samples/ERR2602655_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602655_2.fastq.gz,ERR2602655,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602657,/data/slow/bdri/azuza/samples/ERR2602657_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602657_2.fastq.gz,ERR2602657,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602658,/data/slow/bdri/azuza/samples/ERR2602658_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602658_2.fastq.gz,ERR2602658,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602661,/data/slow/bdri/azuza/samples/ERR2602661_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602661_2.fastq.gz,ERR2602661,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602566,/data/slow/bdri/azuza/samples/ERR2602566_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602566_2.fastq.gz,ERR2602566,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602682,/data/slow/bdri/azuza/samples/ERR2602682_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602682_2.fastq.gz,ERR2602682,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602685,/data/slow/bdri/azuza/samples/ERR2602685_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602685_2.fastq.gz,ERR2602685,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602687,/data/slow/bdri/azuza/samples/ERR2602687_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602687_2.fastq.gz,ERR2602687,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602698,/data/slow/bdri/azuza/samples/ERR2602698_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602698_2.fastq.gz,ERR2602698,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602716,/data/slow/bdri/azuza/samples/ERR2602716_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602716_2.fastq.gz,ERR2602716,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602720,/data/slow/bdri/azuza/samples/ERR2602720_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602720_2.fastq.gz,ERR2602720,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602724,/data/slow/bdri/azuza/samples/ERR2602724_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602724_2.fastq.gz,ERR2602724,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602743,/data/slow/bdri/azuza/samples/ERR2602743_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602743_2.fastq.gz,ERR2602743,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602744,/data/slow/bdri/azuza/samples/ERR2602744_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602744_2.fastq.gz,ERR2602744,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR3312490,/data/slow/bdri/azuza/samples/ERR3312490_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3312490_2.fastq.gz,ERR3312490,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602768,/data/slow/bdri/azuza/samples/ERR2602768_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602768_2.fastq.gz,ERR2602768,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602770,/data/slow/bdri/azuza/samples/ERR2602770_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602770_2.fastq.gz,ERR2602770,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602773,/data/slow/bdri/azuza/samples/ERR2602773_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602773_2.fastq.gz,ERR2602773,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602817,/data/slow/bdri/azuza/samples/ERR2602817_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602817_2.fastq.gz,ERR2602817,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602829,/data/slow/bdri/azuza/samples/ERR2602829_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602829_2.fastq.gz,ERR2602829,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602838,/data/slow/bdri/azuza/samples/ERR2602838_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602838_2.fastq.gz,ERR2602838,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602569,/data/slow/bdri/azuza/samples/ERR2602569_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602569_2.fastq.gz,ERR2602569,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602627,/data/slow/bdri/azuza/samples/ERR2602627_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602627_2.fastq.gz,ERR2602627,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602644,/data/slow/bdri/azuza/samples/ERR2602644_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602644_2.fastq.gz,ERR2602644,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602667,/data/slow/bdri/azuza/samples/ERR2602667_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602667_2.fastq.gz,ERR2602667,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602681,/data/slow/bdri/azuza/samples/ERR2602681_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602681_2.fastq.gz,ERR2602681,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602730,/data/slow/bdri/azuza/samples/ERR2602730_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602730_2.fastq.gz,ERR2602730,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602731,/data/slow/bdri/azuza/samples/ERR2602731_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602731_2.fastq.gz,ERR2602731,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602810,/data/slow/bdri/azuza/samples/ERR2602810_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602810_2.fastq.gz,ERR2602810,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602645,/data/slow/bdri/azuza/samples/ERR2602645_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602645_2.fastq.gz,ERR2602645,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602665,/data/slow/bdri/azuza/samples/ERR2602665_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602665_2.fastq.gz,ERR2602665,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602668,/data/slow/bdri/azuza/samples/ERR2602668_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602668_2.fastq.gz,ERR2602668,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602676,/data/slow/bdri/azuza/samples/ERR2602676_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602676_2.fastq.gz,ERR2602676,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602679,/data/slow/bdri/azuza/samples/ERR2602679_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602679_2.fastq.gz,ERR2602679,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602680,/data/slow/bdri/azuza/samples/ERR2602680_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602680_2.fastq.gz,ERR2602680,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602684,/data/slow/bdri/azuza/samples/ERR2602684_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602684_2.fastq.gz,ERR2602684,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602694,/data/slow/bdri/azuza/samples/ERR2602694_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602694_2.fastq.gz,ERR2602694,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602697,/data/slow/bdri/azuza/samples/ERR2602697_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602697_2.fastq.gz,ERR2602697,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602579,/data/slow/bdri/azuza/samples/ERR2602579_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602579_2.fastq.gz,ERR2602579,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602714,/data/slow/bdri/azuza/samples/ERR2602714_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602714_2.fastq.gz,ERR2602714,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602582,/data/slow/bdri/azuza/samples/ERR2602582_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602582_2.fastq.gz,ERR2602582,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602739,/data/slow/bdri/azuza/samples/ERR2602739_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602739_2.fastq.gz,ERR2602739,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602583,/data/slow/bdri/azuza/samples/ERR2602583_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602583_2.fastq.gz,ERR2602583,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602754,/data/slow/bdri/azuza/samples/ERR2602754_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602754_2.fastq.gz,ERR2602754,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602584,/data/slow/bdri/azuza/samples/ERR2602584_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602584_2.fastq.gz,ERR2602584,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602764,/data/slow/bdri/azuza/samples/ERR2602764_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602764_2.fastq.gz,ERR2602764,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602769,/data/slow/bdri/azuza/samples/ERR2602769_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602769_2.fastq.gz,ERR2602769,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602586,/data/slow/bdri/azuza/samples/ERR2602586_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602586_2.fastq.gz,ERR2602586,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602772,/data/slow/bdri/azuza/samples/ERR2602772_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602772_2.fastq.gz,ERR2602772,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602780,/data/slow/bdri/azuza/samples/ERR2602780_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602780_2.fastq.gz,ERR2602780,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602791,/data/slow/bdri/azuza/samples/ERR2602791_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602791_2.fastq.gz,ERR2602791,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602792,/data/slow/bdri/azuza/samples/ERR2602792_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602792_2.fastq.gz,ERR2602792,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602797,/data/slow/bdri/azuza/samples/ERR2602797_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602797_2.fastq.gz,ERR2602797,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602589,/data/slow/bdri/azuza/samples/ERR2602589_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602589_2.fastq.gz,ERR2602589,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602805,/data/slow/bdri/azuza/samples/ERR2602805_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602805_2.fastq.gz,ERR2602805,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602807,/data/slow/bdri/azuza/samples/ERR2602807_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602807_2.fastq.gz,ERR2602807,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602821,/data/slow/bdri/azuza/samples/ERR2602821_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602821_2.fastq.gz,ERR2602821,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602832,/data/slow/bdri/azuza/samples/ERR2602832_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602832_2.fastq.gz,ERR2602832,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602841,/data/slow/bdri/azuza/samples/ERR2602841_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602841_2.fastq.gz,ERR2602841,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602617,/data/slow/bdri/azuza/samples/ERR2602617_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602617_2.fastq.gz,ERR2602617,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602622,/data/slow/bdri/azuza/samples/ERR2602622_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602622_2.fastq.gz,ERR2602622,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602630,/data/slow/bdri/azuza/samples/ERR2602630_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602630_2.fastq.gz,ERR2602630,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602632,/data/slow/bdri/azuza/samples/ERR2602632_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602632_2.fastq.gz,ERR2602632,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602633,/data/slow/bdri/azuza/samples/ERR2602633_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602633_2.fastq.gz,ERR2602633,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602572,/data/slow/bdri/azuza/samples/ERR2602572_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602572_2.fastq.gz,ERR2602572,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602647,/data/slow/bdri/azuza/samples/ERR2602647_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602647_2.fastq.gz,ERR2602647,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602648,/data/slow/bdri/azuza/samples/ERR2602648_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602648_2.fastq.gz,ERR2602648,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602652,/data/slow/bdri/azuza/samples/ERR2602652_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602652_2.fastq.gz,ERR2602652,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602678,/data/slow/bdri/azuza/samples/ERR2602678_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602678_2.fastq.gz,ERR2602678,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602688,/data/slow/bdri/azuza/samples/ERR2602688_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602688_2.fastq.gz,ERR2602688,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602729,/data/slow/bdri/azuza/samples/ERR2602729_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602729_2.fastq.gz,ERR2602729,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR3312491,/data/slow/bdri/azuza/samples/ERR3312491_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3312491_2.fastq.gz,ERR3312491,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR3312492,/data/slow/bdri/azuza/samples/ERR3312492_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3312492_2.fastq.gz,ERR3312492,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602776,/data/slow/bdri/azuza/samples/ERR2602776_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602776_2.fastq.gz,ERR2602776,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602594,/data/slow/bdri/azuza/samples/ERR2602594_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602594_2.fastq.gz,ERR2602594,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602614,/data/slow/bdri/azuza/samples/ERR2602614_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602614_2.fastq.gz,ERR2602614,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602628,/data/slow/bdri/azuza/samples/ERR2602628_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602628_2.fastq.gz,ERR2602628,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602663,/data/slow/bdri/azuza/samples/ERR2602663_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602663_2.fastq.gz,ERR2602663,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602577,/data/slow/bdri/azuza/samples/ERR2602577_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602577_2.fastq.gz,ERR2602577,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602580,/data/slow/bdri/azuza/samples/ERR2602580_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602580_2.fastq.gz,ERR2602580,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602717,/data/slow/bdri/azuza/samples/ERR2602717_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602717_2.fastq.gz,ERR2602717,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602752,/data/slow/bdri/azuza/samples/ERR2602752_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602752_2.fastq.gz,ERR2602752,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602755,/data/slow/bdri/azuza/samples/ERR2602755_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602755_2.fastq.gz,ERR2602755,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602759,/data/slow/bdri/azuza/samples/ERR2602759_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602759_2.fastq.gz,ERR2602759,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602765,/data/slow/bdri/azuza/samples/ERR2602765_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602765_2.fastq.gz,ERR2602765,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602766,/data/slow/bdri/azuza/samples/ERR2602766_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602766_2.fastq.gz,ERR2602766,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602767,/data/slow/bdri/azuza/samples/ERR2602767_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602767_2.fastq.gz,ERR2602767,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602782,/data/slow/bdri/azuza/samples/ERR2602782_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602782_2.fastq.gz,ERR2602782,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602831,/data/slow/bdri/azuza/samples/ERR2602831_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602831_2.fastq.gz,ERR2602831,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602593,/data/slow/bdri/azuza/samples/ERR2602593_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602593_2.fastq.gz,ERR2602593,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602595,/data/slow/bdri/azuza/samples/ERR2602595_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602595_2.fastq.gz,ERR2602595,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602596,/data/slow/bdri/azuza/samples/ERR2602596_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602596_2.fastq.gz,ERR2602596,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602597,/data/slow/bdri/azuza/samples/ERR2602597_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602597_2.fastq.gz,ERR2602597,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602604,/data/slow/bdri/azuza/samples/ERR2602604_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602604_2.fastq.gz,ERR2602604,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602605,/data/slow/bdri/azuza/samples/ERR2602605_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602605_2.fastq.gz,ERR2602605,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602607,/data/slow/bdri/azuza/samples/ERR2602607_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602607_2.fastq.gz,ERR2602607,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602608,/data/slow/bdri/azuza/samples/ERR2602608_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602608_2.fastq.gz,ERR2602608,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602612,/data/slow/bdri/azuza/samples/ERR2602612_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602612_2.fastq.gz,ERR2602612,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602570,/data/slow/bdri/azuza/samples/ERR2602570_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602570_2.fastq.gz,ERR2602570,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602616,/data/slow/bdri/azuza/samples/ERR2602616_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602616_2.fastq.gz,ERR2602616,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602620,/data/slow/bdri/azuza/samples/ERR2602620_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602620_2.fastq.gz,ERR2602620,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602624,/data/slow/bdri/azuza/samples/ERR2602624_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602624_2.fastq.gz,ERR2602624,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602626,/data/slow/bdri/azuza/samples/ERR2602626_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602626_2.fastq.gz,ERR2602626,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602631,/data/slow/bdri/azuza/samples/ERR2602631_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602631_2.fastq.gz,ERR2602631,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602634,/data/slow/bdri/azuza/samples/ERR2602634_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602634_2.fastq.gz,ERR2602634,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602639,/data/slow/bdri/azuza/samples/ERR2602639_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602639_2.fastq.gz,ERR2602639,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602573,/data/slow/bdri/azuza/samples/ERR2602573_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602573_2.fastq.gz,ERR2602573,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602656,/data/slow/bdri/azuza/samples/ERR2602656_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602656_2.fastq.gz,ERR2602656,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602666,/data/slow/bdri/azuza/samples/ERR2602666_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602666_2.fastq.gz,ERR2602666,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602576,/data/slow/bdri/azuza/samples/ERR2602576_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602576_2.fastq.gz,ERR2602576,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602686,/data/slow/bdri/azuza/samples/ERR2602686_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602686_2.fastq.gz,ERR2602686,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602695,/data/slow/bdri/azuza/samples/ERR2602695_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602695_2.fastq.gz,ERR2602695,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602696,/data/slow/bdri/azuza/samples/ERR2602696_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602696_2.fastq.gz,ERR2602696,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602706,/data/slow/bdri/azuza/samples/ERR2602706_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602706_2.fastq.gz,ERR2602706,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602726,/data/slow/bdri/azuza/samples/ERR2602726_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602726_2.fastq.gz,ERR2602726,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR3312489,/data/slow/bdri/azuza/samples/ERR3312489_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR3312489_2.fastq.gz,ERR3312489,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602775,/data/slow/bdri/azuza/samples/ERR2602775_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602775_2.fastq.gz,ERR2602775,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602808,/data/slow/bdri/azuza/samples/ERR2602808_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602808_2.fastq.gz,ERR2602808,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602822,/data/slow/bdri/azuza/samples/ERR2602822_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602822_2.fastq.gz,ERR2602822,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602840,/data/slow/bdri/azuza/samples/ERR2602840_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602840_2.fastq.gz,ERR2602840,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602670,/data/slow/bdri/azuza/samples/ERR2602670_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602670_2.fastq.gz,ERR2602670,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602671,/data/slow/bdri/azuza/samples/ERR2602671_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602671_2.fastq.gz,ERR2602671,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602690,/data/slow/bdri/azuza/samples/ERR2602690_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602690_2.fastq.gz,ERR2602690,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602578,/data/slow/bdri/azuza/samples/ERR2602578_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602578_2.fastq.gz,ERR2602578,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602701,/data/slow/bdri/azuza/samples/ERR2602701_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602701_2.fastq.gz,ERR2602701,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602702,/data/slow/bdri/azuza/samples/ERR2602702_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602702_2.fastq.gz,ERR2602702,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602708,/data/slow/bdri/azuza/samples/ERR2602708_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602708_2.fastq.gz,ERR2602708,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602709,/data/slow/bdri/azuza/samples/ERR2602709_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602709_2.fastq.gz,ERR2602709,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602723,/data/slow/bdri/azuza/samples/ERR2602723_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602723_2.fastq.gz,ERR2602723,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602727,/data/slow/bdri/azuza/samples/ERR2602727_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602727_2.fastq.gz,ERR2602727,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602734,/data/slow/bdri/azuza/samples/ERR2602734_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602734_2.fastq.gz,ERR2602734,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602745,/data/slow/bdri/azuza/samples/ERR2602745_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602745_2.fastq.gz,ERR2602745,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602747,/data/slow/bdri/azuza/samples/ERR2602747_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602747_2.fastq.gz,ERR2602747,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602756,/data/slow/bdri/azuza/samples/ERR2602756_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602756_2.fastq.gz,ERR2602756,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602757,/data/slow/bdri/azuza/samples/ERR2602757_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602757_2.fastq.gz,ERR2602757,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602585,/data/slow/bdri/azuza/samples/ERR2602585_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602585_2.fastq.gz,ERR2602585,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602763,/data/slow/bdri/azuza/samples/ERR2602763_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602763_2.fastq.gz,ERR2602763,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602779,/data/slow/bdri/azuza/samples/ERR2602779_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602779_2.fastq.gz,ERR2602779,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602781,/data/slow/bdri/azuza/samples/ERR2602781_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602781_2.fastq.gz,ERR2602781,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602787,/data/slow/bdri/azuza/samples/ERR2602787_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602787_2.fastq.gz,ERR2602787,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602790,/data/slow/bdri/azuza/samples/ERR2602790_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602790_2.fastq.gz,ERR2602790,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602804,/data/slow/bdri/azuza/samples/ERR2602804_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602804_2.fastq.gz,ERR2602804,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602811,/data/slow/bdri/azuza/samples/ERR2602811_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602811_2.fastq.gz,ERR2602811,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602818,/data/slow/bdri/azuza/samples/ERR2602818_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602818_2.fastq.gz,ERR2602818,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602591,/data/slow/bdri/azuza/samples/ERR2602591_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602591_2.fastq.gz,ERR2602591,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602833,/data/slow/bdri/azuza/samples/ERR2602833_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602833_2.fastq.gz,ERR2602833,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602837,/data/slow/bdri/azuza/samples/ERR2602837_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602837_2.fastq.gz,ERR2602837,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602842,/data/slow/bdri/azuza/samples/ERR2602842_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602842_2.fastq.gz,ERR2602842,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602598,/data/slow/bdri/azuza/samples/ERR2602598_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602598_2.fastq.gz,ERR2602598,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602599,/data/slow/bdri/azuza/samples/ERR2602599_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602599_2.fastq.gz,ERR2602599,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602601,/data/slow/bdri/azuza/samples/ERR2602601_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602601_2.fastq.gz,ERR2602601,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602623,/data/slow/bdri/azuza/samples/ERR2602623_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602623_2.fastq.gz,ERR2602623,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602571,/data/slow/bdri/azuza/samples/ERR2602571_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602571_2.fastq.gz,ERR2602571,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602636,/data/slow/bdri/azuza/samples/ERR2602636_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602636_2.fastq.gz,ERR2602636,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602637,/data/slow/bdri/azuza/samples/ERR2602637_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602637_2.fastq.gz,ERR2602637,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602646,/data/slow/bdri/azuza/samples/ERR2602646_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602646_2.fastq.gz,ERR2602646,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602650,/data/slow/bdri/azuza/samples/ERR2602650_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602650_2.fastq.gz,ERR2602650,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602651,/data/slow/bdri/azuza/samples/ERR2602651_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602651_2.fastq.gz,ERR2602651,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602654,/data/slow/bdri/azuza/samples/ERR2602654_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602654_2.fastq.gz,ERR2602654,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602659,/data/slow/bdri/azuza/samples/ERR2602659_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602659_2.fastq.gz,ERR2602659,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602799,/data/slow/bdri/azuza/samples/ERR2602799_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602799_2.fastq.gz,ERR2602799,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602590,/data/slow/bdri/azuza/samples/ERR2602590_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602590_2.fastq.gz,ERR2602590,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602575,/data/slow/bdri/azuza/samples/ERR2602575_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602575_2.fastq.gz,ERR2602575,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602677,/data/slow/bdri/azuza/samples/ERR2602677_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602677_2.fastq.gz,ERR2602677,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602683,/data/slow/bdri/azuza/samples/ERR2602683_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602683_2.fastq.gz,ERR2602683,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602704,/data/slow/bdri/azuza/samples/ERR2602704_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602704_2.fastq.gz,ERR2602704,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602710,/data/slow/bdri/azuza/samples/ERR2602710_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602710_2.fastq.gz,ERR2602710,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602713,/data/slow/bdri/azuza/samples/ERR2602713_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602713_2.fastq.gz,ERR2602713,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602721,/data/slow/bdri/azuza/samples/ERR2602721_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602721_2.fastq.gz,ERR2602721,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602722,/data/slow/bdri/azuza/samples/ERR2602722_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602722_2.fastq.gz,ERR2602722,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602581,/data/slow/bdri/azuza/samples/ERR2602581_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602581_2.fastq.gz,ERR2602581,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602733,/data/slow/bdri/azuza/samples/ERR2602733_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602733_2.fastq.gz,ERR2602733,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602737,/data/slow/bdri/azuza/samples/ERR2602737_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602737_2.fastq.gz,ERR2602737,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602741,/data/slow/bdri/azuza/samples/ERR2602741_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602741_2.fastq.gz,ERR2602741,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602758,/data/slow/bdri/azuza/samples/ERR2602758_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602758_2.fastq.gz,ERR2602758,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602777,/data/slow/bdri/azuza/samples/ERR2602777_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602777_2.fastq.gz,ERR2602777,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602785,/data/slow/bdri/azuza/samples/ERR2602785_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602785_2.fastq.gz,ERR2602785,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602794,/data/slow/bdri/azuza/samples/ERR2602794_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602794_2.fastq.gz,ERR2602794,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602802,/data/slow/bdri/azuza/samples/ERR2602802_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602802_2.fastq.gz,ERR2602802,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602836,/data/slow/bdri/azuza/samples/ERR2602836_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602836_2.fastq.gz,ERR2602836,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602606,/data/slow/bdri/azuza/samples/ERR2602606_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602606_2.fastq.gz,ERR2602606,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602638,/data/slow/bdri/azuza/samples/ERR2602638_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602638_2.fastq.gz,ERR2602638,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602643,/data/slow/bdri/azuza/samples/ERR2602643_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602643_2.fastq.gz,ERR2602643,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602649,/data/slow/bdri/azuza/samples/ERR2602649_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602649_2.fastq.gz,ERR2602649,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602653,/data/slow/bdri/azuza/samples/ERR2602653_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602653_2.fastq.gz,ERR2602653,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602673,/data/slow/bdri/azuza/samples/ERR2602673_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602673_2.fastq.gz,ERR2602673,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602693,/data/slow/bdri/azuza/samples/ERR2602693_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602693_2.fastq.gz,ERR2602693,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602699,/data/slow/bdri/azuza/samples/ERR2602699_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602699_2.fastq.gz,ERR2602699,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602703,/data/slow/bdri/azuza/samples/ERR2602703_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602703_2.fastq.gz,ERR2602703,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602728,/data/slow/bdri/azuza/samples/ERR2602728_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602728_2.fastq.gz,ERR2602728,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602735,/data/slow/bdri/azuza/samples/ERR2602735_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602735_2.fastq.gz,ERR2602735,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602736,/data/slow/bdri/azuza/samples/ERR2602736_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602736_2.fastq.gz,ERR2602736,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602749,/data/slow/bdri/azuza/samples/ERR2602749_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602749_2.fastq.gz,ERR2602749,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602750,/data/slow/bdri/azuza/samples/ERR2602750_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602750_2.fastq.gz,ERR2602750,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602587,/data/slow/bdri/azuza/samples/ERR2602587_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602587_2.fastq.gz,ERR2602587,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602789,/data/slow/bdri/azuza/samples/ERR2602789_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602789_2.fastq.gz,ERR2602789,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602800,/data/slow/bdri/azuza/samples/ERR2602800_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602800_2.fastq.gz,ERR2602800,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602806,/data/slow/bdri/azuza/samples/ERR2602806_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602806_2.fastq.gz,ERR2602806,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602819,/data/slow/bdri/azuza/samples/ERR2602819_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602819_2.fastq.gz,ERR2602819,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602600,/data/slow/bdri/azuza/samples/ERR2602600_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602600_2.fastq.gz,ERR2602600,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602602,/data/slow/bdri/azuza/samples/ERR2602602_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602602_2.fastq.gz,ERR2602602,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602609,/data/slow/bdri/azuza/samples/ERR2602609_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602609_2.fastq.gz,ERR2602609,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602610,/data/slow/bdri/azuza/samples/ERR2602610_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602610_2.fastq.gz,ERR2602610,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602611,/data/slow/bdri/azuza/samples/ERR2602611_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602611_2.fastq.gz,ERR2602611,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602613,/data/slow/bdri/azuza/samples/ERR2602613_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602613_2.fastq.gz,ERR2602613,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602574,/data/slow/bdri/azuza/samples/ERR2602574_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602574_2.fastq.gz,ERR2602574,2015,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602662,/data/slow/bdri/azuza/samples/ERR2602662_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602662_2.fastq.gz,ERR2602662,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR2602664,/data/slow/bdri/azuza/samples/ERR2602664_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR2602664_2.fastq.gz,ERR2602664,2016,Malawi,Jillian et al. 2021,Malawian H58
+ERR279153,/data/slow/bdri/azuza/samples/ERR279153_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279153_2.fastq.gz,ERR279153,2009,Malawi,"Wong et al, 2015 (global framework)",Malawian H58
+ERR279143,/data/slow/bdri/azuza/samples/ERR279143_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279143_2.fastq.gz,ERR279143,2011,Malawi,"Wong et al, 2015 (global framework)",Malawian H58
+ERR279146,/data/slow/bdri/azuza/samples/ERR279146_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279146_2.fastq.gz,ERR279146,2011,Malawi,"Wong et al, 2015 (global framework)",Malawian H58
+ERR279115,/data/slow/bdri/azuza/samples/ERR279115_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279115_2.fastq.gz,ERR279115,2011,Malawi,"Wong et al, 2015 (global framework)",Malawian H58
+ERR360812,/data/slow/bdri/azuza/samples/ERR360812_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360812_2.fastq.gz,ERR360812,2010,Malawi,"Wong et al, 2015 (global framework)",Malawian H58
+ERR1017042,/data/slow/bdri/azuza/samples/ERR1017042_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1017042_2.fastq.gz,ERR1017042,2005,Unknown,Wong et al. 2016,Outgroup
+ERR1017039,/data/slow/bdri/azuza/samples/ERR1017039_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1017039_2.fastq.gz,ERR1017039,2005,Unknown,Wong et al. 2016,Outgroup
+ERR331382,/data/slow/bdri/azuza/samples/ERR331382_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331382_2.fastq.gz,ERR331382,2006,Iraq,Wong et al. 2016,Outgroup
+ERR331383,/data/slow/bdri/azuza/samples/ERR331383_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331383_2.fastq.gz,ERR331383,2009,Iraq,Wong et al. 2016,Outgroup
+ERR331384,/data/slow/bdri/azuza/samples/ERR331384_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331384_2.fastq.gz,ERR331384,2008,Iraq,Wong et al. 2016,Outgroup
+ERR331385,/data/slow/bdri/azuza/samples/ERR331385_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331385_2.fastq.gz,ERR331385,2010,Iraq,Wong et al. 2016,Outgroup
+ERR331386,/data/slow/bdri/azuza/samples/ERR331386_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331386_2.fastq.gz,ERR331386,2007,Iraq,Wong et al. 2016,Outgroup
+ERR331387,/data/slow/bdri/azuza/samples/ERR331387_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331387_2.fastq.gz,ERR331387,2009,Iraq,Wong et al. 2016,Outgroup
+ERR331388,/data/slow/bdri/azuza/samples/ERR331388_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331388_2.fastq.gz,ERR331388,2008,Iraq,Wong et al. 2016,Outgroup
+ERR331389,/data/slow/bdri/azuza/samples/ERR331389_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331389_2.fastq.gz,ERR331389,2009,Iraq,Wong et al. 2016,Outgroup
+ERR331390,/data/slow/bdri/azuza/samples/ERR331390_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331390_2.fastq.gz,ERR331390,2008,Iraq,Wong et al. 2016,Outgroup
+ERR352326,/data/slow/bdri/azuza/samples/ERR352326_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352326_2.fastq.gz,ERR352326,2011,Iraq,Wong et al. 2016,Outgroup
+ERR352509,/data/slow/bdri/azuza/samples/ERR352509_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352509_2.fastq.gz,ERR352509,2012,Afghanistan,Wong et al. 2016,Outgroup
+ERR357615,/data/slow/bdri/azuza/samples/ERR357615_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357615_2.fastq.gz,ERR357615,2002,Western_Asia,Wong et al. 2016,Outgroup
+ERR360693,/data/slow/bdri/azuza/samples/ERR360693_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360693_2.fastq.gz,ERR360693,2008,Palestine,Wong et al. 2016,Outgroup
+ERR352307,/data/slow/bdri/azuza/samples/ERR352307_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352307_2.fastq.gz,ERR352307,2011,Pakistan,Wong et al. 2016,Outgroup
+ERR357819,/data/slow/bdri/azuza/samples/ERR357819_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357819_2.fastq.gz,ERR357819,2011,Pakistan,Wong et al. 2016,Outgroup
+ERR360458,/data/slow/bdri/azuza/samples/ERR360458_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360458_2.fastq.gz,ERR360458,2003,Pakistan,Wong et al. 2016,Outgroup
+ERR360468,/data/slow/bdri/azuza/samples/ERR360468_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360468_2.fastq.gz,ERR360468,2003,Pakistan,Wong et al. 2016,Outgroup
+ERR360476,/data/slow/bdri/azuza/samples/ERR360476_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360476_2.fastq.gz,ERR360476,2003,Pakistan,Wong et al. 2016,Outgroup
+ERR352444,/data/slow/bdri/azuza/samples/ERR352444_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352444_2.fastq.gz,ERR352444,2012,Pakistan,Wong et al. 2016,Outgroup
+ERR352463,/data/slow/bdri/azuza/samples/ERR352463_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352463_2.fastq.gz,ERR352463,2010,Pakistan,Wong et al. 2016,Outgroup
+ERR357788,/data/slow/bdri/azuza/samples/ERR357788_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357788_2.fastq.gz,ERR357788,2010,Pakistan,Wong et al. 2016,Outgroup
+ERR422781,/data/slow/bdri/azuza/samples/ERR422781_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422781_2.fastq.gz,ERR422781,2010,Pakistan,Wong et al. 2016,Outgroup
+ERR422805,/data/slow/bdri/azuza/samples/ERR422805_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422805_2.fastq.gz,ERR422805,2011,Pakistan,Wong et al. 2016,Outgroup
+ERR1017069,/data/slow/bdri/azuza/samples/ERR1017069_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1017069_2.fastq.gz,ERR1017069,2007,Pakistan,Wong et al. 2016,Outgroup
+ERR1017097,/data/slow/bdri/azuza/samples/ERR1017097_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1017097_2.fastq.gz,ERR1017097,2009,Pakistan,Wong et al. 2016,Outgroup
+ERR360480,/data/slow/bdri/azuza/samples/ERR360480_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360480_2.fastq.gz,ERR360480,2003,Pakistan,Wong et al. 2016,Outgroup
+ERR360452,/data/slow/bdri/azuza/samples/ERR360452_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360452_2.fastq.gz,ERR360452,2003,Pakistan,Wong et al. 2016,Outgroup
+ERR357603,/data/slow/bdri/azuza/samples/ERR357603_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357603_2.fastq.gz,ERR357603,2011,Nepal,Wong et al. 2016,Outgroup
+ERR1079230,/data/slow/bdri/azuza/samples/ERR1079230_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1079230_2.fastq.gz,ERR1079230,2011,Nepal,Thanh et al. 2016,Outgroup
+ERR119819,/data/slow/bdri/azuza/samples/ERR119819_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR119819_2.fastq.gz,ERR119819,2009,Nepal,Thanh et al. 2016,Outgroup
+ERR119820,/data/slow/bdri/azuza/samples/ERR119820_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR119820_2.fastq.gz,ERR119820,2009,Nepal,Thanh et al. 2016,Outgroup
+ERR119822,/data/slow/bdri/azuza/samples/ERR119822_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR119822_2.fastq.gz,ERR119822,2009,Nepal,Thanh et al. 2016,Outgroup
+ERR119823,/data/slow/bdri/azuza/samples/ERR119823_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR119823_2.fastq.gz,ERR119823,2009,Nepal,Thanh et al. 2016,Outgroup
+ERR119824,/data/slow/bdri/azuza/samples/ERR119824_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR119824_2.fastq.gz,ERR119824,2009,Nepal,Thanh et al. 2016,Outgroup
+ERR119825,/data/slow/bdri/azuza/samples/ERR119825_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR119825_2.fastq.gz,ERR119825,2009,Nepal,Thanh et al. 2016,Outgroup
+ERR1079241,/data/slow/bdri/azuza/samples/ERR1079241_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1079241_2.fastq.gz,ERR1079241,2012,Nepal,Thanh et al. 2016,Outgroup
+ERR1079243,/data/slow/bdri/azuza/samples/ERR1079243_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1079243_2.fastq.gz,ERR1079243,2012,Nepal,Thanh et al. 2016,Outgroup
+ERR1079245,/data/slow/bdri/azuza/samples/ERR1079245_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1079245_2.fastq.gz,ERR1079245,2012,Nepal,Thanh et al. 2016,Outgroup
+ERR1079249,/data/slow/bdri/azuza/samples/ERR1079249_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1079249_2.fastq.gz,ERR1079249,2012,Nepal,Thanh et al. 2016,Outgroup
+ERR1079250,/data/slow/bdri/azuza/samples/ERR1079250_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1079250_2.fastq.gz,ERR1079250,2012,Nepal,Thanh et al. 2016,Outgroup
+ERR1079299,/data/slow/bdri/azuza/samples/ERR1079299_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1079299_2.fastq.gz,ERR1079299,2014,Nepal,Thanh et al. 2016,Outgroup
+ERR331296,/data/slow/bdri/azuza/samples/ERR331296_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331296_2.fastq.gz,ERR331296,2008,Bangladesh,Wong et al. 2016,Outgroup
+ERR331297,/data/slow/bdri/azuza/samples/ERR331297_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331297_2.fastq.gz,ERR331297,2012,Bangladesh,Wong et al. 2016,Outgroup
+ERR337989,/data/slow/bdri/azuza/samples/ERR337989_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR337989_2.fastq.gz,ERR337989,2012,Bangladesh,Wong et al. 2016,Outgroup
+ERR422824,/data/slow/bdri/azuza/samples/ERR422824_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422824_2.fastq.gz,ERR422824,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR331292,/data/slow/bdri/azuza/samples/ERR331292_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331292_2.fastq.gz,ERR331292,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR331293,/data/slow/bdri/azuza/samples/ERR331293_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331293_2.fastq.gz,ERR331293,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR337987,/data/slow/bdri/azuza/samples/ERR337987_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR337987_2.fastq.gz,ERR337987,2012,Bangladesh,Wong et al. 2016,Outgroup
+ERR337990,/data/slow/bdri/azuza/samples/ERR337990_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR337990_2.fastq.gz,ERR337990,2012,Bangladesh,Wong et al. 2016,Outgroup
+ERR337995,/data/slow/bdri/azuza/samples/ERR337995_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR337995_2.fastq.gz,ERR337995,2012,Bangladesh,Wong et al. 2016,Outgroup
+ERR337984,/data/slow/bdri/azuza/samples/ERR337984_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR337984_2.fastq.gz,ERR337984,2012,Bangladesh,Wong et al. 2016,Outgroup
+ERR352304,/data/slow/bdri/azuza/samples/ERR352304_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352304_2.fastq.gz,ERR352304,2010,Bangladesh,Wong et al. 2016,Outgroup
+ERR352308,/data/slow/bdri/azuza/samples/ERR352308_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352308_2.fastq.gz,ERR352308,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR352468,/data/slow/bdri/azuza/samples/ERR352468_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352468_2.fastq.gz,ERR352468,2010,Bangladesh,Wong et al. 2016,Outgroup
+ERR357776,/data/slow/bdri/azuza/samples/ERR357776_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357776_2.fastq.gz,ERR357776,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR357782,/data/slow/bdri/azuza/samples/ERR357782_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357782_2.fastq.gz,ERR357782,2010,Bangladesh,Wong et al. 2016,Outgroup
+ERR357792,/data/slow/bdri/azuza/samples/ERR357792_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357792_2.fastq.gz,ERR357792,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR360526,/data/slow/bdri/azuza/samples/ERR360526_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360526_2.fastq.gz,ERR360526,2007,Bangladesh,Wong et al. 2016,Outgroup
+ERR422766,/data/slow/bdri/azuza/samples/ERR422766_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422766_2.fastq.gz,ERR422766,2010,Bangladesh,Wong et al. 2016,Outgroup
+ERR422752,/data/slow/bdri/azuza/samples/ERR422752_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422752_2.fastq.gz,ERR422752,2009,Bangladesh,Wong et al. 2016,Outgroup
+ERR422775,/data/slow/bdri/azuza/samples/ERR422775_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422775_2.fastq.gz,ERR422775,2010,Bangladesh,Wong et al. 2016,Outgroup
+ERR422776,/data/slow/bdri/azuza/samples/ERR422776_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422776_2.fastq.gz,ERR422776,2010,Bangladesh,Wong et al. 2016,Outgroup
+ERR422800,/data/slow/bdri/azuza/samples/ERR422800_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422800_2.fastq.gz,ERR422800,2010,Bangladesh,Wong et al. 2016,Outgroup
+ERR422801,/data/slow/bdri/azuza/samples/ERR422801_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422801_2.fastq.gz,ERR422801,2010,Bangladesh,Wong et al. 2016,Outgroup
+ERR422810,/data/slow/bdri/azuza/samples/ERR422810_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422810_2.fastq.gz,ERR422810,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR422812,/data/slow/bdri/azuza/samples/ERR422812_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422812_2.fastq.gz,ERR422812,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR422813,/data/slow/bdri/azuza/samples/ERR422813_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422813_2.fastq.gz,ERR422813,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR422815,/data/slow/bdri/azuza/samples/ERR422815_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422815_2.fastq.gz,ERR422815,2011,Bangladesh,Wong et al. 2016,Outgroup
+ERR422829,/data/slow/bdri/azuza/samples/ERR422829_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422829_2.fastq.gz,ERR422829,2012,Bangladesh,Wong et al. 2016,Outgroup
+ERR422831,/data/slow/bdri/azuza/samples/ERR422831_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422831_2.fastq.gz,ERR422831,2012,Bangladesh,Wong et al. 2016,Outgroup
+ERR1017071,/data/slow/bdri/azuza/samples/ERR1017071_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1017071_2.fastq.gz,ERR1017071,2007,Bangladesh,Wong et al. 2016,Outgroup
+ERR1017072,/data/slow/bdri/azuza/samples/ERR1017072_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1017072_2.fastq.gz,ERR1017072,2007,Bangladesh,Wong et al. 2016,Outgroup
+ERR1017087,/data/slow/bdri/azuza/samples/ERR1017087_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1017087_2.fastq.gz,ERR1017087,2008,Bangladesh,Wong et al. 2016,Outgroup
+ERR1017089,/data/slow/bdri/azuza/samples/ERR1017089_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR1017089_2.fastq.gz,ERR1017089,2008,Bangladesh,Wong et al. 2016,Outgroup
+ERR485138,/data/slow/bdri/azuza/samples/ERR485138_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR485138_2.fastq.gz,ERR485138,2006,Bangladesh,Wong et al. 2016,Outgroup
+ERR352279,/data/slow/bdri/azuza/samples/ERR352279_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352279_2.fastq.gz,ERR352279,2010,Myanmar(Burma),Wong et al. 2016,Outgroup
+ERR357824,/data/slow/bdri/azuza/samples/ERR357824_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357824_2.fastq.gz,ERR357824,2011,Myanmar(Burma),Wong et al. 2016,Outgroup
+ERR343272,/data/slow/bdri/azuza/samples/ERR343272_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR343272_2.fastq.gz,ERR343272,2006,India,Wong et al. 2016,Outgroup
+ERR352264,/data/slow/bdri/azuza/samples/ERR352264_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352264_2.fastq.gz,ERR352264,2012,India,Wong et al. 2016,Outgroup
+ERR352456,/data/slow/bdri/azuza/samples/ERR352456_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352456_2.fastq.gz,ERR352456,2011,India,Wong et al. 2016,Outgroup
+ERR357821,/data/slow/bdri/azuza/samples/ERR357821_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357821_2.fastq.gz,ERR357821,2011,India,Wong et al. 2016,Outgroup
+ERR357763,/data/slow/bdri/azuza/samples/ERR357763_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357763_2.fastq.gz,ERR357763,2012,India,Wong et al. 2016,Outgroup
+ERR343327,/data/slow/bdri/azuza/samples/ERR343327_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR343327_2.fastq.gz,ERR343327,2012,India,Wong et al. 2016,Outgroup
+ERR352274,/data/slow/bdri/azuza/samples/ERR352274_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352274_2.fastq.gz,ERR352274,2011,India,Wong et al. 2016,Outgroup
+ERR352280,/data/slow/bdri/azuza/samples/ERR352280_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352280_2.fastq.gz,ERR352280,2011,India,Wong et al. 2016,Outgroup
+ERR352505,/data/slow/bdri/azuza/samples/ERR352505_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352505_2.fastq.gz,ERR352505,2011,India,Wong et al. 2016,Outgroup
+ERR352506,/data/slow/bdri/azuza/samples/ERR352506_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352506_2.fastq.gz,ERR352506,2011,India,Wong et al. 2016,Outgroup
+ERR352948,/data/slow/bdri/azuza/samples/ERR352948_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352948_2.fastq.gz,ERR352948,2011,India,Wong et al. 2016,Outgroup
+ERR357791,/data/slow/bdri/azuza/samples/ERR357791_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357791_2.fastq.gz,ERR357791,2011,India,Wong et al. 2016,Outgroup
+ERR357795,/data/slow/bdri/azuza/samples/ERR357795_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357795_2.fastq.gz,ERR357795,2011,India,Wong et al. 2016,Outgroup
+ERR357796,/data/slow/bdri/azuza/samples/ERR357796_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357796_2.fastq.gz,ERR357796,2011,India,Wong et al. 2016,Outgroup
+ERR357815,/data/slow/bdri/azuza/samples/ERR357815_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357815_2.fastq.gz,ERR357815,2011,India,Wong et al. 2016,Outgroup
+ERR357830,/data/slow/bdri/azuza/samples/ERR357830_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357830_2.fastq.gz,ERR357830,2011,India,Wong et al. 2016,Outgroup
+ERR420415,/data/slow/bdri/azuza/samples/ERR420415_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR420415_2.fastq.gz,ERR420415,2009,India,Wong et al. 2016,Outgroup
+ERR420425,/data/slow/bdri/azuza/samples/ERR420425_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR420425_2.fastq.gz,ERR420425,2011,India,Wong et al. 2016,Outgroup
+ERR279348,/data/slow/bdri/azuza/samples/ERR279348_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279348_2.fastq.gz,ERR279348,2005,India,Wong et al. 2016,Outgroup
+ERR279349,/data/slow/bdri/azuza/samples/ERR279349_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279349_2.fastq.gz,ERR279349,2005,India,Wong et al. 2016,Outgroup
+ERR343322,/data/slow/bdri/azuza/samples/ERR343322_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR343322_2.fastq.gz,ERR343322,2012,India,Wong et al. 2016,Outgroup
+ERR420429,/data/slow/bdri/azuza/samples/ERR420429_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR420429_2.fastq.gz,ERR420429,2009,India,Wong et al. 2016,Outgroup
+ERR420432,/data/slow/bdri/azuza/samples/ERR420432_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR420432_2.fastq.gz,ERR420432,2009,India,Wong et al. 2016,Outgroup
+ERR422817,/data/slow/bdri/azuza/samples/ERR422817_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422817_2.fastq.gz,ERR422817,2011,India,Wong et al. 2016,Outgroup
+ERR343302,/data/slow/bdri/azuza/samples/ERR343302_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR343302_2.fastq.gz,ERR343302,2010,India,Wong et al. 2016,Outgroup
+ERR352272,/data/slow/bdri/azuza/samples/ERR352272_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352272_2.fastq.gz,ERR352272,2011,India,Wong et al. 2016,Outgroup
+ERR357820,/data/slow/bdri/azuza/samples/ERR357820_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357820_2.fastq.gz,ERR357820,2011,India,Wong et al. 2016,Outgroup
+ERR422759,/data/slow/bdri/azuza/samples/ERR422759_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR422759_2.fastq.gz,ERR422759,2009,India,Wong et al. 2016,Outgroup
+ERR352466,/data/slow/bdri/azuza/samples/ERR352466_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352466_2.fastq.gz,ERR352466,2011,India,Wong et al. 2016,Outgroup
+ERR331325,/data/slow/bdri/azuza/samples/ERR331325_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331325_2.fastq.gz,ERR331325,2009,Laos,Wong et al. 2016,Outgroup
+ERR331330,/data/slow/bdri/azuza/samples/ERR331330_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331330_2.fastq.gz,ERR331330,2010,Laos,Wong et al. 2016,Outgroup
+ERR331333,/data/slow/bdri/azuza/samples/ERR331333_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331333_2.fastq.gz,ERR331333,2003,Laos,Wong et al. 2016,Outgroup
+ERR331335,/data/slow/bdri/azuza/samples/ERR331335_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331335_2.fastq.gz,ERR331335,2003,Laos,Wong et al. 2016,Outgroup
+ERR331336,/data/slow/bdri/azuza/samples/ERR331336_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331336_2.fastq.gz,ERR331336,2003,Laos,Wong et al. 2016,Outgroup
+ERR331301,/data/slow/bdri/azuza/samples/ERR331301_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331301_2.fastq.gz,ERR331301,2008,Laos,Wong et al. 2016,Outgroup
+ERR331344,/data/slow/bdri/azuza/samples/ERR331344_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331344_2.fastq.gz,ERR331344,2003,Laos,Wong et al. 2016,Outgroup
+ERR331346,/data/slow/bdri/azuza/samples/ERR331346_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331346_2.fastq.gz,ERR331346,2003,Laos,Wong et al. 2016,Outgroup
+ERR331347,/data/slow/bdri/azuza/samples/ERR331347_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331347_2.fastq.gz,ERR331347,2003,Laos,Wong et al. 2016,Outgroup
+ERR331352,/data/slow/bdri/azuza/samples/ERR331352_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331352_2.fastq.gz,ERR331352,2004,Laos,Wong et al. 2016,Outgroup
+ERR340784,/data/slow/bdri/azuza/samples/ERR340784_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340784_2.fastq.gz,ERR340784,2001,Laos,Wong et al. 2016,Outgroup
+ERR340787,/data/slow/bdri/azuza/samples/ERR340787_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340787_2.fastq.gz,ERR340787,2002,Laos,Wong et al. 2016,Outgroup
+ERR340789,/data/slow/bdri/azuza/samples/ERR340789_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340789_2.fastq.gz,ERR340789,2002,Laos,Wong et al. 2016,Outgroup
+ERR340790,/data/slow/bdri/azuza/samples/ERR340790_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340790_2.fastq.gz,ERR340790,2002,Laos,Wong et al. 2016,Outgroup
+ERR340791,/data/slow/bdri/azuza/samples/ERR340791_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340791_2.fastq.gz,ERR340791,2002,Laos,Wong et al. 2016,Outgroup
+ERR340794,/data/slow/bdri/azuza/samples/ERR340794_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340794_2.fastq.gz,ERR340794,2002,Laos,Wong et al. 2016,Outgroup
+ERR340795,/data/slow/bdri/azuza/samples/ERR340795_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340795_2.fastq.gz,ERR340795,2002,Laos,Wong et al. 2016,Outgroup
+ERR340797,/data/slow/bdri/azuza/samples/ERR340797_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340797_2.fastq.gz,ERR340797,2002,Laos,Wong et al. 2016,Outgroup
+ERR340799,/data/slow/bdri/azuza/samples/ERR340799_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340799_2.fastq.gz,ERR340799,2002,Laos,Wong et al. 2016,Outgroup
+ERR340800,/data/slow/bdri/azuza/samples/ERR340800_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340800_2.fastq.gz,ERR340800,2002,Laos,Wong et al. 2016,Outgroup
+ERR340802,/data/slow/bdri/azuza/samples/ERR340802_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340802_2.fastq.gz,ERR340802,2000,Laos,Wong et al. 2016,Outgroup
+ERR340806,/data/slow/bdri/azuza/samples/ERR340806_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340806_2.fastq.gz,ERR340806,2002,Laos,Wong et al. 2016,Outgroup
+ERR340807,/data/slow/bdri/azuza/samples/ERR340807_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340807_2.fastq.gz,ERR340807,2000,Laos,Wong et al. 2016,Outgroup
+ERR340809,/data/slow/bdri/azuza/samples/ERR340809_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340809_2.fastq.gz,ERR340809,2000,Laos,Wong et al. 2016,Outgroup
+ERR340812,/data/slow/bdri/azuza/samples/ERR340812_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340812_2.fastq.gz,ERR340812,2003,Laos,Wong et al. 2016,Outgroup
+ERR340815,/data/slow/bdri/azuza/samples/ERR340815_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340815_2.fastq.gz,ERR340815,2000,Laos,Wong et al. 2016,Outgroup
+ERR360504,/data/slow/bdri/azuza/samples/ERR360504_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360504_2.fastq.gz,ERR360504,2002,Laos,Wong et al. 2016,Outgroup
+ERR331328,/data/slow/bdri/azuza/samples/ERR331328_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331328_2.fastq.gz,ERR331328,2008,Laos,Wong et al. 2016,Outgroup
+ERR331351,/data/slow/bdri/azuza/samples/ERR331351_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331351_2.fastq.gz,ERR331351,2004,Laos,Wong et al. 2016,Outgroup
+ERR349373,/data/slow/bdri/azuza/samples/ERR349373_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349373_2.fastq.gz,ERR349373,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349556,/data/slow/bdri/azuza/samples/ERR349556_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349556_2.fastq.gz,ERR349556,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349585,/data/slow/bdri/azuza/samples/ERR349585_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349585_2.fastq.gz,ERR349585,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352652,/data/slow/bdri/azuza/samples/ERR352652_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352652_2.fastq.gz,ERR352652,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352654,/data/slow/bdri/azuza/samples/ERR352654_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352654_2.fastq.gz,ERR352654,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352663,/data/slow/bdri/azuza/samples/ERR352663_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352663_2.fastq.gz,ERR352663,1998,Vietnam,Wong et al. 2016,Outgroup
+ERR352667,/data/slow/bdri/azuza/samples/ERR352667_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352667_2.fastq.gz,ERR352667,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349331,/data/slow/bdri/azuza/samples/ERR349331_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349331_2.fastq.gz,ERR349331,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349341,/data/slow/bdri/azuza/samples/ERR349341_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349341_2.fastq.gz,ERR349341,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349345,/data/slow/bdri/azuza/samples/ERR349345_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349345_2.fastq.gz,ERR349345,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349346,/data/slow/bdri/azuza/samples/ERR349346_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349346_2.fastq.gz,ERR349346,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349347,/data/slow/bdri/azuza/samples/ERR349347_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349347_2.fastq.gz,ERR349347,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349348,/data/slow/bdri/azuza/samples/ERR349348_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349348_2.fastq.gz,ERR349348,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349349,/data/slow/bdri/azuza/samples/ERR349349_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349349_2.fastq.gz,ERR349349,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349350,/data/slow/bdri/azuza/samples/ERR349350_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349350_2.fastq.gz,ERR349350,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349353,/data/slow/bdri/azuza/samples/ERR349353_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349353_2.fastq.gz,ERR349353,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349354,/data/slow/bdri/azuza/samples/ERR349354_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349354_2.fastq.gz,ERR349354,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349356,/data/slow/bdri/azuza/samples/ERR349356_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349356_2.fastq.gz,ERR349356,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349357,/data/slow/bdri/azuza/samples/ERR349357_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349357_2.fastq.gz,ERR349357,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349359,/data/slow/bdri/azuza/samples/ERR349359_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349359_2.fastq.gz,ERR349359,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349360,/data/slow/bdri/azuza/samples/ERR349360_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349360_2.fastq.gz,ERR349360,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349361,/data/slow/bdri/azuza/samples/ERR349361_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349361_2.fastq.gz,ERR349361,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349363,/data/slow/bdri/azuza/samples/ERR349363_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349363_2.fastq.gz,ERR349363,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349364,/data/slow/bdri/azuza/samples/ERR349364_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349364_2.fastq.gz,ERR349364,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349367,/data/slow/bdri/azuza/samples/ERR349367_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349367_2.fastq.gz,ERR349367,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349334,/data/slow/bdri/azuza/samples/ERR349334_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349334_2.fastq.gz,ERR349334,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349372,/data/slow/bdri/azuza/samples/ERR349372_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349372_2.fastq.gz,ERR349372,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349375,/data/slow/bdri/azuza/samples/ERR349375_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349375_2.fastq.gz,ERR349375,1993,Vietnam,Wong et al. 2016,Outgroup
+ERR349378,/data/slow/bdri/azuza/samples/ERR349378_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349378_2.fastq.gz,ERR349378,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349381,/data/slow/bdri/azuza/samples/ERR349381_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349381_2.fastq.gz,ERR349381,1993,Vietnam,Wong et al. 2016,Outgroup
+ERR349385,/data/slow/bdri/azuza/samples/ERR349385_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349385_2.fastq.gz,ERR349385,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349387,/data/slow/bdri/azuza/samples/ERR349387_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349387_2.fastq.gz,ERR349387,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349388,/data/slow/bdri/azuza/samples/ERR349388_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349388_2.fastq.gz,ERR349388,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349392,/data/slow/bdri/azuza/samples/ERR349392_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349392_2.fastq.gz,ERR349392,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349337,/data/slow/bdri/azuza/samples/ERR349337_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349337_2.fastq.gz,ERR349337,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349403,/data/slow/bdri/azuza/samples/ERR349403_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349403_2.fastq.gz,ERR349403,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349338,/data/slow/bdri/azuza/samples/ERR349338_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349338_2.fastq.gz,ERR349338,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349523,/data/slow/bdri/azuza/samples/ERR349523_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349523_2.fastq.gz,ERR349523,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349532,/data/slow/bdri/azuza/samples/ERR349532_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349532_2.fastq.gz,ERR349532,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349533,/data/slow/bdri/azuza/samples/ERR349533_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349533_2.fastq.gz,ERR349533,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349534,/data/slow/bdri/azuza/samples/ERR349534_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349534_2.fastq.gz,ERR349534,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349535,/data/slow/bdri/azuza/samples/ERR349535_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349535_2.fastq.gz,ERR349535,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349536,/data/slow/bdri/azuza/samples/ERR349536_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349536_2.fastq.gz,ERR349536,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349538,/data/slow/bdri/azuza/samples/ERR349538_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349538_2.fastq.gz,ERR349538,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349539,/data/slow/bdri/azuza/samples/ERR349539_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349539_2.fastq.gz,ERR349539,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349541,/data/slow/bdri/azuza/samples/ERR349541_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349541_2.fastq.gz,ERR349541,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349524,/data/slow/bdri/azuza/samples/ERR349524_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349524_2.fastq.gz,ERR349524,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349543,/data/slow/bdri/azuza/samples/ERR349543_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349543_2.fastq.gz,ERR349543,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349545,/data/slow/bdri/azuza/samples/ERR349545_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349545_2.fastq.gz,ERR349545,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349546,/data/slow/bdri/azuza/samples/ERR349546_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349546_2.fastq.gz,ERR349546,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349547,/data/slow/bdri/azuza/samples/ERR349547_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349547_2.fastq.gz,ERR349547,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349548,/data/slow/bdri/azuza/samples/ERR349548_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349548_2.fastq.gz,ERR349548,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR349549,/data/slow/bdri/azuza/samples/ERR349549_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349549_2.fastq.gz,ERR349549,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349550,/data/slow/bdri/azuza/samples/ERR349550_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349550_2.fastq.gz,ERR349550,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349551,/data/slow/bdri/azuza/samples/ERR349551_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349551_2.fastq.gz,ERR349551,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349552,/data/slow/bdri/azuza/samples/ERR349552_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349552_2.fastq.gz,ERR349552,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349553,/data/slow/bdri/azuza/samples/ERR349553_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349553_2.fastq.gz,ERR349553,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349557,/data/slow/bdri/azuza/samples/ERR349557_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349557_2.fastq.gz,ERR349557,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349558,/data/slow/bdri/azuza/samples/ERR349558_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349558_2.fastq.gz,ERR349558,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349560,/data/slow/bdri/azuza/samples/ERR349560_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349560_2.fastq.gz,ERR349560,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349562,/data/slow/bdri/azuza/samples/ERR349562_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349562_2.fastq.gz,ERR349562,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349563,/data/slow/bdri/azuza/samples/ERR349563_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349563_2.fastq.gz,ERR349563,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349564,/data/slow/bdri/azuza/samples/ERR349564_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349564_2.fastq.gz,ERR349564,1998,Vietnam,Wong et al. 2016,Outgroup
+ERR349568,/data/slow/bdri/azuza/samples/ERR349568_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349568_2.fastq.gz,ERR349568,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349570,/data/slow/bdri/azuza/samples/ERR349570_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349570_2.fastq.gz,ERR349570,1993,Vietnam,Wong et al. 2016,Outgroup
+ERR349572,/data/slow/bdri/azuza/samples/ERR349572_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349572_2.fastq.gz,ERR349572,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349573,/data/slow/bdri/azuza/samples/ERR349573_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349573_2.fastq.gz,ERR349573,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349578,/data/slow/bdri/azuza/samples/ERR349578_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349578_2.fastq.gz,ERR349578,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349579,/data/slow/bdri/azuza/samples/ERR349579_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349579_2.fastq.gz,ERR349579,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349582,/data/slow/bdri/azuza/samples/ERR349582_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349582_2.fastq.gz,ERR349582,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349583,/data/slow/bdri/azuza/samples/ERR349583_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349583_2.fastq.gz,ERR349583,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349584,/data/slow/bdri/azuza/samples/ERR349584_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349584_2.fastq.gz,ERR349584,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349588,/data/slow/bdri/azuza/samples/ERR349588_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349588_2.fastq.gz,ERR349588,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349590,/data/slow/bdri/azuza/samples/ERR349590_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349590_2.fastq.gz,ERR349590,1993,Vietnam,Wong et al. 2016,Outgroup
+ERR349591,/data/slow/bdri/azuza/samples/ERR349591_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349591_2.fastq.gz,ERR349591,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349592,/data/slow/bdri/azuza/samples/ERR349592_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349592_2.fastq.gz,ERR349592,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349593,/data/slow/bdri/azuza/samples/ERR349593_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349593_2.fastq.gz,ERR349593,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349595,/data/slow/bdri/azuza/samples/ERR349595_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349595_2.fastq.gz,ERR349595,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349597,/data/slow/bdri/azuza/samples/ERR349597_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349597_2.fastq.gz,ERR349597,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349599,/data/slow/bdri/azuza/samples/ERR349599_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349599_2.fastq.gz,ERR349599,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349600,/data/slow/bdri/azuza/samples/ERR349600_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349600_2.fastq.gz,ERR349600,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349601,/data/slow/bdri/azuza/samples/ERR349601_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349601_2.fastq.gz,ERR349601,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349602,/data/slow/bdri/azuza/samples/ERR349602_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349602_2.fastq.gz,ERR349602,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349603,/data/slow/bdri/azuza/samples/ERR349603_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349603_2.fastq.gz,ERR349603,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349605,/data/slow/bdri/azuza/samples/ERR349605_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349605_2.fastq.gz,ERR349605,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349606,/data/slow/bdri/azuza/samples/ERR349606_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349606_2.fastq.gz,ERR349606,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349609,/data/slow/bdri/azuza/samples/ERR349609_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349609_2.fastq.gz,ERR349609,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349531,/data/slow/bdri/azuza/samples/ERR349531_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349531_2.fastq.gz,ERR349531,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR349613,/data/slow/bdri/azuza/samples/ERR349613_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349613_2.fastq.gz,ERR349613,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349615,/data/slow/bdri/azuza/samples/ERR349615_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349615_2.fastq.gz,ERR349615,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349616,/data/slow/bdri/azuza/samples/ERR349616_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349616_2.fastq.gz,ERR349616,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349617,/data/slow/bdri/azuza/samples/ERR349617_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349617_2.fastq.gz,ERR349617,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352607,/data/slow/bdri/azuza/samples/ERR352607_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352607_2.fastq.gz,ERR352607,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352608,/data/slow/bdri/azuza/samples/ERR352608_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352608_2.fastq.gz,ERR352608,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352609,/data/slow/bdri/azuza/samples/ERR352609_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352609_2.fastq.gz,ERR352609,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352611,/data/slow/bdri/azuza/samples/ERR352611_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352611_2.fastq.gz,ERR352611,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352612,/data/slow/bdri/azuza/samples/ERR352612_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352612_2.fastq.gz,ERR352612,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352613,/data/slow/bdri/azuza/samples/ERR352613_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352613_2.fastq.gz,ERR352613,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352614,/data/slow/bdri/azuza/samples/ERR352614_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352614_2.fastq.gz,ERR352614,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352615,/data/slow/bdri/azuza/samples/ERR352615_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352615_2.fastq.gz,ERR352615,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352616,/data/slow/bdri/azuza/samples/ERR352616_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352616_2.fastq.gz,ERR352616,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352617,/data/slow/bdri/azuza/samples/ERR352617_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352617_2.fastq.gz,ERR352617,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352618,/data/slow/bdri/azuza/samples/ERR352618_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352618_2.fastq.gz,ERR352618,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352619,/data/slow/bdri/azuza/samples/ERR352619_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352619_2.fastq.gz,ERR352619,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352620,/data/slow/bdri/azuza/samples/ERR352620_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352620_2.fastq.gz,ERR352620,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352621,/data/slow/bdri/azuza/samples/ERR352621_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352621_2.fastq.gz,ERR352621,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352623,/data/slow/bdri/azuza/samples/ERR352623_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352623_2.fastq.gz,ERR352623,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352624,/data/slow/bdri/azuza/samples/ERR352624_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352624_2.fastq.gz,ERR352624,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352625,/data/slow/bdri/azuza/samples/ERR352625_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352625_2.fastq.gz,ERR352625,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352626,/data/slow/bdri/azuza/samples/ERR352626_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352626_2.fastq.gz,ERR352626,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352627,/data/slow/bdri/azuza/samples/ERR352627_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352627_2.fastq.gz,ERR352627,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352628,/data/slow/bdri/azuza/samples/ERR352628_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352628_2.fastq.gz,ERR352628,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352629,/data/slow/bdri/azuza/samples/ERR352629_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352629_2.fastq.gz,ERR352629,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352631,/data/slow/bdri/azuza/samples/ERR352631_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352631_2.fastq.gz,ERR352631,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352632,/data/slow/bdri/azuza/samples/ERR352632_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352632_2.fastq.gz,ERR352632,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352633,/data/slow/bdri/azuza/samples/ERR352633_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352633_2.fastq.gz,ERR352633,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352635,/data/slow/bdri/azuza/samples/ERR352635_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352635_2.fastq.gz,ERR352635,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352636,/data/slow/bdri/azuza/samples/ERR352636_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352636_2.fastq.gz,ERR352636,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352637,/data/slow/bdri/azuza/samples/ERR352637_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352637_2.fastq.gz,ERR352637,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352638,/data/slow/bdri/azuza/samples/ERR352638_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352638_2.fastq.gz,ERR352638,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352639,/data/slow/bdri/azuza/samples/ERR352639_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352639_2.fastq.gz,ERR352639,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352640,/data/slow/bdri/azuza/samples/ERR352640_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352640_2.fastq.gz,ERR352640,1996,Vietnam,Wong et al. 2016,Outgroup
+ERR352641,/data/slow/bdri/azuza/samples/ERR352641_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352641_2.fastq.gz,ERR352641,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352642,/data/slow/bdri/azuza/samples/ERR352642_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352642_2.fastq.gz,ERR352642,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352643,/data/slow/bdri/azuza/samples/ERR352643_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352643_2.fastq.gz,ERR352643,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352645,/data/slow/bdri/azuza/samples/ERR352645_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352645_2.fastq.gz,ERR352645,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352646,/data/slow/bdri/azuza/samples/ERR352646_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352646_2.fastq.gz,ERR352646,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352648,/data/slow/bdri/azuza/samples/ERR352648_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352648_2.fastq.gz,ERR352648,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352649,/data/slow/bdri/azuza/samples/ERR352649_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352649_2.fastq.gz,ERR352649,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352655,/data/slow/bdri/azuza/samples/ERR352655_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352655_2.fastq.gz,ERR352655,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352656,/data/slow/bdri/azuza/samples/ERR352656_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352656_2.fastq.gz,ERR352656,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352658,/data/slow/bdri/azuza/samples/ERR352658_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352658_2.fastq.gz,ERR352658,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352661,/data/slow/bdri/azuza/samples/ERR352661_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352661_2.fastq.gz,ERR352661,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352662,/data/slow/bdri/azuza/samples/ERR352662_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352662_2.fastq.gz,ERR352662,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352669,/data/slow/bdri/azuza/samples/ERR352669_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352669_2.fastq.gz,ERR352669,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352671,/data/slow/bdri/azuza/samples/ERR352671_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352671_2.fastq.gz,ERR352671,1999,Vietnam,Wong et al. 2016,Outgroup
+ERR352673,/data/slow/bdri/azuza/samples/ERR352673_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352673_2.fastq.gz,ERR352673,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352679,/data/slow/bdri/azuza/samples/ERR352679_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352679_2.fastq.gz,ERR352679,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352681,/data/slow/bdri/azuza/samples/ERR352681_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352681_2.fastq.gz,ERR352681,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352685,/data/slow/bdri/azuza/samples/ERR352685_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352685_2.fastq.gz,ERR352685,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352689,/data/slow/bdri/azuza/samples/ERR352689_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352689_2.fastq.gz,ERR352689,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352605,/data/slow/bdri/azuza/samples/ERR352605_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352605_2.fastq.gz,ERR352605,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352697,/data/slow/bdri/azuza/samples/ERR352697_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352697_2.fastq.gz,ERR352697,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352703,/data/slow/bdri/azuza/samples/ERR352703_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352703_2.fastq.gz,ERR352703,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352709,/data/slow/bdri/azuza/samples/ERR352709_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352709_2.fastq.gz,ERR352709,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352711,/data/slow/bdri/azuza/samples/ERR352711_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352711_2.fastq.gz,ERR352711,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352606,/data/slow/bdri/azuza/samples/ERR352606_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352606_2.fastq.gz,ERR352606,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352713,/data/slow/bdri/azuza/samples/ERR352713_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352713_2.fastq.gz,ERR352713,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352715,/data/slow/bdri/azuza/samples/ERR352715_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352715_2.fastq.gz,ERR352715,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352717,/data/slow/bdri/azuza/samples/ERR352717_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352717_2.fastq.gz,ERR352717,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352719,/data/slow/bdri/azuza/samples/ERR352719_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352719_2.fastq.gz,ERR352719,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352721,/data/slow/bdri/azuza/samples/ERR352721_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352721_2.fastq.gz,ERR352721,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR352725,/data/slow/bdri/azuza/samples/ERR352725_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352725_2.fastq.gz,ERR352725,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR357599,/data/slow/bdri/azuza/samples/ERR357599_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357599_2.fastq.gz,ERR357599,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR357618,/data/slow/bdri/azuza/samples/ERR357618_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357618_2.fastq.gz,ERR357618,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR357642,/data/slow/bdri/azuza/samples/ERR357642_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357642_2.fastq.gz,ERR357642,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR357643,/data/slow/bdri/azuza/samples/ERR357643_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357643_2.fastq.gz,ERR357643,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR357644,/data/slow/bdri/azuza/samples/ERR357644_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357644_2.fastq.gz,ERR357644,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR357645,/data/slow/bdri/azuza/samples/ERR357645_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357645_2.fastq.gz,ERR357645,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR357647,/data/slow/bdri/azuza/samples/ERR357647_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357647_2.fastq.gz,ERR357647,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR357649,/data/slow/bdri/azuza/samples/ERR357649_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357649_2.fastq.gz,ERR357649,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR357651,/data/slow/bdri/azuza/samples/ERR357651_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357651_2.fastq.gz,ERR357651,1993,Vietnam,Wong et al. 2016,Outgroup
+ERR357654,/data/slow/bdri/azuza/samples/ERR357654_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357654_2.fastq.gz,ERR357654,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR357655,/data/slow/bdri/azuza/samples/ERR357655_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357655_2.fastq.gz,ERR357655,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR357657,/data/slow/bdri/azuza/samples/ERR357657_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357657_2.fastq.gz,ERR357657,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR357659,/data/slow/bdri/azuza/samples/ERR357659_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357659_2.fastq.gz,ERR357659,1993,Vietnam,Wong et al. 2016,Outgroup
+ERR357661,/data/slow/bdri/azuza/samples/ERR357661_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357661_2.fastq.gz,ERR357661,1994,Vietnam,Wong et al. 2016,Outgroup
+ERR349569,/data/slow/bdri/azuza/samples/ERR349569_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349569_2.fastq.gz,ERR349569,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349571,/data/slow/bdri/azuza/samples/ERR349571_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349571_2.fastq.gz,ERR349571,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349576,/data/slow/bdri/azuza/samples/ERR349576_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349576_2.fastq.gz,ERR349576,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349580,/data/slow/bdri/azuza/samples/ERR349580_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349580_2.fastq.gz,ERR349580,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR349581,/data/slow/bdri/azuza/samples/ERR349581_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR349581_2.fastq.gz,ERR349581,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR352644,/data/slow/bdri/azuza/samples/ERR352644_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352644_2.fastq.gz,ERR352644,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352647,/data/slow/bdri/azuza/samples/ERR352647_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352647_2.fastq.gz,ERR352647,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352650,/data/slow/bdri/azuza/samples/ERR352650_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352650_2.fastq.gz,ERR352650,1998,Vietnam,Wong et al. 2016,Outgroup
+ERR352651,/data/slow/bdri/azuza/samples/ERR352651_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352651_2.fastq.gz,ERR352651,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR352657,/data/slow/bdri/azuza/samples/ERR352657_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352657_2.fastq.gz,ERR352657,1998,Vietnam,Wong et al. 2016,Outgroup
+ERR352659,/data/slow/bdri/azuza/samples/ERR352659_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352659_2.fastq.gz,ERR352659,1998,Vietnam,Wong et al. 2016,Outgroup
+ERR352665,/data/slow/bdri/azuza/samples/ERR352665_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352665_2.fastq.gz,ERR352665,1999,Vietnam,Wong et al. 2016,Outgroup
+ERR352677,/data/slow/bdri/azuza/samples/ERR352677_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352677_2.fastq.gz,ERR352677,1998,Vietnam,Wong et al. 2016,Outgroup
+ERR352691,/data/slow/bdri/azuza/samples/ERR352691_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352691_2.fastq.gz,ERR352691,1995,Vietnam,Wong et al. 2016,Outgroup
+ERR357622,/data/slow/bdri/azuza/samples/ERR357622_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357622_2.fastq.gz,ERR357622,1998,Vietnam,Wong et al. 2016,Outgroup
+ERR357653,/data/slow/bdri/azuza/samples/ERR357653_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357653_2.fastq.gz,ERR357653,1997,Vietnam,Wong et al. 2016,Outgroup
+ERR357833,/data/slow/bdri/azuza/samples/ERR357833_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357833_2.fastq.gz,ERR357833,2011,Vietnam,Wong et al. 2016,Outgroup
+ERR352470,/data/slow/bdri/azuza/samples/ERR352470_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352470_2.fastq.gz,ERR352470,2010,Thailand,Wong et al. 2016,Outgroup
+ERR357771,/data/slow/bdri/azuza/samples/ERR357771_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357771_2.fastq.gz,ERR357771,2011,Thailand,Wong et al. 2016,Outgroup
+ERR343270,/data/slow/bdri/azuza/samples/ERR343270_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR343270_2.fastq.gz,ERR343270,2006,SEAsia,Wong et al. 2016,Outgroup
+ERR340759,/data/slow/bdri/azuza/samples/ERR340759_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340759_2.fastq.gz,ERR340759,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340758,/data/slow/bdri/azuza/samples/ERR340758_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340758_2.fastq.gz,ERR340758,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR360845,/data/slow/bdri/azuza/samples/ERR360845_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360845_2.fastq.gz,ERR360845,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR331205,/data/slow/bdri/azuza/samples/ERR331205_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331205_2.fastq.gz,ERR331205,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR331206,/data/slow/bdri/azuza/samples/ERR331206_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331206_2.fastq.gz,ERR331206,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR331207,/data/slow/bdri/azuza/samples/ERR331207_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331207_2.fastq.gz,ERR331207,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR331208,/data/slow/bdri/azuza/samples/ERR331208_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR331208_2.fastq.gz,ERR331208,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR340757,/data/slow/bdri/azuza/samples/ERR340757_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340757_2.fastq.gz,ERR340757,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340766,/data/slow/bdri/azuza/samples/ERR340766_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340766_2.fastq.gz,ERR340766,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340767,/data/slow/bdri/azuza/samples/ERR340767_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340767_2.fastq.gz,ERR340767,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR340768,/data/slow/bdri/azuza/samples/ERR340768_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340768_2.fastq.gz,ERR340768,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340770,/data/slow/bdri/azuza/samples/ERR340770_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340770_2.fastq.gz,ERR340770,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340771,/data/slow/bdri/azuza/samples/ERR340771_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340771_2.fastq.gz,ERR340771,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340772,/data/slow/bdri/azuza/samples/ERR340772_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340772_2.fastq.gz,ERR340772,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340773,/data/slow/bdri/azuza/samples/ERR340773_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340773_2.fastq.gz,ERR340773,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340775,/data/slow/bdri/azuza/samples/ERR340775_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340775_2.fastq.gz,ERR340775,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340760,/data/slow/bdri/azuza/samples/ERR340760_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340760_2.fastq.gz,ERR340760,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340761,/data/slow/bdri/azuza/samples/ERR340761_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340761_2.fastq.gz,ERR340761,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR340763,/data/slow/bdri/azuza/samples/ERR340763_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340763_2.fastq.gz,ERR340763,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR352332,/data/slow/bdri/azuza/samples/ERR352332_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352332_2.fastq.gz,ERR352332,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360738,/data/slow/bdri/azuza/samples/ERR360738_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360738_2.fastq.gz,ERR360738,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360739,/data/slow/bdri/azuza/samples/ERR360739_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360739_2.fastq.gz,ERR360739,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360740,/data/slow/bdri/azuza/samples/ERR360740_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360740_2.fastq.gz,ERR360740,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360741,/data/slow/bdri/azuza/samples/ERR360741_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360741_2.fastq.gz,ERR360741,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360742,/data/slow/bdri/azuza/samples/ERR360742_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360742_2.fastq.gz,ERR360742,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360743,/data/slow/bdri/azuza/samples/ERR360743_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360743_2.fastq.gz,ERR360743,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360744,/data/slow/bdri/azuza/samples/ERR360744_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360744_2.fastq.gz,ERR360744,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR360745,/data/slow/bdri/azuza/samples/ERR360745_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360745_2.fastq.gz,ERR360745,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR360746,/data/slow/bdri/azuza/samples/ERR360746_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360746_2.fastq.gz,ERR360746,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR360748,/data/slow/bdri/azuza/samples/ERR360748_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360748_2.fastq.gz,ERR360748,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360754,/data/slow/bdri/azuza/samples/ERR360754_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360754_2.fastq.gz,ERR360754,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360755,/data/slow/bdri/azuza/samples/ERR360755_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360755_2.fastq.gz,ERR360755,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360756,/data/slow/bdri/azuza/samples/ERR360756_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360756_2.fastq.gz,ERR360756,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360758,/data/slow/bdri/azuza/samples/ERR360758_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360758_2.fastq.gz,ERR360758,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360759,/data/slow/bdri/azuza/samples/ERR360759_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360759_2.fastq.gz,ERR360759,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360760,/data/slow/bdri/azuza/samples/ERR360760_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360760_2.fastq.gz,ERR360760,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360761,/data/slow/bdri/azuza/samples/ERR360761_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360761_2.fastq.gz,ERR360761,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360762,/data/slow/bdri/azuza/samples/ERR360762_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360762_2.fastq.gz,ERR360762,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360763,/data/slow/bdri/azuza/samples/ERR360763_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360763_2.fastq.gz,ERR360763,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360765,/data/slow/bdri/azuza/samples/ERR360765_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360765_2.fastq.gz,ERR360765,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360766,/data/slow/bdri/azuza/samples/ERR360766_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360766_2.fastq.gz,ERR360766,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360769,/data/slow/bdri/azuza/samples/ERR360769_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360769_2.fastq.gz,ERR360769,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360770,/data/slow/bdri/azuza/samples/ERR360770_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360770_2.fastq.gz,ERR360770,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360771,/data/slow/bdri/azuza/samples/ERR360771_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360771_2.fastq.gz,ERR360771,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360772,/data/slow/bdri/azuza/samples/ERR360772_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360772_2.fastq.gz,ERR360772,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360773,/data/slow/bdri/azuza/samples/ERR360773_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360773_2.fastq.gz,ERR360773,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360774,/data/slow/bdri/azuza/samples/ERR360774_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360774_2.fastq.gz,ERR360774,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360775,/data/slow/bdri/azuza/samples/ERR360775_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360775_2.fastq.gz,ERR360775,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360776,/data/slow/bdri/azuza/samples/ERR360776_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360776_2.fastq.gz,ERR360776,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360777,/data/slow/bdri/azuza/samples/ERR360777_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360777_2.fastq.gz,ERR360777,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360778,/data/slow/bdri/azuza/samples/ERR360778_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360778_2.fastq.gz,ERR360778,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360779,/data/slow/bdri/azuza/samples/ERR360779_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360779_2.fastq.gz,ERR360779,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360780,/data/slow/bdri/azuza/samples/ERR360780_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360780_2.fastq.gz,ERR360780,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360781,/data/slow/bdri/azuza/samples/ERR360781_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360781_2.fastq.gz,ERR360781,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360782,/data/slow/bdri/azuza/samples/ERR360782_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360782_2.fastq.gz,ERR360782,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360783,/data/slow/bdri/azuza/samples/ERR360783_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360783_2.fastq.gz,ERR360783,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360785,/data/slow/bdri/azuza/samples/ERR360785_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360785_2.fastq.gz,ERR360785,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360786,/data/slow/bdri/azuza/samples/ERR360786_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360786_2.fastq.gz,ERR360786,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360787,/data/slow/bdri/azuza/samples/ERR360787_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360787_2.fastq.gz,ERR360787,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360788,/data/slow/bdri/azuza/samples/ERR360788_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360788_2.fastq.gz,ERR360788,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360789,/data/slow/bdri/azuza/samples/ERR360789_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360789_2.fastq.gz,ERR360789,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360791,/data/slow/bdri/azuza/samples/ERR360791_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360791_2.fastq.gz,ERR360791,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360792,/data/slow/bdri/azuza/samples/ERR360792_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360792_2.fastq.gz,ERR360792,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360846,/data/slow/bdri/azuza/samples/ERR360846_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360846_2.fastq.gz,ERR360846,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360847,/data/slow/bdri/azuza/samples/ERR360847_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360847_2.fastq.gz,ERR360847,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360848,/data/slow/bdri/azuza/samples/ERR360848_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360848_2.fastq.gz,ERR360848,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360889,/data/slow/bdri/azuza/samples/ERR360889_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360889_2.fastq.gz,ERR360889,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360890,/data/slow/bdri/azuza/samples/ERR360890_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360890_2.fastq.gz,ERR360890,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360891,/data/slow/bdri/azuza/samples/ERR360891_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360891_2.fastq.gz,ERR360891,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360954,/data/slow/bdri/azuza/samples/ERR360954_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360954_2.fastq.gz,ERR360954,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360955,/data/slow/bdri/azuza/samples/ERR360955_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360955_2.fastq.gz,ERR360955,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360956,/data/slow/bdri/azuza/samples/ERR360956_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360956_2.fastq.gz,ERR360956,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360958,/data/slow/bdri/azuza/samples/ERR360958_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360958_2.fastq.gz,ERR360958,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360959,/data/slow/bdri/azuza/samples/ERR360959_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360959_2.fastq.gz,ERR360959,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360960,/data/slow/bdri/azuza/samples/ERR360960_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360960_2.fastq.gz,ERR360960,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR360961,/data/slow/bdri/azuza/samples/ERR360961_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360961_2.fastq.gz,ERR360961,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360962,/data/slow/bdri/azuza/samples/ERR360962_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360962_2.fastq.gz,ERR360962,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR360963,/data/slow/bdri/azuza/samples/ERR360963_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360963_2.fastq.gz,ERR360963,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360964,/data/slow/bdri/azuza/samples/ERR360964_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360964_2.fastq.gz,ERR360964,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360965,/data/slow/bdri/azuza/samples/ERR360965_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360965_2.fastq.gz,ERR360965,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360966,/data/slow/bdri/azuza/samples/ERR360966_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360966_2.fastq.gz,ERR360966,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360967,/data/slow/bdri/azuza/samples/ERR360967_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360967_2.fastq.gz,ERR360967,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360968,/data/slow/bdri/azuza/samples/ERR360968_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360968_2.fastq.gz,ERR360968,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360970,/data/slow/bdri/azuza/samples/ERR360970_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360970_2.fastq.gz,ERR360970,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360971,/data/slow/bdri/azuza/samples/ERR360971_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360971_2.fastq.gz,ERR360971,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360972,/data/slow/bdri/azuza/samples/ERR360972_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360972_2.fastq.gz,ERR360972,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360973,/data/slow/bdri/azuza/samples/ERR360973_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360973_2.fastq.gz,ERR360973,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360975,/data/slow/bdri/azuza/samples/ERR360975_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360975_2.fastq.gz,ERR360975,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360976,/data/slow/bdri/azuza/samples/ERR360976_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360976_2.fastq.gz,ERR360976,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360977,/data/slow/bdri/azuza/samples/ERR360977_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360977_2.fastq.gz,ERR360977,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360978,/data/slow/bdri/azuza/samples/ERR360978_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360978_2.fastq.gz,ERR360978,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360979,/data/slow/bdri/azuza/samples/ERR360979_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360979_2.fastq.gz,ERR360979,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360948,/data/slow/bdri/azuza/samples/ERR360948_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360948_2.fastq.gz,ERR360948,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360980,/data/slow/bdri/azuza/samples/ERR360980_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360980_2.fastq.gz,ERR360980,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360981,/data/slow/bdri/azuza/samples/ERR360981_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360981_2.fastq.gz,ERR360981,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360982,/data/slow/bdri/azuza/samples/ERR360982_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360982_2.fastq.gz,ERR360982,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360983,/data/slow/bdri/azuza/samples/ERR360983_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360983_2.fastq.gz,ERR360983,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360984,/data/slow/bdri/azuza/samples/ERR360984_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360984_2.fastq.gz,ERR360984,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360985,/data/slow/bdri/azuza/samples/ERR360985_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360985_2.fastq.gz,ERR360985,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360949,/data/slow/bdri/azuza/samples/ERR360949_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360949_2.fastq.gz,ERR360949,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360986,/data/slow/bdri/azuza/samples/ERR360986_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360986_2.fastq.gz,ERR360986,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360987,/data/slow/bdri/azuza/samples/ERR360987_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360987_2.fastq.gz,ERR360987,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360988,/data/slow/bdri/azuza/samples/ERR360988_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360988_2.fastq.gz,ERR360988,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360990,/data/slow/bdri/azuza/samples/ERR360990_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360990_2.fastq.gz,ERR360990,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360991,/data/slow/bdri/azuza/samples/ERR360991_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360991_2.fastq.gz,ERR360991,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360992,/data/slow/bdri/azuza/samples/ERR360992_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360992_2.fastq.gz,ERR360992,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360993,/data/slow/bdri/azuza/samples/ERR360993_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360993_2.fastq.gz,ERR360993,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360994,/data/slow/bdri/azuza/samples/ERR360994_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360994_2.fastq.gz,ERR360994,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360996,/data/slow/bdri/azuza/samples/ERR360996_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360996_2.fastq.gz,ERR360996,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360997,/data/slow/bdri/azuza/samples/ERR360997_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360997_2.fastq.gz,ERR360997,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360998,/data/slow/bdri/azuza/samples/ERR360998_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360998_2.fastq.gz,ERR360998,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360999,/data/slow/bdri/azuza/samples/ERR360999_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360999_2.fastq.gz,ERR360999,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR361000,/data/slow/bdri/azuza/samples/ERR361000_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR361000_2.fastq.gz,ERR361000,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR360950,/data/slow/bdri/azuza/samples/ERR360950_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360950_2.fastq.gz,ERR360950,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR360952,/data/slow/bdri/azuza/samples/ERR360952_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR360952_2.fastq.gz,ERR360952,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319402,/data/slow/bdri/azuza/samples/ERR319402_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319402_2.fastq.gz,ERR319402,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319411,/data/slow/bdri/azuza/samples/ERR319411_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319411_2.fastq.gz,ERR319411,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319412,/data/slow/bdri/azuza/samples/ERR319412_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319412_2.fastq.gz,ERR319412,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319413,/data/slow/bdri/azuza/samples/ERR319413_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319413_2.fastq.gz,ERR319413,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319414,/data/slow/bdri/azuza/samples/ERR319414_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319414_2.fastq.gz,ERR319414,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319415,/data/slow/bdri/azuza/samples/ERR319415_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319415_2.fastq.gz,ERR319415,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319416,/data/slow/bdri/azuza/samples/ERR319416_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319416_2.fastq.gz,ERR319416,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319417,/data/slow/bdri/azuza/samples/ERR319417_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319417_2.fastq.gz,ERR319417,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319419,/data/slow/bdri/azuza/samples/ERR319419_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319419_2.fastq.gz,ERR319419,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319420,/data/slow/bdri/azuza/samples/ERR319420_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319420_2.fastq.gz,ERR319420,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319403,/data/slow/bdri/azuza/samples/ERR319403_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319403_2.fastq.gz,ERR319403,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319421,/data/slow/bdri/azuza/samples/ERR319421_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319421_2.fastq.gz,ERR319421,2009,Cambodia,Wong et al. 2016,Outgroup
+ERR319422,/data/slow/bdri/azuza/samples/ERR319422_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319422_2.fastq.gz,ERR319422,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319423,/data/slow/bdri/azuza/samples/ERR319423_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319423_2.fastq.gz,ERR319423,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319424,/data/slow/bdri/azuza/samples/ERR319424_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319424_2.fastq.gz,ERR319424,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319425,/data/slow/bdri/azuza/samples/ERR319425_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319425_2.fastq.gz,ERR319425,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319426,/data/slow/bdri/azuza/samples/ERR319426_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319426_2.fastq.gz,ERR319426,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319427,/data/slow/bdri/azuza/samples/ERR319427_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319427_2.fastq.gz,ERR319427,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319428,/data/slow/bdri/azuza/samples/ERR319428_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319428_2.fastq.gz,ERR319428,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319429,/data/slow/bdri/azuza/samples/ERR319429_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319429_2.fastq.gz,ERR319429,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319404,/data/slow/bdri/azuza/samples/ERR319404_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319404_2.fastq.gz,ERR319404,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319431,/data/slow/bdri/azuza/samples/ERR319431_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319431_2.fastq.gz,ERR319431,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319432,/data/slow/bdri/azuza/samples/ERR319432_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319432_2.fastq.gz,ERR319432,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319433,/data/slow/bdri/azuza/samples/ERR319433_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319433_2.fastq.gz,ERR319433,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319434,/data/slow/bdri/azuza/samples/ERR319434_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319434_2.fastq.gz,ERR319434,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319435,/data/slow/bdri/azuza/samples/ERR319435_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319435_2.fastq.gz,ERR319435,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319436,/data/slow/bdri/azuza/samples/ERR319436_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319436_2.fastq.gz,ERR319436,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319437,/data/slow/bdri/azuza/samples/ERR319437_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319437_2.fastq.gz,ERR319437,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319438,/data/slow/bdri/azuza/samples/ERR319438_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319438_2.fastq.gz,ERR319438,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319439,/data/slow/bdri/azuza/samples/ERR319439_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319439_2.fastq.gz,ERR319439,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319405,/data/slow/bdri/azuza/samples/ERR319405_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319405_2.fastq.gz,ERR319405,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319441,/data/slow/bdri/azuza/samples/ERR319441_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319441_2.fastq.gz,ERR319441,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR319442,/data/slow/bdri/azuza/samples/ERR319442_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319442_2.fastq.gz,ERR319442,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319443,/data/slow/bdri/azuza/samples/ERR319443_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319443_2.fastq.gz,ERR319443,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319444,/data/slow/bdri/azuza/samples/ERR319444_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319444_2.fastq.gz,ERR319444,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319445,/data/slow/bdri/azuza/samples/ERR319445_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319445_2.fastq.gz,ERR319445,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319446,/data/slow/bdri/azuza/samples/ERR319446_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319446_2.fastq.gz,ERR319446,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319447,/data/slow/bdri/azuza/samples/ERR319447_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319447_2.fastq.gz,ERR319447,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319448,/data/slow/bdri/azuza/samples/ERR319448_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319448_2.fastq.gz,ERR319448,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319449,/data/slow/bdri/azuza/samples/ERR319449_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319449_2.fastq.gz,ERR319449,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319450,/data/slow/bdri/azuza/samples/ERR319450_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319450_2.fastq.gz,ERR319450,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319406,/data/slow/bdri/azuza/samples/ERR319406_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319406_2.fastq.gz,ERR319406,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319451,/data/slow/bdri/azuza/samples/ERR319451_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319451_2.fastq.gz,ERR319451,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319452,/data/slow/bdri/azuza/samples/ERR319452_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319452_2.fastq.gz,ERR319452,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319453,/data/slow/bdri/azuza/samples/ERR319453_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319453_2.fastq.gz,ERR319453,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319454,/data/slow/bdri/azuza/samples/ERR319454_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319454_2.fastq.gz,ERR319454,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319455,/data/slow/bdri/azuza/samples/ERR319455_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319455_2.fastq.gz,ERR319455,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319456,/data/slow/bdri/azuza/samples/ERR319456_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319456_2.fastq.gz,ERR319456,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319457,/data/slow/bdri/azuza/samples/ERR319457_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319457_2.fastq.gz,ERR319457,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319458,/data/slow/bdri/azuza/samples/ERR319458_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319458_2.fastq.gz,ERR319458,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319459,/data/slow/bdri/azuza/samples/ERR319459_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319459_2.fastq.gz,ERR319459,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319460,/data/slow/bdri/azuza/samples/ERR319460_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319460_2.fastq.gz,ERR319460,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319461,/data/slow/bdri/azuza/samples/ERR319461_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319461_2.fastq.gz,ERR319461,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319463,/data/slow/bdri/azuza/samples/ERR319463_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319463_2.fastq.gz,ERR319463,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319464,/data/slow/bdri/azuza/samples/ERR319464_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319464_2.fastq.gz,ERR319464,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319465,/data/slow/bdri/azuza/samples/ERR319465_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319465_2.fastq.gz,ERR319465,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319466,/data/slow/bdri/azuza/samples/ERR319466_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319466_2.fastq.gz,ERR319466,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319467,/data/slow/bdri/azuza/samples/ERR319467_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319467_2.fastq.gz,ERR319467,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319468,/data/slow/bdri/azuza/samples/ERR319468_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319468_2.fastq.gz,ERR319468,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319469,/data/slow/bdri/azuza/samples/ERR319469_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319469_2.fastq.gz,ERR319469,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319470,/data/slow/bdri/azuza/samples/ERR319470_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319470_2.fastq.gz,ERR319470,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319408,/data/slow/bdri/azuza/samples/ERR319408_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319408_2.fastq.gz,ERR319408,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319471,/data/slow/bdri/azuza/samples/ERR319471_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319471_2.fastq.gz,ERR319471,2011,Cambodia,Wong et al. 2016,Outgroup
+ERR319472,/data/slow/bdri/azuza/samples/ERR319472_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319472_2.fastq.gz,ERR319472,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319473,/data/slow/bdri/azuza/samples/ERR319473_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319473_2.fastq.gz,ERR319473,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319474,/data/slow/bdri/azuza/samples/ERR319474_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319474_2.fastq.gz,ERR319474,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319475,/data/slow/bdri/azuza/samples/ERR319475_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319475_2.fastq.gz,ERR319475,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319476,/data/slow/bdri/azuza/samples/ERR319476_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319476_2.fastq.gz,ERR319476,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319477,/data/slow/bdri/azuza/samples/ERR319477_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319477_2.fastq.gz,ERR319477,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319478,/data/slow/bdri/azuza/samples/ERR319478_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319478_2.fastq.gz,ERR319478,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319479,/data/slow/bdri/azuza/samples/ERR319479_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319479_2.fastq.gz,ERR319479,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319480,/data/slow/bdri/azuza/samples/ERR319480_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319480_2.fastq.gz,ERR319480,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319409,/data/slow/bdri/azuza/samples/ERR319409_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319409_2.fastq.gz,ERR319409,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319481,/data/slow/bdri/azuza/samples/ERR319481_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319481_2.fastq.gz,ERR319481,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319482,/data/slow/bdri/azuza/samples/ERR319482_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319482_2.fastq.gz,ERR319482,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319483,/data/slow/bdri/azuza/samples/ERR319483_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319483_2.fastq.gz,ERR319483,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319484,/data/slow/bdri/azuza/samples/ERR319484_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319484_2.fastq.gz,ERR319484,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319485,/data/slow/bdri/azuza/samples/ERR319485_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319485_2.fastq.gz,ERR319485,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319486,/data/slow/bdri/azuza/samples/ERR319486_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319486_2.fastq.gz,ERR319486,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319487,/data/slow/bdri/azuza/samples/ERR319487_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319487_2.fastq.gz,ERR319487,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319488,/data/slow/bdri/azuza/samples/ERR319488_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319488_2.fastq.gz,ERR319488,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319489,/data/slow/bdri/azuza/samples/ERR319489_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319489_2.fastq.gz,ERR319489,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319490,/data/slow/bdri/azuza/samples/ERR319490_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319490_2.fastq.gz,ERR319490,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319410,/data/slow/bdri/azuza/samples/ERR319410_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319410_2.fastq.gz,ERR319410,2008,Cambodia,Wong et al. 2016,Outgroup
+ERR319492,/data/slow/bdri/azuza/samples/ERR319492_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319492_2.fastq.gz,ERR319492,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319494,/data/slow/bdri/azuza/samples/ERR319494_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319494_2.fastq.gz,ERR319494,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR319495,/data/slow/bdri/azuza/samples/ERR319495_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319495_2.fastq.gz,ERR319495,2012,Cambodia,Wong et al. 2016,Outgroup
+ERR340774,/data/slow/bdri/azuza/samples/ERR340774_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR340774_2.fastq.gz,ERR340774,2007,Cambodia,Wong et al. 2016,Outgroup
+ERR319440,/data/slow/bdri/azuza/samples/ERR319440_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR319440_2.fastq.gz,ERR319440,2010,Cambodia,Wong et al. 2016,Outgroup
+ERR352313,/data/slow/bdri/azuza/samples/ERR352313_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352313_2.fastq.gz,ERR352313,1992,Fiji,Wong et al. 2016,Outgroup
+ERR352315,/data/slow/bdri/azuza/samples/ERR352315_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352315_2.fastq.gz,ERR352315,1993,Fiji,Wong et al. 2016,Outgroup
+ERR352498,/data/slow/bdri/azuza/samples/ERR352498_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR352498_2.fastq.gz,ERR352498,1993,Fiji,Wong et al. 2016,Outgroup
+ERR357469,/data/slow/bdri/azuza/samples/ERR357469_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357469_2.fastq.gz,ERR357469,1992,Fiji,Wong et al. 2016,Outgroup
+ERR357474,/data/slow/bdri/azuza/samples/ERR357474_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357474_2.fastq.gz,ERR357474,1993,Fiji,Wong et al. 2016,Outgroup
+ERR357475,/data/slow/bdri/azuza/samples/ERR357475_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357475_2.fastq.gz,ERR357475,1993,Fiji,Wong et al. 2016,Outgroup
+ERR357476,/data/slow/bdri/azuza/samples/ERR357476_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357476_2.fastq.gz,ERR357476,1993,Fiji,Wong et al. 2016,Outgroup
+ERR357803,/data/slow/bdri/azuza/samples/ERR357803_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357803_2.fastq.gz,ERR357803,1992,Fiji,Wong et al. 2016,Outgroup
+ERR357807,/data/slow/bdri/azuza/samples/ERR357807_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357807_2.fastq.gz,ERR357807,1993,Fiji,Wong et al. 2016,Outgroup
+ERR213273,/data/slow/bdri/azuza/samples/ERR213273_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR213273_2.fastq.gz,ERR213273,1995,Fiji,Wong et al. 2016,Outgroup
+ERR213285,/data/slow/bdri/azuza/samples/ERR213285_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR213285_2.fastq.gz,ERR213285,1994,Fiji,Wong et al. 2016,Outgroup
+ERR357764,/data/slow/bdri/azuza/samples/ERR357764_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR357764_2.fastq.gz,ERR357764,2012,Australia,Wong et al. 2016,Outgroup
+ERR279139,/data/slow/bdri/azuza/samples/ERR279139_1.fastq.gz,/data/slow/bdri/azuza/samples/ERR279139_2.fastq.gz,ERR279139,2011,Malawi,,

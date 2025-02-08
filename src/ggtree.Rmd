@@ -8,10 +8,6 @@ editor_options:
 ---
 
 ```{r}
-# library(pak)
-# pak("ggtree")
-# pak("igraph")
-
 library(ape)
 library(ggtree)
 library(ggnewscale)
@@ -21,7 +17,6 @@ library(janitor)
 library(plotly)
 library(viridis)
 library(tidytree)
-#library(ggbreak)
 library(devtools)
 
 # load the metadata
@@ -39,7 +34,7 @@ metadata <-
     select(!c(accession_number)) %>%
   select(sample_name, year, country, publication)
 
-extra <- read.table("./outputs/microbe/mykrobe_predictResults.tsv",
+extra <- read.table("./docs/mykrobe_predictResults.tsv",
                     sep="\t", header=TRUE)
 
 gpu_mykrobe <-
@@ -121,8 +116,7 @@ genome_ids <- c("10607_2_40", "9475_6_42", "22522_8_260", "22522_8_271")
 sanger_ids <- read_table("docs/unique_sanger_ids") %>%
   rename("sample_name" = "accession")
 
-#load("./docs/metadata_plus_mykrobe.RData")
-#load("./docs/amr_genes.RData")
+
 tree <- ape::read.tree("data/iq2.contree")
 
 data <- patched_metadata
@@ -580,7 +574,7 @@ load("./docs/amr_genes.RData")
 ```{r}
 # color the tips of the tree
 data <- metadata
-tree <- ape::read.tree("/Users/zuza/repos/H58/outputs/iqtree/20240629/iqtree/phylo.aln.contree")
+tree <- ape::read.tree("./outputs/iqtree/20240629/iqtree/phylo.aln.contree")
 
 tree %>% drop.tip("AL513382.1") %>% ggtree() %<+% data + aes(color = year)# + scale_colour_grey()
 
@@ -1008,13 +1002,14 @@ nodes <- nodeid(tree, c("ERR2602821", "ERR2602832"))
 p <- 
   ggtree(tree) %<+% data +
   #scale_x_break(c(0.00001, 0.00013), expand = F) +  hexpand(0.00009, direction = -1) + hexpand(0.09, direction = 1) +
-  geom_highlight(node = nodes, fill = "#3a0177", alpha = .6, extend = 1)
+  geom_highlight(node = nodes, fill = "#3a0177", alpha = .6, extend = 1) +
+    geom_tiplab(align = TRUE)
 
 p
 p1 <-
     gheatmap(p, year,
         width = 0.014 ,
-        #offset = 0.00001,#0.000015,
+        offset = 0.0000004,#0.000015,
         colnames_position = "top",
         colnames_angle = 90,
         colnames_offset_y = y_offset,

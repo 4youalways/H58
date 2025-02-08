@@ -60,7 +60,7 @@ table_1_data <-
 table_1_data
 
 read_qc <-
-  read_table("/Users/zuza/repos/H58/outputs/nanoplot/nanostats/nanostats.tsv") %>%
+  read_table("./outputs/nanoplot/nanostats/nanostats.tsv") %>%
     tibble() %>%
   clean_names()
 

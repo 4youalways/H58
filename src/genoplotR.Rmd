@@ -317,7 +317,7 @@ plot_gene_map(c(phage_one),
 #### combining the phage regions
 
 ```{r }
-pdf(file = "/Users/zuza/typhi/figures/bacteriophages_1.pdf",
+pdf(file = "./typhi/figures/bacteriophages_1.pdf",
     width = 14)
 
 plot_gene_map(dna_segs =
@@ -637,50 +637,77 @@ dev.off()
 ```
 
 
+# load assemblies and comparison files
+
 ```{r}
 # load assemblies
 ct18 <-
-  "/Users/zuza/typhi/results/prokka/chromosome/AL513382.1/AL513382.1.gbk"
+  "./results/prokka/chromosome/AL513382.1/AL513382.1.gbk"
 s1017142 <-
-  "/Users/zuza/typhi/results/prokka/chromosome/1017142/1017142.gbk"
+  "./results/prokka/chromosome/1017142/1017142.gbk"
 A53789 <-
-  "/Users/zuza/typhi/results/prokka/chromosome/A53789/A53789.gbk"
+  "./results/prokka/chromosome/A53789/A53789.gbk"
 A58390 <-
-  "/Users/zuza/typhi/results/prokka/chromosome/A58390/A58390.gbk"
+  "./results/prokka/chromosome/A58390/A58390.gbk"
 BKQT8S <-
-  "/Users/zuza/typhi/results/prokka/chromosome/BKQT8S/BKQT8S.gbk"
+  "./results/prokka/chromosome/BKQT8S/BKQT8S.gbk"
 BKQU3X <-
-  "/Users/zuza/typhi/results/prokka/chromosome/BKQU3X/BKQU3X.gbk"
+  "./results/prokka/chromosome/BKQU3X/BKQU3X.gbk"
   
 # load blast comparisons
 comparison_file_1 <-
-  "/Users/zuza/typhi/results/blast/ct18_vs_1017142.txt"
+  "./results/blast/ct18_vs_1017142.txt"
 comparison_file_2 <-
-  "/Users/zuza/typhi/results/blast/1017142_vs_A3789.txt"
+  "./results/blast/1017142_vs_A3789.txt"
 comparison_file_3 <-
-  "/Users/zuza/typhi/results/blast/A53789_vs_A58390.txt"
+  "./results/blast/A53789_vs_A58390.txt"
 comparison_file_4 <-
-  "/Users/zuza/typhi/results/blast/A58390_vs_BKQT8S.txt"
+  "./results/blast/A58390_vs_BKQT8S.txt"
 comparison_file_5 <-
-  "/Users/zuza/typhi/results/blast/BKQT8S_vs_BKQU3X.txt"
+  "./results/blast/BKQT8S_vs_BKQU3X.txt"
 
 ```
+# create and save DNA segments
 
-# Figure4
+```{r, eval=FALSE, echo=FALSE}
+dna_seg_ref <-
+  read_dna_seg_from_genbank(ct18)
+
+dna_seq_1017142 <-
+  read_dna_seg_from_genbank(s1017142)
+
+dna_seq_A58390 <-
+  read_dna_seg_from_genbank(A58390)
+
+dna_seq_BKQT8S <-
+  read_dna_seg_from_genbank(BKQT8S)
+
+dna_seq_BKQU3X <-
+  read_dna_seg_from_genbank(BKQU3X)
+
+save(dna_seg_ref,
+     dna_seq_1017142,
+     dna_seq_A58390,
+     dna_seq_BKQT8S,
+     dna_seq_BKQU3X,
+     file = "data/r/dna_segs.RData")
+```
+
+
+
+## create and plot Figure4
 
 ```{r}
 # create dna segments
-dna_seg_ref <-
-  read_dna_seg_from_genbank(ct18)
+load("data/r/dna_segs.RData")
+
 dna_seg1 <- filter(dna_seg_ref, start > 3467657, end <= 3475923)
 dna_seg1 <- dna_seg1 %>% filter(gene != "hemC") %>% filter( synonym != "STY_03442")
 plot_gene_map(list(dna_seg1), gene_type = "arrows", annotations = list(annot1))
 annot1 <- annotation(text = dna_seg1$gene, x1=middle(dna_seg1), rot = 30)
 
 
-
-dna_seq_1017142 <-
-  read_dna_seg_from_genbank(s1017142)
+# DNA segment two
 
 dna_seg2 <- filter(dna_seq_1017142, start >= 4502005, end <= 4508283)
 plot_gene_map(list(dna_seg2), gene_type = "arrows", annotations = list(annot2))
@@ -688,8 +715,7 @@ annot2 <- annotation(text = dna_seg2$gene, x1=middle(dna_seg2), rot = 30)
 
 dna_seg2 <- dna_seg2 %>% filter(gene != "hemC")
 
-dna_seq_A58390 <-
-  read_dna_seg_from_genbank(A58390)
+
 dna_seg3 <- filter(dna_seq_A58390, start >= 4447227, end <= 4454218)
 plot_gene_map(list(dna_seg3), gene_type = "arrows", annotations = list(annot3))
 
@@ -701,8 +727,6 @@ dna_seg3 <- dna_seg3 %>% filter(gene != "hemC") %>% filter(synonym != "STY_04383
 
 
 
-dna_seq_BKQT8S <-
-  read_dna_seg_from_genbank(BKQT8S)
 dna_seg4 <- filter(dna_seq_BKQT8S, start >= 4447227, end <= 4454442)
 
 plot_gene_map(list(dna_seg4), gene_type = "arrows", annotations = list(annot4))
@@ -712,8 +736,7 @@ annot4 <- annotation(text = dna_seg4$gene, x1=middle(dna_seg4), rot = 30)
 dna_seg4 <- dna_seg4 %>% filter(synonym != "STY_04384")
 
 
-dna_seq_BKQU3X <-
-  read_dna_seg_from_genbank(BKQU3X)
+
 dna_seg5 <- filter(dna_seq_BKQU3X, start >= 4447227, end <= 4454803)
 plot_gene_map(list(dna_seg5), gene_type = "arrows", annotations = list(annot5))
 dna_seg5$gene[5] <- "IS1D"
@@ -723,7 +746,7 @@ dna_seg5 <- dna_seg5 %>% filter(gene != "hemC") %>% filter(synonym != "STY_04381
 
 
 # create comparison files
-system(command = "blastn -query /Users/zuza/repos/H58/outputs/assemblies/polca/1017142.fasta -subject /Users/zuza/repos/H58/outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
+system(command = "blastn -query ./outputs/assemblies/polca/1017142.fasta -subject ./outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
 
 # comparison file for ct18_a58390
 #comparison_1 <-
@@ -791,7 +814,8 @@ plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
               comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
               dna_seg_scale = TRUE,
               dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
-              annotation_height = 2,
+              annotation_height = 1.5,
+              annotation_cex = 1,
               main  = "Comparison of the insertion site at cyaA")
 
 
@@ -824,53 +848,48 @@ dev.off()
 ```
 
 
-# FigureS1
+## FigureS1
 
 ```{r}
 # create dna segments
 
-dna_seg_ref <-
-  read_dna_seg_from_genbank("data/ref/sequence.gb")
-
-dna_seg_ref <-
-  read_dna_seg_from_genbank(ct18)
+# dna_seg_ref <-
+#   read_dna_seg_from_genbank("data/ref/sequence.gb")
+# 
+# dna_seg_ref <-
+#   read_dna_seg_from_genbank(ct18)
 dna_seg1 <- filter(dna_seg_ref, start >= 1682538, end <= 1698553)
 plot_gene_map(list(dna_seg1), gene_type = "arrows", annotations = list(annot1))
 annot1 <- annotation(text = dna_seg1$gene, x1=middle(dna_seg1), rot = 30)
 
 
 
-dna_seq_1017142 <-
-  read_dna_seg_from_genbank(s1017142)
 dna_seg2 <- filter(dna_seq_1017142, start >= 2467391, end <= 2483298)
 plot_gene_map(list(dna_seg2), gene_type = "arrows", annotations = list(annot2))
 annot2 <- annotation(text = dna_seg2$gene, x1=middle(dna_seg2), rot = 30)
 
 
-dna_seq_A58390 <-
-  read_dna_seg_from_genbank(A58390)
+
 dna_seg3 <- filter(dna_seq_A58390, start >= 2551524, end <= 2567431)
 plot_gene_map(list(dna_seg3), gene_type = "arrows", annotations = list(annot3))
 annot3 <- annotation(text = dna_seg3$gene, x1=middle(dna_seg3), rot = 30)
 
 
-dna_seq_BKQT8S <-
-  read_dna_seg_from_genbank(BKQT8S)
+
 dna_seg4 <- filter(dna_seq_BKQT8S, start >= 2551470, end <= 2567377)
 
 plot_gene_map(list(dna_seg4), gene_type = "arrows", annotations = list(annot4))
 annot4 <- annotation(text = dna_seg4$gene, x1=middle(dna_seg4), rot = 30)
 
 
-dna_seq_BKQU3X <-
-  read_dna_seg_from_genbank(BKQU3X)
+
 dna_seg5 <- filter(dna_seq_BKQU3X, start >= 2551463, end <= 2567370)
 plot_gene_map(list(dna_seg5), gene_type = "arrows", annotations = list(annot5))
 annot5 <- annotation(text = dna_seg5$gene, x1=middle(dna_seg5), rot = 30)
 
 
 # create comparison files
-# system(command = "blastn -query /Users/zuza/repos/H58/outputs/assemblies/polca/1017142.fasta -subject /Users/zuza/repos/H58/outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
+# system(command = "blastn -query ./outputs/assemblies/polca/1017142.fasta -subject ./outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
 
 # comparison file for ct18_a58390
 #comparison_1 <-
@@ -938,7 +957,8 @@ plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
               comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
               dna_seg_scale = TRUE,
               dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
-              annotation_height = 2,
+              annotation_height = 1.5,
+              annotation_cex = 1,
               main  = "Comparison of the insertion site at nlpC")
 
 
@@ -971,53 +991,40 @@ dev.off()
 ```
 
 
-#Figure s2
+## Figure s2
 
 ```{r}
 # create dna segments
 
-dna_seg_ref <-
-  read_dna_seg_from_genbank("data/ref/sequence.gb")
-
-dna_seg_ref <-
-  read_dna_seg_from_genbank(ct18)
 dna_seg1 <- filter(dna_seg_ref, start >= 3813583, end <= 3822270)
 plot_gene_map(list(dna_seg1), gene_type = "arrows", annotations = list(annot1))
 annot1 <- annotation(text = dna_seg1$gene, x1=middle(dna_seg1), rot = 30)
 
 
-
-dna_seq_1017142 <-
-  read_dna_seg_from_genbank(s1017142)
 dna_seg2 <- filter(dna_seq_1017142, start >= 8457, end <= 17144)
 plot_gene_map(list(dna_seg2), gene_type = "arrows", annotations = list(annot2))
 annot2 <- annotation(text = dna_seg2$gene, x1=middle(dna_seg2), rot = 30)
 
 
-dna_seq_A58390 <-
-  read_dna_seg_from_genbank(A58390)
 dna_seg3 <- filter(dna_seq_A58390, start >= 8457, end <= 17144)
 plot_gene_map(list(dna_seg3), gene_type = "arrows", annotations = list(annot3))
 annot3 <- annotation(text = dna_seg3$gene, x1=middle(dna_seg3), rot = 30)
 
 
-dna_seq_BKQT8S <-
-  read_dna_seg_from_genbank(BKQT8S)
+
 dna_seg4 <- filter(dna_seq_BKQT8S, start >= 8457, end <= 17144)
 
 plot_gene_map(list(dna_seg4), gene_type = "arrows", annotations = list(annot4))
 annot4 <- annotation(text = dna_seg4$gene, x1=middle(dna_seg4), rot = 30)
 
 
-dna_seq_BKQU3X <-
-  read_dna_seg_from_genbank(BKQU3X)
 dna_seg5 <- filter(dna_seq_BKQU3X, start >= 8457, end <= 17144)
 plot_gene_map(list(dna_seg5), gene_type = "arrows", annotations = list(annot5))
 annot5 <- annotation(text = dna_seg5$gene, x1=middle(dna_seg5), rot = 30)
 
 
 # create comparison files
-# system(command = "blastn -query /Users/zuza/repos/H58/outputs/assemblies/polca/1017142.fasta -subject /Users/zuza/repos/H58/outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
+# system(command = "blastn -query ./outputs/assemblies/polca/1017142.fasta -subject ./outputs/assemblies/polca/A58390.fasta  -outfmt 6 -out docs/1017142_a58390_comparison.txt")
 
 # comparison file for ct18_a58390
 #comparison_1 <-
@@ -1085,7 +1092,8 @@ plot_gene_map(dna_segs = list(dna_seg1, dna_seg2, dna_seg3, dna_seg4, dna_seg5),
               comparisons = list(comparison_1, comparison_2, comparison_4, comparison_5),
               dna_seg_scale = TRUE,
               dna_seg_labels = c("CT18", "1017142", "A58390", "BKQT8S", "BKQU3X"),
-              annotation_height = 2,
+              annotation_height = 1.5,
+              annotation_cex = 1,
               main  = "Comparison of the insertion site at yidA")
 
 
