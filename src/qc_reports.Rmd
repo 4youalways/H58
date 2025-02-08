@@ -22,7 +22,7 @@ library(figpatch)
 
 
 ```{r clean_nanoplot_data}
-setwd("/Users/zuza/repos/H58")
+setwd("./repos/H58")
 
 read_stats <-
     read_table("./outputs/nanoplot/nanostats/nanostats.txt")
