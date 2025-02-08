@@ -3,7 +3,7 @@ nextflow.enable.dsl=2
 
 process MAPPING {
     tag "${sample}"
-    conda '/Users/zuza/miniconda3/envs/mapping'
+    conda '~/miniconda3/envs/mapping'
 
     input:
     tuple val(sample_id), path(file)
@@ -25,7 +25,7 @@ process MAPPING {
 process ILLUMINA_MAPPING {
     tag "${sample_id}"
 
-    conda '/Users/zuza/miniconda3/envs/illumina_mapping'
+    conda '~/miniconda3/envs/illumina_mapping'
 
     maxForks 1
     cpus 8
@@ -53,7 +53,7 @@ process ILLUMINA_MAPPING {
 /*
 process COVERAGE {
     tag "${sample}"
-    conda '/Users/zuza/miniconda3/envs/mapping'
+    conda '~/miniconda3/envs/mapping'
     input:
     path(bam_files)
 
