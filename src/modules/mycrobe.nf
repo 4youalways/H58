@@ -1,8 +1,8 @@
-#!/Users/zuza/miniconda3/envs/nextflow/bin nextflow
+#!/usr/bin nextflow
 
 nextflow.enable.dsl=2
 
-params.short_reads = "/data/slow/bdri/azuza/samples/ERR279139_{1,2}.fastq.gz"
+params.short_reads = "./samples/ERR279139_{1,2}.fastq.gz"
 params.output = "profiles"
 
 process MYKROBE_PREPARE{
